@@ -80,6 +80,13 @@
 
             <!-- Hier kommt der eigentliche Seiten-/Post-Content rein -->
             <section class="section blog-content">
+                {% if page.images %}
+                <div class="blog-gallery">
+                    {% for img in page.images %}
+                        <img src="{{ img | relative_url }}" class="blog-image">
+                    {% endfor %}
+                </div>
+                {% endif %}
                 {{ content }}
             </section>
         </main>
