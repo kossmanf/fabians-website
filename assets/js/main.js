@@ -15,6 +15,8 @@ function setupTagSearch(inputId, containerSelector) {
     });
 }
 
+setupTagSearch("project-search", "#projects .tags");
+
 document.addEventListener("DOMContentLoaded", function () {
     setupTagSearch('project-search', '#project-tags');
     setupTagSearch('blog-search', '#blog-tags');

@@ -12,7 +12,7 @@
             {{ site.title }}
         {% endif %}
     </title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </head>
 <body>
@@ -175,6 +175,10 @@
             <section id="projects" class="section" style="margin-bottom: 16px;">
                 <h2>{{ projects.title | default: "Ausgewählte Themen & Projekte" }}</h2>
 
+                {% if projects.intro %}
+                    <p>{{ projects.intro }}</p>
+                {% endif %}
+                
                 <div class="search-wrapper">
                     <input
                         type="search"
@@ -183,10 +187,6 @@
                         placeholder="Projekte durchsuchen …"
                         aria-label="Projekte durchsuchen">
                 </div>
-
-                {% if projects.intro %}
-                    <p>{{ projects.intro }}</p>
-                {% endif %}
 
                 <div class="tags">
                     {% assign project_pages = site.pages | where: "layout", "project" %}
