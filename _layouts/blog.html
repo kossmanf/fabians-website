@@ -1,0 +1,101 @@
+---
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if page.title %}
+            {{ page.title }} · {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="logo">FABIAN&nbsp;KOSSMANN</div>
+            <nav>
+                <a href="{{ "/" | relative_url }}#about">Über mich</a>
+                <a href="{{ "/" | relative_url }}#projects">Projekte</a>
+                <a href="{{ "/" | relative_url }}#blog">Blog</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Blog-Hero -->
+            <section class="hero hero-blog">
+                <div class="hero-left">
+                    <div class="hero-eyebrow">Blog</div>
+                    <h1>
+                        {% if page.title %}
+                            {{ page.title }}
+                        {% else %}
+                            Blog
+                        {% endif %}
+                    </h1>
+
+                    {% if page.subtitle %}
+                        <p class="hero-sub">
+                            {{ page.subtitle }}
+                        </p>
+                    {% else %}
+                        <p class="hero-sub">
+                            Gedanken zu KI, Data Science, Statistik und Projekten.
+                        </p>
+                    {% endif %}
+                </div>
+
+                <div class="hero-right">
+                    <div class="card">
+                        <div class="avatar-wrapper">
+                            <div class="avatar">
+                                <div class="avatar-inner">
+                                    FK
+                                    <!-- später: <img src="{{ "/assets/img/fabian.jpg" | relative_url }}" alt="Foto von Fabian" style="width:100%;height:100%;border-radius:999px;object-fit:cover;"> -->
+                                </div>
+                            </div>
+                            <div>
+                                <div class="avatar-text-title">Fabian Kossmann</div>
+                                <div class="avatar-text-sub">KI & Data Science · Trier, DE</div>
+                            </div>
+                        </div>
+
+                        <ul class="meta-list">
+                            <li>🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik</li>
+                            <li>🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI</li>
+                            <li>💻 Praxisprojekte mit Python, ML & Simulation</li>
+                        </ul>
+
+                        <div class="pill">
+                            <span class="pill-dot"></span>
+                            Offen für spannende Projekte & Werkstudentenstellen
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hier kommt der eigentliche Seiten-/Post-Content rein -->
+            <section class="section blog-content">
+                {{ content }}
+            </section>
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> Fabian Kossmann</div>
+            <div>
+                <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
+                <!-- später: <a href="{{ "/impressum.html" | relative_url }}">Impressum</a> -->
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Aktuelles Jahr im Footer setzen
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
