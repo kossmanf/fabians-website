@@ -107,40 +107,6 @@
             <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
         </div>
     </footer>
-
-    <section id="contact" class="section" style="margin-bottom: 16px;">
-        <h2>Kontakt</h2>
-
-        {% if page.contact_text %}
-            <p>{{ page.contact_text }}</p>
-        {% endif %}
-
-        <div class="contact-items">
-            {% if page.email %}
-                <a class="contact-item" href="mailto:{{ page.email }}">
-                    📧 {{ page.email }}
-                </a>
-            {% endif %}
-
-            {% if page.github %}
-                <a class="contact-item" href="{{ page.github }}" target="_blank">
-                    💻 GitHub ansehen
-                </a>
-            {% endif %}
-
-            {% if page.linkedin %}
-                <a class="contact-item" href="{{ page.linkedin }}" target="_blank">
-                    🔗 LinkedIn Profil
-                </a>
-            {% endif %}
-
-            {% if page.x %}
-                <a class="contact-item" href="{{ page.x }}" target="_blank">
-                    🐦 X / Twitter
-                </a>
-            {% endif %}
-        </div>
-    </section>
 </div>
 
 <script>
