@@ -376,3 +376,25 @@ footer a:hover {
     opacity: 0.75;
 }
 
+
+
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    font-size: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.contact-item:hover {
+    background: #f5f5f5;
+}
