@@ -17,11 +17,31 @@ cv_entries:
     subtitle: "ZIMK – Webentwicklung, TYPO3"
     location: "Trier, DE"
 
-contact_text: Du kannst mich hier erreichen – beruflich, privat oder für Projektanfragen.
-email: hi@fabian-kossmann.de
-github: https://github.com/fabikoss
-linkedin: https://www.linkedin.com/in/fabian-kossmann
-x: https://twitter.com/dein_username
-kaggle: https://kaggle.com/dein_username
-huggingface: https://huggingface.co/dein_username
+platforms_title: "Profile & Plattformen"
+platforms_text: "Hier findest du meine wichtigsten Accounts und Online-Profile."
+
+platforms:
+  - name: "E-Mail"
+    icon: "📧"
+    url: "mailto:hi@fabian-kossmann.de"
+
+  - name: "GitHub"
+    icon: "💻"
+    url: "https://github.com/fabikoss"
+
+  - name: "LinkedIn"
+    icon: "🔗"
+    url: "https://www.linkedin.com/in/fabian-kossmann"
+
+  - name: "X / Twitter"
+    icon: "🐦"
+    url: "https://twitter.com/dein_username"
+
+  - name: "Kaggle"
+    icon: "📊"
+    url: "https://kaggle.com/dein_username"
+
+  - name: "Hugging Face"
+    icon: "🤗"
+    url: "https://huggingface.co/dein_username"
 ---
