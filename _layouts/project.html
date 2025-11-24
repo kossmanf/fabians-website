@@ -1,0 +1,118 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if page.title %}
+            {{ page.title }} · {{ site.title }}
+        {% else %}
+            Projekt · {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+<div class="page">
+
+    <header>
+        <div class="logo">FABIAN&nbsp;KOSSMANN</div>
+        <nav>
+            <a href="{{ "/" | relative_url }}#about">Über mich</a>
+            <a href="{{ "/" | relative_url }}#projects">Projekte</a>
+            <a href="{{ "/" | relative_url }}#blog">Blog</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero-project">
+            <div class="hero-left">
+
+                <div class="hero-eyebrow">Projekt</div>
+
+                <h1>
+                    {% if page.title %}
+                        {{ page.title }}
+                    {% else %}
+                        Projekt
+                    {% endif %}
+                </h1>
+
+                {% if page.subtitle %}
+                    <p class="hero-sub">{{ page.subtitle }}</p>
+                {% else %}
+                    <p class="hero-sub">Ein technisches Projekt aus KI, Data Science oder Software.</p>
+                {% endif %}
+
+                {% if page.github %}
+                    <a class="button github-button"
+                       href="{{ page.github }}" target="_blank">
+                        ⭐ GitHub Repository
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="hero-right">
+                <div class="card">
+                    <div class="avatar-wrapper">
+                        <div class="avatar">
+                            <div class="avatar-inner">
+                                FK
+                            </div>
+                        </div>
+                        <div>
+                            <div class="avatar-text-title">Fabian Kossmann</div>
+                            <div class="avatar-text-sub">KI & Data Science · Trier, DE</div>
+                        </div>
+                    </div>
+
+                    <ul class="meta-list">
+                        <li>💻 Fokus: Python, ML, Simulationen</li>
+                        <li>📊 Statistik & KI-Modelle</li>
+                        <li>🚀 Interesse an innovativen Projekten</li>
+                    </ul>
+
+                    <div class="pill">
+                        <span class="pill-dot"></span>
+                        Projekt aus meinem Portfolio
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section project-content">
+
+            {% if page.images %}
+                {% for img in page.images %}
+                    <img
+                        src="{{ img.src | relative_url }}"
+                        {% if img.width %}width="{{ img.width }}"{% endif %}
+                        {% if img.height %}height="{{ img.height }}"{% endif %}
+                        class="blog-image"
+                    >
+                {% endfor %}
+            {% endif %}
+
+            {{ content }}
+        </section>
+
+    </main>
+
+    <footer>
+        <div>© <span id="year"></span> Fabian Kossmann</div>
+        <div>
+            <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
