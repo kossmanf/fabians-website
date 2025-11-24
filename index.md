@@ -3,7 +3,7 @@ layout: default
 title: "Start"
 
 header_section:
-  logo: "FABIAN&nbsp;KOSSMANN"
+  logo: "FABIAN KOßMANN"
   nav:
     - label: "Über mich"
       href: "#about"
@@ -22,7 +22,7 @@ hero_section:
     Ich studiere Künstliche Intelligenz & Data Science …
 
   avatar_initials: "FK"
-  avatar_name: "Fabian Kossmann"
+  avatar_name: "Fabian Koßmann"
   avatar_subtitle: "KI & Data Science · Trier, DE"
 
   meta:

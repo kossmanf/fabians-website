@@ -18,7 +18,7 @@ footer_section:
   left_html: "© <span id='year'></span> Fabian Kossmann"
   links:
     - label: "Kontakt"
-      href: "mailto:hi@fabian-kossmann.de"
+      href: "mailto:fabiankossmann98@gmail.com"
 ---
 
 **Impressum**  
