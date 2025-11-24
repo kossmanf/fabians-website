@@ -35,7 +35,7 @@ platforms_section:
 
     - name: "GitHub"
       icon: "💻"
-      url: "https://github.com/fabikoss"
+      url: "https://github.com/kossmanf" 
 
     - name: "LinkedIn"
       icon: "🔗"
