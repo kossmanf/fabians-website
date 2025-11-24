@@ -16,29 +16,55 @@
 </head>
 <body>
     <div class="page">
+        {%- assign header = page.header_section | default: site.header_section -%}
+        {%- assign hero = page.blog_hero_section -%}
+        {%- assign media = page.media_section -%}
+        {%- assign footer = page.footer_section | default: site.footer_section -%}
+
+        <!-- HEADER -->
         <header>
-            <div class="logo">FABIAN&nbsp;KOSSMANN</div>
-            <nav>
-                <a href="{{ "/" | relative_url }}#about">Über mich</a>
-                <a href="{{ "/" | relative_url }}#projects">Projekte</a>
-                <a href="{{ "/" | relative_url }}#blog">Blog</a>
-            </nav>
+            <div class="logo">
+                {{ header.logo | default: "FABIAN\u00A0KOSSMANN" }}
+            </div>
+
+            {% if header.nav %}
+                <nav>
+                    {% for item in header.nav %}
+                        <a href="{{ item.href }}">{{ item.label }}</a>
+                    {% endfor %}
+                </nav>
+            {% else %}
+                <nav>
+                    <a href="{{ "/" | relative_url }}#about">Über mich</a>
+                    <a href="{{ "/" | relative_url }}#projects">Projekte</a>
+                    <a href="{{ "/" | relative_url }}#blog">Blog</a>
+                </nav>
+            {% endif %}
         </header>
 
         <main>
             <!-- Blog-Hero -->
             <section class="hero hero-blog">
                 <div class="hero-left">
-                    <div class="hero-eyebrow">Blog</div>
+                    <div class="hero-eyebrow">
+                        {{ hero.eyebrow | default: "Blog" }}
+                    </div>
+
                     <h1>
-                        {% if page.title %}
+                        {% if hero.title %}
+                            {{ hero.title }}
+                        {% elsif page.title %}
                             {{ page.title }}
                         {% else %}
                             Blog
                         {% endif %}
                     </h1>
 
-                    {% if page.subtitle %}
+                    {% if hero.subtitle %}
+                        <p class="hero-sub">
+                            {{ hero.subtitle }}
+                        </p>
+                    {% elsif page.subtitle %}
                         <p class="hero-sub">
                             {{ page.subtitle }}
                         </p>
@@ -54,58 +80,99 @@
                         <div class="avatar-wrapper">
                             <div class="avatar">
                                 <div class="avatar-inner">
-                                    FK
+                                    {{ hero.avatar_initials | default: "FK" }}
                                     <!-- später: <img src="{{ "/assets/img/fabian.jpg" | relative_url }}" alt="Foto von Fabian" style="width:100%;height:100%;border-radius:999px;object-fit:cover;"> -->
                                 </div>
                             </div>
                             <div>
-                                <div class="avatar-text-title">Fabian Kossmann</div>
-                                <div class="avatar-text-sub">KI & Data Science · Trier, DE</div>
+                                <div class="avatar-text-title">
+                                    {{ hero.avatar_name | default: "Fabian Kossmann" }}
+                                </div>
+                                <div class="avatar-text-sub">
+                                    {{ hero.avatar_subtitle | default: "KI & Data Science · Trier, DE" }}
+                                </div>
                             </div>
                         </div>
 
-                        <ul class="meta-list">
-                            <li>🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik</li>
-                            <li>🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI</li>
-                            <li>💻 Praxisprojekte mit Python, ML & Simulation</li>
-                        </ul>
+                        {% if hero.meta %}
+                            <ul class="meta-list">
+                                {% for item in hero.meta %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <ul class="meta-list">
+                                <li>🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik</li>
+                                <li>🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI</li>
+                                <li>💻 Praxisprojekte mit Python, ML & Simulation</li>
+                            </ul>
+                        {% endif %}
 
                         <div class="pill">
                             <span class="pill-dot"></span>
-                            Offen für spannende Projekte & Werkstudentenstellen
+                            {{ hero.pill_text | default: "Offen für spannende Projekte & Werkstudentenstellen" }}
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Hier kommt der eigentliche Seiten-/Post-Content rein -->
+            <!-- Blog-Content -->
             <section class="section blog-content">
-                {% if page.images %}
-                {% for img in page.images %}
-                    <img
-                    src="{{ img.src | relative_url }}"
-                    {% if img.width %}width="{{ img.width }}"{% endif %}
-                    {% if img.height %}height="{{ img.height }}"{% endif %}
-                    class="blog-image"
-                    >
-                {% endfor %}
+                {% comment %}
+                Medien-Bereich: zuerst media_section.images, fallback auf page.images
+                {% endcomment %}
+                {% if media.images %}
+                    {% for img in media.images %}
+                        <img
+                            src="{{ img.src | relative_url }}"
+                            {% if img.width %}width="{{ img.width }}"{% endif %}
+                            {% if img.height %}height="{{ img.height }}"{% endif %}
+                            class="{{ img.class | default: 'blog-image' }}"
+                            {% if img.alt %}alt="{{ img.alt }}"{% endif %}
+                        >
+                    {% endfor %}
+                {% elsif page.images %}
+                    {% for img in page.images %}
+                        <img
+                            src="{{ img.src | relative_url }}"
+                            {% if img.width %}width="{{ img.width }}"{% endif %}
+                            {% if img.height %}height="{{ img.height }}"{% endif %}
+                            class="blog-image"
+                        >
+                    {% endfor %}
                 {% endif %}
+
                 {{ content }}
             </section>
         </main>
 
+        <!-- FOOTER -->
         <footer>
-            <div>© <span id="year"></span> Fabian Kossmann</div>
             <div>
-                <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
-                <!-- später: <a href="{{ "/impressum.html" | relative_url }}">Impressum</a> -->
+                {% if footer.left_html %}
+                    {{ footer.left_html }}
+                {% else %}
+                    © <span id="year"></span> Fabian Kossmann
+                {% endif %}
+            </div>
+            <div>
+                {% if footer.links %}
+                    {% for link in footer.links %}
+                        <a href="{{ link.href }}">{{ link.label }}</a>
+                    {% endfor %}
+                {% else %}
+                    <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
+                    <!-- später: <a href="{{ "/impressum.html" | relative_url }}">Impressum</a> -->
+                {% endif %}
             </div>
         </footer>
     </div>
 
     <script>
-        // Aktuelles Jahr im Footer setzen
-        document.getElementById('year').textContent = new Date().getFullYear();
+        var yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
