@@ -23,31 +23,33 @@ cv_entries:
     subtitle: "ZIMK – Webentwicklung, TYPO3"
     location: "Trier, DE"
 
-platforms_title: "Profile & Plattformen"
-platforms_text: "Hier findest du meine wichtigsten Accounts und Online-Profile."
+platforms_section:
 
-platforms:
-  - name: "E-Mail"
-    icon: "📧"
-    url: "mailto:hi@fabian-kossmann.de"
+  platforms_title: "Profile & Plattformen"
+  platforms_text: "Hier findest du meine wichtigsten Accounts und Online-Profile."
 
-  - name: "GitHub"
-    icon: "💻"
-    url: "https://github.com/fabikoss"
+  platforms:
+    - name: "E-Mail"
+      icon: "📧"
+      url: "mailto:hi@fabian-kossmann.de"
 
-  - name: "LinkedIn"
-    icon: "🔗"
-    url: "https://www.linkedin.com/in/fabian-kossmann"
+    - name: "GitHub"
+      icon: "💻"
+      url: "https://github.com/fabikoss"
 
-  - name: "X / Twitter"
-    icon: "🐦"
-    url: "https://twitter.com/dein_username"
+    - name: "LinkedIn"
+      icon: "🔗"
+      url: "https://www.linkedin.com/in/fabian-kossmann"
 
-  - name: "Kaggle"
-    icon: "📊"
-    url: "https://kaggle.com/dein_username"
+    - name: "X / Twitter"
+      icon: "🐦"
+      url: "https://twitter.com/dein_username"
 
-  - name: "Hugging Face"
-    icon: "🤗"
-    url: "https://huggingface.co/dein_username"
+    - name: "Kaggle"
+      icon: "📊"
+      url: "https://kaggle.com/dein_username"
+
+    - name: "Hugging Face"
+      icon: "🤗"
+      url: "https://huggingface.co/dein_username"
 ---

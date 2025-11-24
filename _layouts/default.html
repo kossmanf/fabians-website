@@ -133,7 +133,7 @@
                 </div>
             </section>
 
-            <section id="blog" class="section">
+            <section id="blog" class="section"  style="margin-bottom: 16px;">
                 <h2>Blog</h2>
                 <p>
                     Kurze Gedanken, Experimente und Projekte rund um KI, Statistik und Data Science.
@@ -149,15 +149,32 @@
                 </div>
             </section>
 
-            <section id="platforms" class="section" style="margin-bottom: 16px;">
-                <h2>{{ page.platforms_title }}</h2>
+            <section class="platforms">
+                <h2>{{  }}</h2>
+                <p>{{ page.plattform_section.platforms_text }}</p>
 
-                {% if page.platforms_text %}
-                    <p>{{ page.platforms_text }}</p>
+                <ul class="platform-list">
+                    {% for item in page.plattform_section.platforms %}
+                    <li class="platform-item">
+                        <a href="{{ item.url }}" target="_blank">
+                        <span class="icon">{{ item.icon }}</span>
+                        <span class="name">{{ item.name }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                </section>
+
+
+            <section id="platforms" class="section" style="margin-bottom: 16px;">
+                <h2>{{ page.platforms_section.platforms_title }}</h2>
+
+                {% if page.platforms_section.platforms_text %}
+                    <p>{{ page.platforms_section.platforms_text }}</p>
                 {% endif %}
 
                 <div class="tags">
-                    {% for platform in page.platforms %}
+                    {% for platform in page.platforms_section.platforms %}
                         <a class="tag tag-platform" href="{{ platform.url }}" target="_blank">
                             {{ platform.icon }} {{ platform.name }}
                         </a>
@@ -170,14 +187,13 @@
         <footer>
             <div>© <span id="year"></span> Fabian Kossmann</div>
             <div>
-                <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
+                <a href="mailto:fabiankossmann98@gmail.com">Kontakt</a>
                 <!-- später: <a href="/impressum.html">Impressum</a> -->
             </div>
         </footer>
     </div>
 
     <script>
-        // Aktuelles Jahr im Footer setzen
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
