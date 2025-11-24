@@ -1,6 +1,5 @@
 ---
 ---
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -18,40 +17,78 @@
 <body>
 <div class="page">
 
+    {%- assign header = page.header_section | default: site.header_section -%}
+    {%- assign hero = page.project_hero_section -%}
+    {%- assign media = page.media_section -%}
+    {%- assign footer = page.footer_section | default: site.footer_section -%}
+
+    <!-- HEADER -->
     <header>
-        <div class="logo">FABIAN&nbsp;KOSSMANN</div>
-        <nav>
-            <a href="{{ "/" | relative_url }}#about">Über mich</a>
-            <a href="{{ "/" | relative_url }}#projects">Projekte</a>
-            <a href="{{ "/" | relative_url }}#blog">Blog</a>
-        </nav>
+        <div class="logo">
+            {{ header.logo | default: "FABIAN\u00A0KOSSMANN" }}
+        </div>
+
+        {% if header.nav %}
+            <nav>
+                {% for item in header.nav %}
+                    <a href="{{ item.href }}">{{ item.label }}</a>
+                {% endfor %}
+            </nav>
+        {% else %}
+            <nav>
+                <a href="{{ "/" | relative_url }}#about">Über mich</a>
+                <a href="{{ "/" | relative_url }}#projects">Projekte</a>
+                <a href="{{ "/" | relative_url }}#blog">Blog</a>
+            </nav>
+        {% endif %}
     </header>
 
     <main>
+        <!-- HERO -->
         <section class="hero hero-project">
             <div class="hero-left">
 
-                <div class="hero-eyebrow">Projekt</div>
+                <div class="hero-eyebrow">
+                    {{ hero.eyebrow | default: "Projekt" }}
+                </div>
 
                 <h1>
-                    {% if page.title %}
+                    {% if hero.title %}
+                        {{ hero.title }}
+                    {% elsif page.title %}
                         {{ page.title }}
                     {% else %}
                         Projekt
                     {% endif %}
                 </h1>
 
-                {% if page.subtitle %}
+                {% if hero.subtitle %}
+                    <p class="hero-sub">{{ hero.subtitle }}</p>
+                {% elsif page.subtitle %}
                     <p class="hero-sub">{{ page.subtitle }}</p>
                 {% else %}
-                    <p class="hero-sub">Ein technisches Projekt aus KI, Data Science oder Software.</p>
+                    <p class="hero-sub">
+                        Ein technisches Projekt aus KI, Data Science oder Software.
+                    </p>
                 {% endif %}
 
-                {% if page.github %}
+                {% if hero.github_url or page.github %}
                     <a class="button github-button"
-                       href="{{ page.github }}" target="_blank">
-                        ⭐ GitHub Repository
+                       href="{{ hero.github_url | default: page.github }}"
+                       target="_blank">
+                        {{ hero.github_label | default: "⭐ GitHub Repository" }}
                     </a>
+                {% endif %}
+
+                {% if hero.actions %}
+                    <div class="hero-actions">
+                        {% for action in hero.actions %}
+                            <a href="{{ action.href }}"
+                               class="btn btn-{{ action.style | default: 'ghost' }}">
+                                {{ action.label }}
+                            </a>
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </div>
 
@@ -60,38 +97,64 @@
                     <div class="avatar-wrapper">
                         <div class="avatar">
                             <div class="avatar-inner">
-                                FK
+                                {{ hero.avatar_initials | default: "FK" }}
                             </div>
                         </div>
                         <div>
-                            <div class="avatar-text-title">Fabian Kossmann</div>
-                            <div class="avatar-text-sub">KI & Data Science · Trier, DE</div>
+                            <div class="avatar-text-title">
+                                {{ hero.avatar_name | default: "Fabian Kossmann" }}
+                            </div>
+                            <div class="avatar-text-sub">
+                                {{ hero.avatar_subtitle | default: "KI & Data Science · Trier, DE" }}
+                            </div>
                         </div>
                     </div>
 
-                    <ul class="meta-list">
-                        <li>💻 Fokus: Python, ML, Simulationen</li>
-                        <li>📊 Statistik & KI-Modelle</li>
-                        <li>🚀 Interesse an innovativen Projekten</li>
-                    </ul>
+                    {% if hero.meta %}
+                        <ul class="meta-list">
+                            {% for item in hero.meta %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <ul class="meta-list">
+                            <li>💻 Fokus: Python, ML, Simulationen</li>
+                            <li>📊 Statistik & KI-Modelle</li>
+                            <li>🚀 Interesse an innovativen Projekten</li>
+                        </ul>
+                    {% endif %}
 
                     <div class="pill">
                         <span class="pill-dot"></span>
-                        Projekt aus meinem Portfolio
+                        {{ hero.pill_text | default: "Projekt aus meinem Portfolio" }}
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- CONTENT -->
         <section class="section project-content">
 
-            {% if page.images %}
+            {% comment %}
+            Medien-Bereich: zuerst media_section.images, fallback auf page.images
+            {% endcomment %}
+            {% if media.images %}
+                {% for img in media.images %}
+                    <img
+                        src="{{ img.src | relative_url }}"
+                        {% if img.width %}width="{{ img.width }}"{% endif %}
+                        {% if img.height %}height="{{ img.height }}"{% endif %}
+                        class="{{ img.class | default: 'project-image' }}"
+                        {% if img.alt %}alt="{{ img.alt }}"{% endif %}
+                    >
+                {% endfor %}
+            {% elsif page.images %}
                 {% for img in page.images %}
                     <img
                         src="{{ img.src | relative_url }}"
                         {% if img.width %}width="{{ img.width }}"{% endif %}
                         {% if img.height %}height="{{ img.height }}"{% endif %}
-                        class="blog-image"
+                        class="project-image"
                     >
                 {% endfor %}
             {% endif %}
@@ -101,16 +164,32 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
-        <div>© <span id="year"></span> Fabian Kossmann</div>
         <div>
-            <a href="mailto:info@fabian-kossmann.de">Kontakt</a>
+            {% if footer.left_html %}
+                {{ footer.left_html }}
+            {% else %}
+                © <span id="year"></span> Fabian Kossmann
+            {% endif %}
+        </div>
+        <div>
+            {% if footer.links %}
+                {% for link in footer.links %}
+                    <a href="{{ link.href }}">{{ link.label }}</a>
+                {% endfor %}
+            {% else %}
+                <a href="mailto:fabiankossmann98@gmail.com">Kontakt</a>
+            {% endif %}
         </div>
     </footer>
 </div>
 
 <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    var yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 </script>
 
 </body>
