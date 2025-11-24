@@ -1,0 +1,75 @@
+---
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if page.title %}
+            {{ page.title }} · {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+    <div class="page">
+
+        {%- assign header = page.header_section | default: site.header_section -%}
+        {%- assign footer = page.footer_section | default: site.footer_section -%}
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                {{ header.logo | default: "FABIAN\u00A0KOSSMANN" }}
+            </div>
+
+            {% if header.nav %}
+                <nav>
+                    {% for item in header.nav %}
+                        <a href="{{ item.href }}">{{ item.label }}</a>
+                    {% endfor %}
+                </nav>
+            {% endif %}
+        </header>
+
+        <!-- CONTENT -->
+        <main class="section" style="max-width: 700px; margin: 40px auto;">
+            <h1>{{ page.title | default: "Impressum" }}</h1>
+
+            <div class="impressum-content">
+                {{ content }}
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div>
+                {% if footer.left_html %}
+                    {{ footer.left_html }}
+                {% else %}
+                    © <span id="year"></span> Fabian Kossmann
+                {% endif %}
+            </div>
+            <div>
+                {% if footer.links %}
+                    {% for link in footer.links %}
+                        <a href="{{ link.href }}">{{ link.label }}</a>
+                    {% endfor %}
+                {% else %}
+                    <a href="mailto:fabiankossmann98@gmail.com">Kontakt</a>
+                {% endif %}
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        var yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

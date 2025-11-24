@@ -5,35 +5,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>
+        {% if page.title %}
+            {{ page.title }} · {{ site.title }}
+        {% else %}
+            {{ site.title }}
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
 <body>
     <div class="page">
+
+        {%- assign header = page.header_section -%}
+        {%- assign hero = page.hero_section -%}
+        {%- assign about = page.about_section -%}
+        {%- assign projects = page.projects_section -%}
+        {%- assign blog = page.blog_section -%}
+        {%- assign platforms = page.platforms_section -%}
+        {%- assign footer = page.footer_section -%}
+
+        <!-- HEADER -->
         <header>
-            <div class="logo">FABIAN&nbsp;KOSSMANN</div>
-            <nav>
-                <a href="#about">Über mich</a>
-                <a href="#projects">Projekte</a>
-                <a href="#blog">Blog</a>
-                <a href="#platforms">Profile & Plattformen</a>
-            </nav>
+            <div class="logo">
+                {{ header.logo | default: "FABIAN\u00A0KOSSMANN" }}
+            </div>
+
+            {% if header.nav %}
+                <nav>
+                    {% for item in header.nav %}
+                        <a href="{{ item.href }}">{{ item.label }}</a>
+                    {% endfor %}
+                </nav>
+            {% endif %}
         </header>
 
         <main>
+            <!-- HERO -->
             <section class="hero">
                 <div class="hero-left">
-                    <div class="hero-eyebrow">KI & Data Science</div>
-                    <h1>Hi, ich bin <span>Fabian</span>.</h1>
-                    <p class="hero-sub">
-                        Ich studiere Künstliche Intelligenz & Data Science und entwickle gerne
-                        praktische Lösungen mit Statistik, Machine Learning und Simulation -
-                        vom Fahrstuhl-Controller mit Reinforcement Learning bis zur Musikgenre-Klassifikation.
-                    </p>
+                    {% if hero.eyebrow %}
+                        <div class="hero-eyebrow">{{ hero.eyebrow }}</div>
+                    {% endif %}
 
-                    {% if page.badges %}
+                    <h1>
+                        {% if hero.title_prefix %}
+                            {{ hero.title_prefix }}
+                        {% else %}
+                            Hi, ich bin
+                        {% endif %}
+                        <span>
+                            {% if hero.name %}
+                                {{ hero.name }}
+                            {% else %}
+                                Fabian
+                            {% endif %}
+                        </span>.
+                    </h1>
+
+                    {% if hero.sub %}
+                        <p class="hero-sub">
+                            {{ hero.sub }}
+                        </p>
+                    {% endif %}
+
+                    {% if hero.badges %}
                         <div class="badges">
-                            {% for badge in page.badges %}
+                            {% for badge in hero.badges %}
                                 <div class="badge">
                                     {% if badge.strong %}
                                         <strong>{{ badge.strong }}</strong>{% if badge.text %} {{ badge.text }}{% endif %}
@@ -45,13 +83,15 @@
                         </div>
                     {% endif %}
 
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
-                        <a href="#blog" class="btn btn-ghost">Blogposts ansehen</a>
-                        <a href="#about" class="btn btn-ghost">Mehr über mich</a>
-                        <a href="#platforms" class="btn btn-ghost">Profile & Plattformen</a>
-                    </div>
-
+                    {% if hero.actions %}
+                        <div class="hero-actions">
+                            {% for action in hero.actions %}
+                                <a href="{{ action.href }}" class="btn btn-{{ action.style | default: 'ghost' }}">
+                                    {{ action.label }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
 
                 <div class="hero-right">
@@ -59,73 +99,88 @@
                         <div class="avatar-wrapper">
                             <div class="avatar">
                                 <div class="avatar-inner">
-                                    FK
-                                    <!-- später: <img src="assets/img/fabian.jpg" alt="Foto von Fabian" style="width:100%;height:100%;border-radius:999px;object-fit:cover;"> -->
+                                    {% if hero.avatar_initials %}
+                                        {{ hero.avatar_initials }}
+                                    {% else %}
+                                        FK
+                                    {% endif %}
+                                    <!-- später: <img src="{{ "/assets/img/fabian.jpg" | relative_url }}" alt="Foto von Fabian" style="width:100%;height:100%;border-radius:999px;object-fit:cover;"> -->
                                 </div>
                             </div>
                             <div>
-                                <div class="avatar-text-title">Fabian Kossmann</div>
-                                <div class="avatar-text-sub">KI & Data Science · Trier, DE</div>
+                                <div class="avatar-text-title">
+                                    {{ hero.avatar_name | default: "Fabian Kossmann" }}
+                                </div>
+                                <div class="avatar-text-sub">
+                                    {{ hero.avatar_subtitle | default: "KI & Data Science · Trier, DE" }}
+                                </div>
                             </div>
                         </div>
 
-                        <ul class="meta-list">
-                            <li>🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik</li>
-                            <li>🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI</li>
-                            <li>💻 Praxisprojekte mit Python, ML & Simulation</li>
-                        </ul>
+                        {% if hero.meta %}
+                            <ul class="meta-list">
+                                {% for item in hero.meta %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
 
-                        <div class="pill">
-                            <span class="pill-dot"></span>
-                            Offen für spannende Projekte & Werkstudentenstellen
-                        </div>
+                        {% if hero.pill_text %}
+                            <div class="pill">
+                                <span class="pill-dot"></span>
+                                {{ hero.pill_text }}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </section>
 
+            <!-- ABOUT -->
             <section id="about" class="section" style="margin-bottom: 16px;">
-                <h2>Über mich</h2>
-                <p>
-                    Ich kombiniere gerne mathematisches Denken mit praktischer Umsetzung.
-                    Besonders spannend finde ich Probleme, bei denen Unsicherheit, Entscheidungen
-                    und reale Daten zusammentreffen - z.&nbsp;B. Empfehlungssysteme, Simulation
-                    von komplexen Systemen oder Gesundheits-/Routing-Optimierung.
-                </p>
-                <p>
-                    Wenn ich nicht gerade code, mache ich Sport (Gym, Laufen) und denke über
-                    faire, datengetriebene Systeme für Gesellschaft und Technik nach.
-                </p>
+                <h2>{{ about.title | default: "Über mich" }}</h2>
 
-                <div class="cv-timeline">
-                    {% for item in page.cv_entries %}
-                        <div class="cv-item">
-                            <div class="cv-bubble"></div>
-                            <div class="cv-content">
-                                <div class="cv-year">{{ item.year }}</div>
-                                <div class="cv-title">{{ item.title }}</div>
-
-                                {% if item.subtitle %}
-                                    <div class="cv-subtitle">{{ item.subtitle }}</div>
-                                {% endif %}
-
-                                {% if item.location %}
-                                    <div class="cv-location">{{ item.location }}</div>
-                                {% endif %}
-                            </div>
-                        </div>
+                {% if about.paragraphs %}
+                    {% for paragraph in about.paragraphs %}
+                        <p>{{ paragraph }}</p>
                     {% endfor %}
-                </div>
+                {% endif %}
+
+                {% if about.cv_entries %}
+                    <div class="cv-timeline">
+                        {% for item in about.cv_entries %}
+                            <div class="cv-item">
+                                <div class="cv-bubble"></div>
+                                <div class="cv-content">
+                                    {% if item.year %}
+                                        <div class="cv-year">{{ item.year }}</div>
+                                    {% endif %}
+                                    {% if item.title %}
+                                        <div class="cv-title">{{ item.title }}</div>
+                                    {% endif %}
+                                    {% if item.subtitle %}
+                                        <div class="cv-subtitle">{{ item.subtitle }}</div>
+                                    {% endif %}
+                                    {% if item.location %}
+                                        <div class="cv-location">{{ item.location }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </section>
 
+            <!-- PROJECTS -->
             <section id="projects" class="section" style="margin-bottom: 16px;">
-                <h2>Ausgewählte Themen & Projekte</h2>
-                <p>
-                    Eine wachsende Sammlung meiner KI-, Statistik- und Web-Projekte.
-                </p>
+                <h2>{{ projects.title | default: "Ausgewählte Themen & Projekte" }}</h2>
+
+                {% if projects.intro %}
+                    <p>{{ projects.intro }}</p>
+                {% endif %}
 
                 <div class="tags">
-                    {% assign projects = site.pages | where: "layout", "project" %}
-                    {% for project in projects %}
+                    {% assign project_pages = site.pages | where: "layout", "project" %}
+                    {% for project in project_pages %}
                         <a class="tag tag-project" href="{{ project.url | relative_url }}">
                             {{ project.title }}
                         </a>
@@ -133,15 +188,17 @@
                 </div>
             </section>
 
-            <section id="blog" class="section"  style="margin-bottom: 16px;">
-                <h2>Blog</h2>
-                <p>
-                    Kurze Gedanken, Experimente und Projekte rund um KI, Statistik und Data Science.
-                </p>
+            <!-- BLOG -->
+            <section id="blog" class="section" style="margin-bottom: 16px;">
+                <h2>{{ blog.title | default: "Blog" }}</h2>
+
+                {% if blog.intro %}
+                    <p>{{ blog.intro }}</p>
+                {% endif %}
 
                 <div class="tags">
-                    {% assign posts = site.pages | where: "layout", "blog" %}
-                    {% for post in posts %}
+                    {% assign blog_posts = site.pages | where: "layout", "blog" %}
+                    {% for post in blog_posts %}
                         <a class="tag tag-blog" href="{{ post.url | relative_url }}">
                             {{ post.title }}
                         </a>
@@ -149,52 +206,54 @@
                 </div>
             </section>
 
-            <section class="platforms">
-                <h2>{{  }}</h2>
-                <p>{{ page.plattform_section.platforms_text }}</p>
-
-                <ul class="platform-list">
-                    {% for item in page.plattform_section.platforms %}
-                    <li class="platform-item">
-                        <a href="{{ item.url }}" target="_blank">
-                        <span class="icon">{{ item.icon }}</span>
-                        <span class="name">{{ item.name }}</span>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                </section>
-
-
+            <!-- PLATFORMS -->
             <section id="platforms" class="section" style="margin-bottom: 16px;">
-                <h2>{{ page.platforms_section.platforms_title }}</h2>
-
-                {% if page.platforms_section.platforms_text %}
-                    <p>{{ page.platforms_section.platforms_text }}</p>
+                {% if platforms.title %}
+                    <h2>{{ platforms.title }}</h2>
                 {% endif %}
 
-                <div class="tags">
-                    {% for platform in page.platforms_section.platforms %}
-                        <a class="tag tag-platform" href="{{ platform.url }}" target="_blank">
-                            {{ platform.icon }} {{ platform.name }}
-                        </a>
-                    {% endfor %}
-                </div>
+                {% if platforms.text %}
+                    <p>{{ platforms.text }}</p>
+                {% endif %}
+
+                {% if platforms.platforms %}
+                    <div class="tags">
+                        {% for platform in platforms.platforms %}
+                            <a class="tag tag-platform" href="{{ platform.url }}" target="_blank">
+                                {{ platform.icon }} {{ platform.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </section>
-    
         </main>
 
+        <!-- FOOTER -->
         <footer>
-            <div>© <span id="year"></span> Fabian Kossmann</div>
             <div>
-                <a href="mailto:fabiankossmann98@gmail.com">Kontakt</a>
-                <!-- später: <a href="/impressum.html">Impressum</a> -->
+                {% if footer.left_html %}
+                    {{ footer.left_html }}
+                {% else %}
+                    © <span id="year"></span> Fabian Kossmann
+                {% endif %}
+            </div>
+            <div>
+                {% if footer.links %}
+                    {% for link in footer.links %}
+                        <a href="{{ link.href }}">{{ link.label }}</a>
+                    {% endfor %}
+                {% else %}
+                    <a href="mailto:fabiankossmann98@gmail.com">Kontakt</a>
+                {% endif %}
             </div>
         </footer>
     </div>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        var yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
