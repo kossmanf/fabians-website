@@ -124,15 +124,22 @@
             </section>
 
             <section id="blog" class="section">
-                <h2>Blog (bald)</h2>
+                <h2>Blog</h2>
                 <p>
-                    Hier möchte ich in Zukunft über KI-Projekte, Statistik-Ideen und kleine Experimente
-                    schreiben – eher technisch, aber verständlich erklärt.
+                    Kurze Gedanken, Experimente und Projekte rund um KI, Statistik und Data Science.
                 </p>
-                <p style="font-size:0.85rem;color:var(--muted);">
-                    Aktuell ist das nur ein Platzhalter. Der Blog kommt, sobald die grundlegende Seite steht.
-                </p>
+
+                <!-- Blogposts als Tag-Bubbles -->
+                <div class="tags">
+                    {% assign posts = site.pages | where: "layout", "blog" %}
+                    {% for post in posts %}
+                        <a class="tag tag-blog" href="{{ post.url | relative_url }}">
+                            {{ post.title }}
+                        </a>
+                    {% endfor %}
+                </div>
             </section>
+
         </main>
 
         <footer>
