@@ -1,6 +1,12 @@
 ---
 layout: default
 
+badges:
+  - strong: "Master"
+    text: "KI & Data Science"
+  - text: "Fokus: ML, Statistik, Bayes"
+  - text: "Python · PyTorch · TensorFlow"
+
 cv_entries:
   - year: "seit 2024"
     title: "Master KI & Data Science"

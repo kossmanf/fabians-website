@@ -31,11 +31,19 @@
                         vom Fahrstuhl-Controller mit Reinforcement Learning bis zur Musikgenre-Klassifikation.
                     </p>
 
-                    <div class="badges">
-                        <div class="badge"><strong>Master</strong> KI & Data Science</div>
-                        <div class="badge">Fokus: ML, Statistik, Bayes</div>
-                        <div class="badge">Python · PyTorch · TensorFlow</div>
-                    </div>
+                    {% if page.badges %}
+                        <div class="badges">
+                            {% for badge in page.badges %}
+                                <div class="badge">
+                                    {% if badge.strong %}
+                                        <strong>{{ badge.strong }}</strong>{% if badge.text %} {{ badge.text }}{% endif %}
+                                    {% else %}
+                                        {{ badge.text }}
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
 
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
