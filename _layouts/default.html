@@ -123,13 +123,28 @@
                 </div>
             </section>
 
+            <section id="projects" class="section" style="margin-bottom: 16px;">
+                <h2>Ausgewählte Themen & Projekte</h2>
+                <p>
+                    Eine wachsende Sammlung meiner KI-, Statistik- und Web-Projekte.
+                </p>
+
+                <div class="tags">
+                    {% assign projects = site.pages | where: "layout", "project" %}
+                    {% for project in projects %}
+                        <a class="tag tag-project" href="{{ project.url | relative_url }}">
+                            {{ project.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </section>
+
             <section id="blog" class="section">
                 <h2>Blog</h2>
                 <p>
                     Kurze Gedanken, Experimente und Projekte rund um KI, Statistik und Data Science.
                 </p>
 
-                <!-- Blogposts als Tag-Bubbles -->
                 <div class="tags">
                     {% assign posts = site.pages | where: "layout", "blog" %}
                     {% for post in posts %}
