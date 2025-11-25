@@ -52,6 +52,16 @@ nav a {
   border: 1px solid transparent;
 }
 
+.nav {
+  display: flex;
+  flex-wrap: wrap;                  
+  justify-content: center;          
+
+  column-gap: clamp(0.75rem, 3vw, 3rem);
+  row-gap: 0.5rem;
+}
+
+
 nav a:hover {
   border-color: var(--border);
   color: var(--text);
