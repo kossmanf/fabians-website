@@ -17,10 +17,12 @@ function setupTagSearch(inputId, containerSelector) {
     });
 }
 
-setupTagSearch('project-search', '#project-tags');
-setupTagSearch('blog-search', '#blog-tags');
+document.addEventListener("DOMContentLoaded", function () {
+    setupTagSearch("project-search", "#projects .tags");
+    setupTagSearch('blog-search', '#blog .tags');
 
-var yearEl = document.getElementById('year');
-if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-}
+    var yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+});
