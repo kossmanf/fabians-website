@@ -205,6 +205,15 @@
                 {% if blog.intro %}
                     <p>{{ blog.intro }}</p>
                 {% endif %}
+                 
+                <div class="search-wrapper">
+                    <input
+                        type="search"
+                        id="blog-search"
+                        class="search-input"
+                        placeholder="Blogs durchsuchen …"
+                        aria-label="Blogs durchsuchen">
+                </div>
 
                 <div class="tags">
                     {% assign blog_posts = site.pages | where: "layout", "blog" %}
