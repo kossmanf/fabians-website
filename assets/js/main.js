@@ -1,4 +1,5 @@
 function setupTagSearch(inputId, containerSelector) {
+    console.log("Hello, world!");
     var input = document.getElementById(inputId);
     var container = document.querySelector(containerSelector);
     if (!input || !container) return;
