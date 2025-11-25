@@ -1,5 +1,4 @@
 function setupTagSearch(inputId, containerSelector) {
-    console.log("Hello, world!");
     var input = document.getElementById(inputId);
     var container = document.querySelector(containerSelector);
     if (!input || !container) return;
@@ -8,6 +7,8 @@ function setupTagSearch(inputId, containerSelector) {
 
     input.addEventListener('input', function (e) {
         var query = e.target.value.toLowerCase().trim();
+
+        console.log("called");
 
         items.forEach(function (item) {
             var text = (item.dataset.search || item.textContent).toLowerCase();
