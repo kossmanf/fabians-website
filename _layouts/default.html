@@ -179,23 +179,29 @@
                     <p>{{ projects.intro }}</p>
                 {% endif %}
                 
-                <div class="search-wrapper">
+                <div class="search-wrapper" role="search">
+                    <span class="search-icon" aria-hidden="true"></span>
                     <input
                         type="search"
                         id="project-search"
                         class="search-input"
                         placeholder="Projekte durchsuchen …"
                         aria-label="Projekte durchsuchen">
+                    <button class="search-clear" type="button" aria-label="Projektsuche leeren" hidden>×</button>
                 </div>
+                <div class="search-meta" aria-live="polite"></div>
 
-                <div class="tags">
+                <div class="tags result-list">
                     {% assign project_pages = site.pages | where: "layout", "project" %}
                     {% for project in project_pages %}
                         <a class="tag tag-project" href="{{ project.url | relative_url }}">
-                            {{ project.title }}
+                            <span class="result-type">Projekt</span>
+                            <span class="result-title">{{ project.title }}</span>
+                            <span class="result-arrow" aria-hidden="true">→</span>
                         </a>
                     {% endfor %}
                 </div>
+                <p class="search-empty" hidden>Kein passendes Projekt gefunden.</p>
             </section>
 
             <!-- BLOG -->
@@ -206,23 +212,29 @@
                     <p>{{ blog.intro }}</p>
                 {% endif %}
                  
-                <div class="search-wrapper">
+                <div class="search-wrapper" role="search">
+                    <span class="search-icon" aria-hidden="true"></span>
                     <input
                         type="search"
                         id="blog-search"
                         class="search-input"
                         placeholder="Blogs durchsuchen …"
                         aria-label="Blogs durchsuchen">
+                    <button class="search-clear" type="button" aria-label="Blogsuche leeren" hidden>×</button>
                 </div>
+                <div class="search-meta" aria-live="polite"></div>
 
-                <div class="tags">
+                <div class="tags result-list">
                     {% assign blog_posts = site.pages | where: "layout", "blog" %}
                     {% for post in blog_posts %}
                         <a class="tag tag-blog" href="{{ post.url | relative_url }}">
-                            {{ post.title }}
+                            <span class="result-type">Artikel</span>
+                            <span class="result-title">{{ post.title }}</span>
+                            <span class="result-arrow" aria-hidden="true">→</span>
                         </a>
                     {% endfor %}
                 </div>
+                <p class="search-empty" hidden>Kein passender Blogbeitrag gefunden.</p>
             </section>
 
             <!-- PLATFORMS -->

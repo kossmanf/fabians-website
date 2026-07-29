@@ -4,17 +4,37 @@ function setupTagSearch(inputId, containerSelector) {
     if (!input || !container) return;
 
     var items = container.querySelectorAll('a.tag');
+    var section = input.closest('.section');
+    var clearButton = input.parentElement.querySelector('.search-clear');
+    var resultMeta = section.querySelector('.search-meta');
+    var emptyState = section.querySelector('.search-empty');
 
-    input.addEventListener('input', function (e) {
-        var query = e.target.value.toLowerCase().trim();
-
-        console.log("called");
+    function updateResults() {
+        var query = input.value.toLocaleLowerCase('de').trim();
+        var visibleCount = 0;
 
         items.forEach(function (item) {
-            var text = (item.dataset.search || item.textContent).toLowerCase();
-            item.style.display = text.includes(query) ? '' : 'none';
+            var text = (item.dataset.search || item.textContent).toLocaleLowerCase('de');
+            var isVisible = text.includes(query);
+            item.hidden = !isVisible;
+            if (isVisible) visibleCount += 1;
         });
+
+        clearButton.hidden = query.length === 0;
+        emptyState.hidden = visibleCount !== 0;
+        resultMeta.textContent = query
+            ? visibleCount + ' Treffer'
+            : items.length + (items.length === 1 ? ' Eintrag' : ' Einträge');
+    }
+
+    input.addEventListener('input', updateResults);
+    clearButton.addEventListener('click', function () {
+        input.value = '';
+        input.focus();
+        updateResults();
     });
+
+    updateResults();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
