@@ -6,12 +6,12 @@ subtitle: "AI & Data Science · Trier, Germany"
 
 meta:
   - icon: "🎓"
-    text: "Master's student focusing on AI, data science and statistics"
+    text: "Master's student specialising in AI and Data Science"
   - icon: "🧠"
-    text: "Interested in Bayesian decision theory and explainable AI"
+    text: "Interested in a wide range of topics, especially artificial intelligence and anything related to computer science and mathematics"
   - icon: "💻"
-    text: "Practical projects with Python, machine learning and simulation"
+    text: "Hands-on Python projects in machine learning and simulation"
 
 # Available values: "green", "yellow" or "red"
 status_tone: "red"
-status: "Currently fully occupied with project work and my master's thesis, but always open to future projects."
+status: "I'm currently at full capacity with project work and my master's thesis, but I'm always open to new projects and ideas."

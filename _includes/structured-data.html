@@ -1,4 +1,9 @@
 {% assign page_lang = page.lang | default: "de" %}
+{% if page_lang == "en" %}
+  {% assign structured_alternate_name = site.title_en | default: "Fabian Kossmann AI and Data Science" %}
+{% else %}
+  {% assign structured_alternate_name = site.title | default: "Fabian Koßmann KI und Data Science" %}
+{% endif %}
 {% if page.url == "/" or page.url == "/en/" %}
 <script type="application/ld+json">
 {
@@ -9,7 +14,7 @@
       "@id": "{{ '/' | absolute_url }}#website",
       "url": "{{ '/' | absolute_url }}",
       "name": "Fabian Koßmann",
-      "alternateName": "Fabian Koßmann KI & Data Science",
+      "alternateName": "{{ structured_alternate_name }}",
       "inLanguage": ["de", "en"]
     },
     {

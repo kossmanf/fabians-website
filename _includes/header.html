@@ -1,16 +1,18 @@
 {%- assign page_lang = page.lang | default: "de" -%}
 {%- if page_lang == "en" -%}
     {%- assign header = site.data.en.header -%}
+    {%- assign header_logo_fallback = "FABIAN KOSSMANN" -%}
     {%- assign language_label = "DE" -%}
     {%- assign language_target = page.translation_url | default: "/" -%}
 {%- else -%}
     {%- assign header = site.data.header -%}
+    {%- assign header_logo_fallback = "FABIAN KOßMANN" -%}
     {%- assign language_label = "EN" -%}
     {%- assign language_target = page.translation_url | default: "/en/" -%}
 {%- endif -%}
 <header>
     <div class="logo">
-        {{ header.logo | default: "FABIAN KOßMANN" }}
+        {{ header.logo | default: header_logo_fallback }}
     </div>
 
     {% if header.nav %}

@@ -4,13 +4,22 @@ layout: base
 {% assign hero = page.project_hero_section %}
 {% assign media = page.media_section %}
 {% assign page_lang = page.lang | default: "de" %}
+{% if page_lang == "en" %}
+    {% assign project_label_fallback = "Project" %}
+    {% assign project_subtitle_fallback = "A technical project in AI, data science or software." %}
+    {% assign project_cta_fallback = "View project ↗" %}
+{% else %}
+    {% assign project_label_fallback = "Projekt" %}
+    {% assign project_subtitle_fallback = "Ein technisches Projekt aus KI, Data Science oder Software." %}
+    {% assign project_cta_fallback = "Projekt ansehen ↗" %}
+{% endif %}
 <main>
         <!-- HERO -->
         <section class="hero hero-project">
             <div class="hero-left">
 
                 <div class="hero-eyebrow">
-                    {{ hero.eyebrow | default: page.category | default: "Projekt" }}
+                    {{ hero.eyebrow | default: page.category | default: project_label_fallback }}
                 </div>
 
                 <h1>
@@ -19,7 +28,7 @@ layout: base
                     {% elsif page.title %}
                         {{ page.title }}
                     {% else %}
-                        Projekt
+                        {{ project_label_fallback }}
                     {% endif %}
                 </h1>
 
@@ -28,13 +37,7 @@ layout: base
                 {% elsif page.subtitle %}
                     <p class="hero-sub">{{ page.subtitle }}</p>
                 {% else %}
-                    <p class="hero-sub">
-                        {% if page_lang == "en" %}
-                            A technical project in AI, data science or software.
-                        {% else %}
-                            Ein technisches Projekt aus KI, Data Science oder Software.
-                        {% endif %}
-                    </p>
+                    <p class="hero-sub">{{ project_subtitle_fallback }}</p>
                 {% endif %}
 
                 {% if hero.github_url or page.project_url or page.github %}
@@ -46,10 +49,8 @@ layout: base
                             {{ hero.github_label }}
                         {% elsif page.project_label %}
                             {{ page.project_label }}
-                        {% elsif page_lang == "en" %}
-                            View project ↗
                         {% else %}
-                            Projekt ansehen ↗
+                            {{ project_cta_fallback }}
                         {% endif %}
                     </a>
                 {% endif %}

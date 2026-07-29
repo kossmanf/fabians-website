@@ -4,6 +4,11 @@ layout: base
 {% assign hero = page.blog_hero_section %}
 {% assign media = page.media_section %}
 {% assign page_lang = page.lang | default: "de" %}
+{% if page_lang == "en" %}
+    {% assign blog_subtitle_fallback = "Thoughts on AI, data science, statistics and projects." %}
+{% else %}
+    {% assign blog_subtitle_fallback = "Gedanken zu KI, Data Science, Statistik und Projekten." %}
+{% endif %}
 <main>
             <!-- Blog-Hero -->
             <section class="hero hero-blog">
@@ -15,7 +20,7 @@ layout: base
                     {% if page.date %}
                         <time class="blog-date" datetime="{{ page.date | date_to_xmlschema }}">
                             {% if page_lang == "en" %}
-                                {{ page.date | date: "%B %-d, %Y" }}
+                                {{ page.date | date: "%-d %B %Y" }}
                             {% else %}
                                 {{ page.date | date: "%d.%m.%Y" }}
                             {% endif %}
@@ -41,13 +46,7 @@ layout: base
                             {{ page.subtitle }}
                         </p>
                     {% else %}
-                        <p class="hero-sub">
-                            {% if page_lang == "en" %}
-                                Thoughts on AI, data science, statistics and projects.
-                            {% else %}
-                                Gedanken zu KI, Data Science, Statistik und Projekten.
-                            {% endif %}
-                        </p>
+                        <p class="hero-sub">{{ blog_subtitle_fallback }}</p>
                     {% endif %}
                 </div>
 

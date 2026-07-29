@@ -1,8 +1,12 @@
 {%- assign page_lang = page.lang | default: "de" -%}
 {%- if page_lang == "en" -%}
     {%- assign profile = site.data.en.profile -%}
+    {%- assign profile_name_fallback = "Fabian Kossmann" -%}
+    {%- assign profile_subtitle_fallback = "AI & Data Science · Trier, Germany" -%}
 {%- else -%}
     {%- assign profile = site.data.profile -%}
+    {%- assign profile_name_fallback = "Fabian Koßmann" -%}
+    {%- assign profile_subtitle_fallback = "KI & Data Science · Trier, DE" -%}
 {%- endif -%}
 <div class="card">
     <div class="avatar-wrapper">
@@ -19,10 +23,10 @@
         </div>
         <div>
             <div class="avatar-text-title">
-                {{ profile.name | default: "Fabian Kossmann" }}
+                {{ profile.name | default: profile_name_fallback }}
             </div>
             <div class="avatar-text-sub">
-                {{ profile.subtitle | default: "KI & Data Science · Trier, DE" }}
+                {{ profile.subtitle | default: profile_subtitle_fallback }}
             </div>
         </div>
     </div>

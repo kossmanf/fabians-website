@@ -7,9 +7,10 @@ function setupTagSearch(section) {
     var clearButton = input.parentElement.querySelector('.search-clear');
     var resultMeta = section.querySelector('.search-meta');
     var emptyState = section.querySelector('.search-empty');
-    var countSingular = section.dataset.countSingular || 'Eintrag';
-    var countPlural = section.dataset.countPlural || 'Einträge';
     var locale = document.documentElement.lang || 'de';
+    var isEnglish = locale.toLowerCase().indexOf('en') === 0;
+    var countSingular = section.dataset.countSingular || (isEnglish ? 'result' : 'Eintrag');
+    var countPlural = section.dataset.countPlural || (isEnglish ? 'results' : 'Einträge');
 
     function updateResults() {
         var query = input.value.toLocaleLowerCase(locale).trim();

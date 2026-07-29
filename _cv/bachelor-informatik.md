@@ -9,6 +9,7 @@ location: "Trier, DE"
 
 period_en: "2019 – 2024"
 title_en: "B.Sc. Computer Science"
+description_en: "After completing my Abitur in 2019, I entered a new chapter of my life. As I initially could not choose between mathematics and computer science, I enrolled in both degree programmes. My interest in computer science had already begun at school: as part of an extended project in Year 12 at the Waldorf school, I developed and programmed several Arduino-based projects. I chose Trier University of Applied Sciences because I already knew the city and thought it was a beautiful place. My cousin had also studied there."
 institution_en: "Trier University of Applied Sciences"
 location_en: "Trier, Germany"
 ---

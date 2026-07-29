@@ -4,12 +4,22 @@ layout: base
 {% assign page_lang = page.lang | default: "de" %}
 {% if page_lang == "en" %}
     {% assign impressum = site.data.en.impressum %}
+    {% assign legal_eyebrow_fallback = "Legal" %}
+    {% assign legal_title_fallback = "Legal notice" %}
+    {% assign provider_heading_fallback = "Provider" %}
+    {% assign email_label_fallback = "Email" %}
+    {% assign disclaimer_title_fallback = "Disclaimer" %}
 {% else %}
     {% assign impressum = site.data.impressum %}
+    {% assign legal_eyebrow_fallback = "Rechtliches" %}
+    {% assign legal_title_fallback = "Impressum" %}
+    {% assign provider_heading_fallback = "Anbieter" %}
+    {% assign email_label_fallback = "E-Mail" %}
+    {% assign disclaimer_title_fallback = "Haftungsausschluss" %}
 {% endif %}
 <main class="section impressum">
-            <div class="hero-eyebrow">{% if page_lang == "en" %}Legal{% else %}Rechtliches{% endif %}</div>
-            <h1>{{ impressum.title | default: page.title | default: "Impressum" }}</h1>
+            <div class="hero-eyebrow">{{ legal_eyebrow_fallback }}</div>
+            <h1>{{ impressum.title | default: page.title | default: legal_title_fallback }}</h1>
 
             <div class="impressum-content">
                 {% if impressum.legal_reference %}
@@ -18,7 +28,7 @@ layout: base
 
                 {% if impressum.provider %}
                     <section class="impressum-block">
-                        <h2>{{ impressum.provider.heading | default: "Anbieter" }}</h2>
+                        <h2>{{ impressum.provider.heading | default: provider_heading_fallback }}</h2>
                         {% if impressum.provider.name %}
                             <strong>{{ impressum.provider.name }}</strong>
                         {% endif %}
@@ -31,7 +41,7 @@ layout: base
                         {% endif %}
                         {% if impressum.provider.email %}
                             <p>
-                                <span>{{ impressum.provider.email_label | default: "E-Mail" }}</span>
+                                <span>{{ impressum.provider.email_label | default: email_label_fallback }}</span>
                                 <a href="mailto:{{ impressum.provider.email }}">{{ impressum.provider.email }}</a>
                             </p>
                         {% endif %}
@@ -52,7 +62,7 @@ layout: base
 
                 {% if impressum.disclaimer %}
                     <section class="impressum-block">
-                        <h2>{{ impressum.disclaimer.title | default: "Haftungsausschluss" }}</h2>
+                        <h2>{{ impressum.disclaimer.title | default: disclaimer_title_fallback }}</h2>
                         {% for paragraph in impressum.disclaimer.paragraphs %}
                             <p>{{ paragraph }}</p>
                         {% endfor %}

@@ -12,6 +12,7 @@
   search: true
   search_placeholder: "Projekte durchsuchen …"
   search_label: "Projekte durchsuchen"
+  search_clear_label: "Projektsuche leeren"
   empty_text: "Kein passendes Projekt gefunden."
   count_singular: "Eintrag"
   count_plural: "Einträge"
@@ -25,6 +26,7 @@
   search: true
   search_placeholder: "Blogposts durchsuchen …"
   search_label: "Blogposts durchsuchen"
+  search_clear_label: "Blogsuche leeren"
   empty_text: "Kein passender Blogbeitrag gefunden."
   count_singular: "Eintrag"
   count_plural: "Einträge"

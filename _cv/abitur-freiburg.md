@@ -9,7 +9,8 @@ institution: "Freie Waldorfschule Freiburg-Wiehre"
 location: "Freiburg im Breisgau, DE"
 
 period_en: "2019"
-title_en: "German Abitur"
+title_en: "Abitur (German University Entrance Qualification)"
+description_en: "Having completed my Fachhochschulreife with very good results, I wanted to prove to myself—and perhaps to my parents as well—that I was capable of achieving even more. At the time, moving on to an internship did not feel like the right path for me. I therefore decided to continue straight away and complete my Abitur in one additional year."
 institution_en: "Freie Waldorfschule Freiburg-Wiehre"
 location_en: "Freiburg im Breisgau, Germany"
 ---

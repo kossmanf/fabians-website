@@ -7,11 +7,29 @@ layout: base
     {% assign skills = site.data.en.skills | sort: "order" %}
     {% assign hero_actions = site.data.en.actions | sort: "order" %}
     {% assign sections = site.data.en.sections | sort: "order" %}
+    {% assign hero_title_prefix_fallback = "Hi, I'm" %}
+    {% assign count_singular_fallback = "result" %}
+    {% assign count_plural_fallback = "results" %}
+    {% assign search_placeholder_fallback = "Search …" %}
+    {% assign search_label_fallback = "Search this section" %}
+    {% assign search_clear_label_fallback = "Clear search" %}
+    {% assign project_item_label_fallback = "Project" %}
+    {% assign blog_item_label_fallback = "Article" %}
+    {% assign search_empty_fallback = "No matching entries found." %}
 {% else %}
     {% assign hero = site.data.hero %}
     {% assign skills = site.data.skills | sort: "order" %}
     {% assign hero_actions = site.data.actions | sort: "order" %}
     {% assign sections = site.data.sections | sort: "order" %}
+    {% assign hero_title_prefix_fallback = "Hi, ich bin" %}
+    {% assign count_singular_fallback = "Eintrag" %}
+    {% assign count_plural_fallback = "Einträge" %}
+    {% assign search_placeholder_fallback = "Durchsuchen …" %}
+    {% assign search_label_fallback = "Bereich durchsuchen" %}
+    {% assign search_clear_label_fallback = "Suche leeren" %}
+    {% assign project_item_label_fallback = "Projekt" %}
+    {% assign blog_item_label_fallback = "Artikel" %}
+    {% assign search_empty_fallback = "Keine passenden Einträge gefunden." %}
 {% endif %}
 <main>
             <!-- HERO -->
@@ -25,7 +43,7 @@ layout: base
                         {% if hero.title_prefix %}
                             {{ hero.title_prefix }}
                         {% else %}
-                            Hi, ich bin
+                            {{ hero_title_prefix_fallback }}
                         {% endif %}
                         <span>
                             {% if hero.name %}
@@ -89,8 +107,8 @@ layout: base
             {% for section in sections %}
                 <section id="{{ section.section_id }}"
                          class="section"
-                         data-count-singular="{{ section.count_singular | default: 'Eintrag' }}"
-                         data-count-plural="{{ section.count_plural | default: 'Einträge' }}"
+                         data-count-singular="{{ section.count_singular | default: count_singular_fallback }}"
+                         data-count-plural="{{ section.count_plural | default: count_plural_fallback }}"
                          {% if section.search %}data-search-section{% endif %}>
                     {% if section.title %}
                         <h2>{{ section.title }}</h2>
@@ -111,11 +129,11 @@ layout: base
                                 type="search"
                                 id="{{ section.section_id }}-search"
                                 class="search-input"
-                                placeholder="{{ section.search_placeholder | default: 'Durchsuchen …' }}"
-                                aria-label="{{ section.search_label | default: 'Bereich durchsuchen' }}">
+                                placeholder="{{ section.search_placeholder | default: search_placeholder_fallback }}"
+                                aria-label="{{ section.search_label | default: search_label_fallback }}">
                             <button class="search-clear"
                                     type="button"
-                                    aria-label="{{ section.search_label | default: 'Suche' }} leeren"
+                                    aria-label="{{ section.search_clear_label | default: search_clear_label_fallback }}"
                                     hidden>×</button>
                         </div>
                         <div class="search-meta" aria-live="polite"></div>
@@ -190,7 +208,7 @@ layout: base
                                     {% assign project_lang = project.lang | default: "de" %}
                                     {% if project_lang == page_lang %}
                                         <a class="tag tag-project" href="{{ project.url | relative_url }}">
-                                            <span class="result-type">{{ section.item_label | default: "Projekt" }}</span>
+                                            <span class="result-type">{{ section.item_label | default: project_item_label_fallback }}</span>
                                             <span class="result-title">{{ project.title }}</span>
                                             <span class="result-arrow" aria-hidden="true">→</span>
                                         </a>
@@ -206,11 +224,11 @@ layout: base
                                     {% if post_lang == page_lang %}
                                         <a class="tag tag-blog" href="{{ post.url | relative_url }}">
                                             <span class="result-meta">
-                                                <span class="result-type">{{ section.item_label | default: "Artikel" }}</span>
+                                                <span class="result-type">{{ section.item_label | default: blog_item_label_fallback }}</span>
                                                 {% if post.date %}
                                                     <time class="result-date" datetime="{{ post.date | date_to_xmlschema }}">
                                                         {% if page_lang == "en" %}
-                                                            {{ post.date | date: "%B %-d, %Y" }}
+                                                            {{ post.date | date: "%-d %B %Y" }}
                                                         {% else %}
                                                             {{ post.date | date: "%d.%m.%Y" }}
                                                         {% endif %}
@@ -244,7 +262,7 @@ layout: base
                     {% endcase %}
 
                     {% if section.search %}
-                        <p class="search-empty" hidden>{{ section.empty_text | default: "Keine passenden Einträge gefunden." }}</p>
+                        <p class="search-empty" hidden>{{ section.empty_text | default: search_empty_fallback }}</p>
                     {% endif %}
                 </section>
             {% endfor %}

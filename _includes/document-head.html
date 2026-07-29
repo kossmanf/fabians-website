@@ -1,13 +1,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% capture document_title %}{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
-{% assign social_image = page.social_image | default: '/assets/img/social-preview.jpg' %}
+{% assign page_language = page.lang | default: 'de' %}
+{% if page_language == 'en' %}
+    {% assign localized_site_title = site.title_en | default: 'Fabian Kossmann AI and Data Science' %}
+    {% assign default_social_image = '/assets/img/social-preview-en.png' %}
+    {% assign social_image_alt = 'Fabian Kossmann – AI & Data Science portfolio' %}
+{% else %}
+    {% assign localized_site_title = site.title | default: 'Fabian Koßmann KI und Data Science' %}
+    {% assign default_social_image = '/assets/img/social-preview.jpg' %}
+    {% assign social_image_alt = 'Fabian Koßmann – KI & Data Science Portfolio' %}
+{% endif %}
+{% capture document_title %}{% if page.title %}{{ page.title }} · {{ localized_site_title }}{% else %}{{ localized_site_title }}{% endif %}{% endcapture %}
+{% assign social_image = page.social_image | default: default_social_image %}
 <title>{{ document_title | strip }}</title>
 {% if page.description %}
     <meta name="description" content="{{ page.description | strip_html | normalize_whitespace | escape }}">
 {% endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
-{% assign page_language = page.lang | default: 'de' %}
 {% if page_language == 'en' %}
     {% assign german_url = page.translation_url %}
     {% assign english_url = page.url %}
@@ -38,7 +47,7 @@
 <meta property="og:image" content="{{ social_image | absolute_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Fabian Koßmann – KI & Data Science Portfolio">
+<meta property="og:image:alt" content="{{ social_image_alt | escape }}">
 <meta property="og:site_name" content="Fabian Koßmann">
 <meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% else %}de_DE{% endif %}">
 <meta name="twitter:card" content="summary_large_image">
@@ -47,7 +56,7 @@
     <meta name="twitter:description" content="{{ page.description | strip_html | normalize_whitespace | escape }}">
 {% endif %}
 <meta name="twitter:image" content="{{ social_image | absolute_url }}">
-<meta name="twitter:image:alt" content="Fabian Koßmann – KI & Data Science Portfolio">
+<meta name="twitter:image:alt" content="{{ social_image_alt | escape }}">
 {% include structured-data.html %}
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
 {% assign asset_version = site.time | date: '%s' %}

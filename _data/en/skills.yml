@@ -1,11 +1,39 @@
 - order: 1
   title: "AI & Data Science"
-  description: "The focus of my master's degree and my current projects."
+  description: "The focus of my master's degree and current projects, spanning everything from data preparation to the development and evaluation of data-driven models."
 
 - order: 2
-  title: "Machine Learning · Statistics · Bayes"
-  description: "Interested in probabilistic models and decision-making under uncertainty."
+  title: "Machine Learning & Statistics"
+  description: "An interest in probabilistic models, prediction and well-founded decision-making under uncertainty."
 
 - order: 3
-  title: "Python · PyTorch · TensorFlow"
-  description: "Tools for modelling, experimentation and data-driven applications."
+  title: "Mathematical Logic"
+  description: "An interest in formal systems, automated reasoning and how knowledge and inferences can be represented."
+
+- order: 4
+  title: "Optimisation"
+  description: "Modelling and solving complex decision problems using mathematical optimisation methods."
+
+- order: 5
+  title: "Python"
+  description: "My preferred tool for data analysis, modelling, machine learning, simulation and rapid prototyping."
+
+- order: 6
+  title: "Data Analysis"
+  description: "Preparing, exploring and visualising real-world data to identify patterns and derive actionable insights."
+
+- order: 7
+  title: "Software Development"
+  description: "Developing structured, maintainable applications, from smaller tools and prototypes to larger projects."
+
+- order: 8
+  title: "Web Development & TYPO3"
+  description: "Hands-on experience with PHP, JavaScript, HTML and CSS, as well as developing and migrating custom TYPO3 extensions."
+
+- order: 9
+  title: "Simulation & Modelling"
+  description: "Representing complex systems through models and simulations to explore possible outcomes and evaluate decisions."
+
+- order: 10
+  title: "Problem Solving"
+  description: "Breaking down complex problems analytically and combining mathematical ideas with pragmatic technical implementation."

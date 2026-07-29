@@ -9,7 +9,8 @@ institution: "Freie Waldorfschule Freiburg-Wiehre"
 location: "Freiburg im Breisgau, DE"
 
 period_en: "2018"
-title_en: "Advanced Technical College Entrance Qualification"
+title_en: "University of Applied Sciences Entrance Qualification"
+description_en: "My educational path was not always straightforward. At the Waldorf school, before entering upper secondary level, a meeting was held to decide together whether I should pursue the Abitur or the Fachhochschulreife. Although my parents were not particularly pleased at first, I followed my teachers' recommendation and chose the general Fachhochschulreife with an additional focus on woodworking."
 institution_en: "Freie Waldorfschule Freiburg-Wiehre"
 location_en: "Freiburg im Breisgau, Germany"
 ---

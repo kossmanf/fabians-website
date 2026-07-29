@@ -10,6 +10,7 @@ location: "Trier, DE"
 
 period_en: "since 2023"
 title_en: "Working Student / Student Assistant"
+description_en: "Over lunch with friends, our conversation turned to work. Three of them were already working at ZIMK at Trier University at the time. One told me about an open position and encouraged me to apply as a student assistant. At first, I was hesitant: I was concerned about taking on an additional commitment alongside my studies, had never worked before and had only limited practical experience from university projects. In the end, I decided to apply because the role seemed like a valuable opportunity to gain my first professional experience and enter the world of work."
 institution_en: "ZIMK – Web Development, TYPO3"
 location_en: "Trier, Germany"
 ---
