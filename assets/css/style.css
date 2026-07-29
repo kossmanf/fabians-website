@@ -117,7 +117,7 @@ h1 span {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .badge {
@@ -167,7 +167,7 @@ h1 span {
 
 .skill-detail {
   max-width: 560px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   padding: 11px 13px;
   border-left: 2px solid #6366f1;
   border-radius: 0 8px 8px 0;
@@ -321,33 +321,28 @@ h1 span {
 .availability {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 9px;
-  align-items: start;
+  gap: 10px;
+  align-items: center;
   width: 100%;
-  padding: 10px 11px;
-  border: 1px solid rgba(34,197,94,0.2);
-  border-radius: 10px;
-  background: rgba(34,197,94,0.055);
-  color: #cbd5e1;
-  font-size: 0.72rem;
-  line-height: 1.35;
+  padding: 10px 13px;
+  border: 1px solid rgba(34,197,94,0.4);
+  border-radius: 12px;
+  background: rgba(34,197,94,0.09);
+  color: #dcfce7;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-.availability strong {
-  display: block;
-  margin-bottom: 1px;
-  color: #86efac;
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.availability-text {
+  min-width: 0;
 }
 
 .pill-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 999px;
   background: #22c55e;
-  margin-top: 4px;
   box-shadow: 0 0 0 3px rgba(34,197,94,0.12);
 }
 

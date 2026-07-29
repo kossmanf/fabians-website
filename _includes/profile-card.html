@@ -32,12 +32,7 @@
     {% if profile.status %}
         <div class="availability">
             <span class="pill-dot"></span>
-            <span>
-                {% if profile.status_label %}
-                    <strong>{{ profile.status_label }}</strong>
-                {% endif %}
-                {{ profile.status }}
-            </span>
+            <span class="availability-text">{{ profile.status }}</span>
         </div>
     {% endif %}
 </div>
