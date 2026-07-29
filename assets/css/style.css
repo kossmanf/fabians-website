@@ -326,8 +326,15 @@ h1 span {
   color: #e5e7eb;
 }
 
-/* Wenn du später ein echtes Foto nutzen willst:
- Ersetze .avatar-inner durch ein <img> mit object-fit: cover; */
+.avatar-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center 43%;
+  background: #020617;
+}
 
 .avatar-text-title {
   font-size: 0.95rem;

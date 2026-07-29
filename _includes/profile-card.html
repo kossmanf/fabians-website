@@ -7,9 +7,15 @@
 <div class="card">
     <div class="avatar-wrapper">
         <div class="avatar">
-            <div class="avatar-inner">
-                {{ profile.initials | default: "FK" }}
-            </div>
+            {% if profile.image %}
+                <img class="avatar-image"
+                     src="{{ profile.image | relative_url }}"
+                     alt="{{ profile.image_alt | default: profile.name | escape }}">
+            {% else %}
+                <div class="avatar-inner">
+                    {{ profile.initials | default: "FK" }}
+                </div>
+            {% endif %}
         </div>
         <div>
             <div class="avatar-text-title">
