@@ -3,8 +3,11 @@ name: "Fabian Koßmann"
 subtitle: "KI & Data Science · Trier, DE"
 
 meta:
-  - "🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik"
-  - "🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI"
-  - "💻 Praxisprojekte mit Python, ML & Simulation"
+  - icon: "🎓"
+    text: "Masterstudent mit Schwerpunkt KI, Data Science & Statistik"
+  - icon: "🧠"
+    text: "Interesse an Bayes-Entscheidungstheorie & erklärbarer KI"
+  - icon: "💻"
+    text: "Praxisprojekte mit Python, ML & Simulation"
 
 status: "Offen für spannende Projekte & Werkstudentenstellen"
