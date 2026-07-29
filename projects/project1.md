@@ -1,66 +1,41 @@
 ---
 layout: project
 title: "Fahrstuhl-Simulation mit Reinforcement Learning"
-
-header_section:
-  logo: "FABIAN&nbsp;KOSSMANN"
-  nav:
-    - label: "Startseite"
-      href: "/"
-    - label: "Über mich"
-      href: "/#about"
-    - label: "Projekte"
-      href: "/#projects"
-    - label: "Blog"
-      href: "/#blog"
-
-project_hero_section:
-  eyebrow: "Projekt · Simulation & RL"
-  title: "Fahrstuhl-Simulation mit Reinforcement Learning"
-  subtitle: "Mehrere Aufzüge lernen, Personen effizient zu transportieren – basierend auf einer SimPy-Simulation."
-  github_url: "https://github.com/dein_repo/fahrstuhl-rl"
-  github_label: "⭐ Code auf GitHub ansehen"
-  avatar_initials: "FK"
-  avatar_name: "Fabian Kossmann"
-  avatar_subtitle: "KI & Data Science · Trier, DE"
-  meta:
-    - "🐍 Implementiert in Python mit SimPy & NumPy"
-    - "🧠 RL-Agent zur Steuerung mehrerer Aufzüge"
-    - "📊 Auswertung von Wartezeiten & Auslastung"
-  pill_text: "Experimentelles Forschungs- / Lernprojekt"
-  actions:
-    - label: "Zurück zur Übersicht"
-      href: "/#projects"
-      style: "ghost"
-
-media_section:
-  images:
-    - src: /assets/img/projects/p1.jpg
-      width: 900
-      alt: "Auswertung der Wartezeiten"
-      class: "project-image"
-
-footer_section:
-  left_html: "© <span id='year'></span> Fabian Kossmann"
-  links:
-    - label: "Kontakt"
-      href: "mailto:hi@fabian-kossmann.de"
-    - label: "Impressum"
-      href: "/impressum.html"
+subtitle: "Mehrere Aufzüge lernen, Personen effizient zu transportieren – basierend auf einer SimPy-Simulation."
+category: "Simulation & Reinforcement Learning"
+project_url: "https://github.com/dein_repo/fahrstuhl-rl"
 ---
 
-Hier kommt der eigentliche **Markdown-Content** deines Projekts hin.
-
-Du kannst hier normal mit Überschriften, Listen und Codeblöcken arbeiten:
+In diesem Projekt untersuche ich, wie ein Reinforcement-Learning-Agent mehrere Aufzüge in einem simulierten Gebäude effizient steuern kann.
 
 ## Ziel des Projekts
 
-- Simulation eines Gebäudes mit mehreren Aufzügen  
-- RL-Agent optimiert Wartezeiten und Fahrwege  
-- Vergleich mit regelbasierten Strategien
+- Simulation eines Gebäudes mit mehreren Aufzügen
+- Optimierung von Wartezeiten und Fahrwegen
+- Vergleich mit regelbasierten Steuerungsstrategien
+- Analyse von Auslastung und Energieverbrauch
+
+![Auswertung der Fahrstuhl-Simulation](/assets/img/projects/p1.jpg)
 
 ## Technischer Stack
 
-- Python, SimPy, NumPy
-- Logging der Trajektorien
-- Auswertung in Jupyter Notebooks
+- Python
+- SimPy
+- NumPy
+- Reinforcement Learning
+- Jupyter Notebooks
+
+## Funktionsweise
+
+Die Simulation erzeugt Fahrgäste mit unterschiedlichen Start- und Zielstockwerken. Der Agent entscheidet, welcher Aufzug eine Anfrage übernimmt und welches Stockwerk als Nächstes angefahren wird.
+
+Als Belohnung dienen unter anderem:
+
+1. kurze Wartezeiten,
+2. kurze Fahrtzeiten,
+3. eine gleichmäßige Auslastung der Aufzüge,
+4. möglichst wenige Leerfahrten.
+
+## Aktueller Stand
+
+Die grundlegende Simulation und erste regelbasierte Strategien sind implementiert. Als nächster Schritt wird der Reinforcement-Learning-Agent trainiert und mit den bestehenden Strategien verglichen.
