@@ -1,11 +1,43 @@
-- order: 1
+order: 1
   title: "KI & Data Science"
-  description: "Schwerpunkt meines Masterstudiums und meiner aktuellen Projekte."
+  description: "Schwerpunkt meines Masterstudiums und meiner aktuellen Projekte von der Datenaufbereitung bis zur Entwicklung und Bewertung datengetriebener Modelle."
 
-- order: 2
-  title: "Machine Learning · Statistik · Bayes"
-  description: "Interesse an probabilistischen Modellen und Entscheidungen unter Unsicherheit."
+order: 2
+  title: "Machine Learning & Statistik"
+  description: "Interesse an probabilistischen Modellen, Vorhersagen und fundierten Entscheidungen unter Unsicherheit."
 
-- order: 3
-  title: "Python · PyTorch · TensorFlow"
-  description: "Werkzeuge für Modellierung, Experimente und datengetriebene Anwendungen."
+order: 3
+  title: "Mathematische Logik"
+  description: "Interesse an formalen Systemen, automatischem Schließen und der Frage, wie sich Wissen und Schlussfolgerungen darstellen lassen."
+
+order: 4
+  title: "Optimierung"
+  description: "Modellierung und Lösung komplexer Entscheidungsprobleme mit Methoden der mathematischen Optimierung."
+
+order: 5
+  title: "Python"
+  description: "Mein bevorzugtes Werkzeug für Datenanalyse, Modellierung, Machine Learning, Simulationen und schnelle Prototypen."
+
+order: 6
+  title: "Datenanalyse"
+  description: "Aufbereitung, Untersuchung und Visualisierung realer Daten, um Muster zu erkennen und verwertbare Erkenntnisse abzuleiten."
+
+order: 7
+  title: "Softwareentwicklung"
+  description: "Entwicklung strukturierter und wartbarer Anwendungen von kleineren Tools und Prototypen bis zu umfangreicheren Projekten."
+
+order: 8
+  title: "Webentwicklung & TYPO3"
+  description: "Praktische Erfahrung mit PHP, JavaScript, HTML, CSS sowie der Entwicklung und Migration eigener TYPO3-Erweiterungen."
+
+order: 9
+  title: "Simulation & Modellierung"
+  description: "Abbildung komplexer Systeme durch Modelle und Simulationen, um mögliche Entwicklungen und Entscheidungen zu untersuchen."
+
+order: 10
+  title: "Problemlösung"
+  description: "Analytische Zerlegung komplexer Fragestellungen und Verbindung mathematischer Ideen mit einer pragmatischen technischen Umsetzung."
+
+
+#Während meines Bachelor Studuiums habe ich mich mehr und mehr für logik angefangen zu intetesseiern und habe auch in rahmen meiner bacheloarabreit heuristiken für Theorembeweiseer mittels eines sprachmodells entwickelt so kam ich dazu in meinen master das ganze zu bertiefen und den schwerpunkt ki und data scnce zu wählen
+#                   Schwerpunkt meines Masterstudiums und meiner aktuellen Projekte.
