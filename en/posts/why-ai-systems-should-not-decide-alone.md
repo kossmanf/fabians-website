@@ -3,6 +3,7 @@ layout: blog
 title: "Why AI Systems Should Not Decide Alone"
 subtitle: "A few thoughts on how people and AI should work together instead of automating everything."
 description: "Why AI systems should not make important decisions alone and why human judgement and responsibility still matter."
+date: 2026-07-29
 category: "AI & Responsibility"
 lang: "en"
 translation_url: "/posts/blogpost1.html"

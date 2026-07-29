@@ -3,6 +3,7 @@ layout: blog
 title: "Was bedeutet eigentlich erklärbare KI?"
 subtitle: "Warum gute Vorhersagen allein nicht immer ausreichen."
 description: "Eine verständliche Einführung in erklärbare KI, globale und lokale Erklärungen sowie die Grenzen von Explainable AI."
+date: 2026-07-29
 category: "KI & Erklärbarkeit"
 lang: "de"
 translation_url: "/en/posts/what-does-explainable-ai-mean.html"

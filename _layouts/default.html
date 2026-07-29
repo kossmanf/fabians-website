@@ -205,7 +205,18 @@ layout: base
                                     {% assign post_lang = post.lang | default: "de" %}
                                     {% if post_lang == page_lang %}
                                         <a class="tag tag-blog" href="{{ post.url | relative_url }}">
-                                            <span class="result-type">{{ section.item_label | default: "Artikel" }}</span>
+                                            <span class="result-meta">
+                                                <span class="result-type">{{ section.item_label | default: "Artikel" }}</span>
+                                                {% if post.date %}
+                                                    <time class="result-date" datetime="{{ post.date | date_to_xmlschema }}">
+                                                        {% if page_lang == "en" %}
+                                                            {{ post.date | date: "%B %-d, %Y" }}
+                                                        {% else %}
+                                                            {{ post.date | date: "%d.%m.%Y" }}
+                                                        {% endif %}
+                                                    </time>
+                                                {% endif %}
+                                            </span>
                                             <span class="result-title">{{ post.title }}</span>
                                             <span class="result-arrow" aria-hidden="true">→</span>
                                         </a>

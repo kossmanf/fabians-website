@@ -2,6 +2,7 @@
 layout: blog
 title: "Warum KI-Systeme nicht allein entscheiden sollten"
 description: "Warum KI-Systeme wichtige Entscheidungen nicht allein treffen sollten und menschliche Verantwortung weiterhin notwendig bleibt."
+date: 2026-07-29
 lang: "de"
 translation_url: "/en/posts/why-ai-systems-should-not-decide-alone.html"
 ---

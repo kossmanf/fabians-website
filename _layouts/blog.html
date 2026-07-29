@@ -12,6 +12,16 @@ layout: base
                         {{ hero.eyebrow | default: page.category | default: "Blog" }}
                     </div>
 
+                    {% if page.date %}
+                        <time class="blog-date" datetime="{{ page.date | date_to_xmlschema }}">
+                            {% if page_lang == "en" %}
+                                {{ page.date | date: "%B %-d, %Y" }}
+                            {% else %}
+                                {{ page.date | date: "%d.%m.%Y" }}
+                            {% endif %}
+                        </time>
+                    {% endif %}
+
                     <h1>
                         {% if hero.title %}
                             {{ hero.title }}

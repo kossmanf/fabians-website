@@ -3,6 +3,7 @@ layout: blog
 title: "What Does Explainable AI Actually Mean?"
 subtitle: "Why accurate predictions alone are not always enough."
 description: "An accessible introduction to explainable AI, global and local explanations, and the limitations of XAI methods."
+date: 2026-07-29
 category: "AI & Explainability"
 lang: "en"
 translation_url: "/posts/beispiel-blogpost.html"

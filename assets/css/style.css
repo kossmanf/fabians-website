@@ -578,6 +578,18 @@ h1 span {
   text-transform: uppercase;
 }
 
+.result-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 9px;
+  align-items: center;
+}
+
+.result-date {
+  color: #64748b;
+  font-size: 0.68rem;
+}
+
 .result-title {
   grid-column: 1;
   color: #e5e7eb;
@@ -593,6 +605,13 @@ h1 span {
 }
 
 .result-list .tag:hover .result-arrow { color: #a5b4fc; }
+
+.blog-date {
+  display: block;
+  margin: -2px 0 9px;
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
 
 .search-empty {
   margin: 6px 0 0 !important;
