@@ -194,7 +194,8 @@ h1 span {
 }
 
 .hero-right {
-  justify-self: center;
+  justify-self: end;
+  width: min(100%, 320px);
 }
 
 .card {
@@ -206,6 +207,7 @@ h1 span {
   border: 1px solid rgba(148,163,184,0.2);
   min-width: 260px;
   max-width: 320px;
+  width: 100%;
 }
 
 .avatar-wrapper {
@@ -768,6 +770,16 @@ footer a:hover {
 
   .hero-actions .btn {
     flex: 1 1 calc(50% - 10px);
+  }
+
+  .hero-right {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .hero-right .card {
+    max-width: none;
+    min-width: 0;
   }
 
   .result-list {
