@@ -1,0 +1,16 @@
+{%- assign footer = site.data.footer -%}
+<footer>
+    <div>
+        {{ footer.left_html | default: "© <span id='year'></span> Fabian Kossmann" }}
+    </div>
+
+    {% if footer.links %}
+        <div>
+            {% for link in footer.links %}
+                <a href="{% if link.href contains '://' or link.href contains 'mailto:' %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}">
+                    {{ link.label }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+</footer>

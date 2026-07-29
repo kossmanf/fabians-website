@@ -1,0 +1,21 @@
+title: "Impressum"
+legal_reference: "Angaben gemäß § 5 TMG und § 18 Abs. 2 MStV"
+
+provider:
+  name: "Fabian Koßmann"
+  address:
+    - "Lambertistraße 1"
+    - "54294 Trier"
+    - "Deutschland"
+  email: "fabiankossmann98@gmail.com"
+
+responsible:
+  title: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"
+  name: "Fabian Koßmann"
+  address: "Lambertistraße 1, 54294 Trier"
+
+disclaimer:
+  title: "Haftungsausschluss"
+  paragraphs:
+    - "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Dennoch kann ich keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität übernehmen."
+    - "Für Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich."

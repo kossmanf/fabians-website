@@ -1,0 +1,14 @@
+{%- assign header = site.data.header -%}
+<header>
+    <div class="logo">
+        {{ header.logo | default: "FABIAN KOßMANN" }}
+    </div>
+
+    {% if header.nav %}
+        <nav aria-label="Hauptnavigation">
+            {% for item in header.nav %}
+                <a href="{{ item.href | relative_url }}">{{ item.label }}</a>
+            {% endfor %}
+        </nav>
+    {% endif %}
+</header>

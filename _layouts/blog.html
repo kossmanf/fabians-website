@@ -1,51 +1,9 @@
 ---
+layout: base
 ---
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if page.title %}
-            {{ page.title }} · {{ site.title }}
-        {% else %}
-            {{ site.title }}
-        {% endif %}
-    </title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
-</head>
-<body>
-    <div class="page">
-        {%- assign header = site.data.header -%}
-        {%- assign hero = page.blog_hero_section -%}
-        {%- assign media = page.media_section -%}
-        {%- assign footer = site.data.footer -%}
-
-        <!-- HEADER -->
-        <header>
-            <div class="logo">
-                {{ header.logo | default: "FABIAN\u00A0KOSSMANN" }}
-            </div>
-
-            {% if header.nav %}
-                <nav>
-                    {% for item in header.nav %}
-                        <a href="{{ item.href }}">{{ item.label }}</a>
-                    {% endfor %}
-                </nav>
-            {% else %}
-                <nav>
-                    <a href="{{ "/" | relative_url }}">Startseite</a>
-                    <a href="{{ "/" | relative_url }}#about">Über mich</a>
-                    <a href="{{ "/" | relative_url }}#projects">Projekte</a>
-                    <a href="{{ "/" | relative_url }}#blog">Blog</a>
-                    <a href="{{ "/" | relative_url }}#platforms">Profile & Plattformen</a>
-                </nav>
-            {% endif %}
-        </header>
-
-        <main>
+{% assign hero = page.blog_hero_section %}
+{% assign media = page.media_section %}
+<main>
             <!-- Blog-Hero -->
             <section class="hero hero-blog">
                 <div class="hero-left">
@@ -79,43 +37,7 @@
                 </div>
 
                 <div class="hero-right">
-                    <div class="card">
-                        <div class="avatar-wrapper">
-                            <div class="avatar">
-                                <div class="avatar-inner">
-                                    {{ hero.avatar_initials | default: "FK" }}
-                                    <!-- später: <img src="{{ "/assets/img/fabian.jpg" | relative_url }}" alt="Foto von Fabian" style="width:100%;height:100%;border-radius:999px;object-fit:cover;"> -->
-                                </div>
-                            </div>
-                            <div>
-                                <div class="avatar-text-title">
-                                    {{ hero.avatar_name | default: "Fabian Kossmann" }}
-                                </div>
-                                <div class="avatar-text-sub">
-                                    {{ hero.avatar_subtitle | default: "KI & Data Science · Trier, DE" }}
-                                </div>
-                            </div>
-                        </div>
-
-                        {% if hero.meta %}
-                            <ul class="meta-list">
-                                {% for item in hero.meta %}
-                                    <li>{{ item }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <ul class="meta-list">
-                                <li>🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik</li>
-                                <li>🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI</li>
-                                <li>💻 Praxisprojekte mit Python, ML & Simulation</li>
-                            </ul>
-                        {% endif %}
-
-                        <div class="pill">
-                            <span class="pill-dot"></span>
-                            {{ hero.pill_text | default: "Gedanken, Projekte und Experimente" }}
-                        </div>
-                    </div>
+                    {% include profile-card.html %}
                 </div>
             </section>
 
@@ -145,31 +67,8 @@
                     {% endfor %}
                 {% endif %}
 
-                {{ content }}
+                <div class="prose">
+                    {{ content }}
+                </div>
             </section>
-        </main>
-
-        <!-- FOOTER -->
-        <footer>
-            <div>
-                {% if footer.left_html %}
-                    {{ footer.left_html }}
-                {% else %}
-                    © <span id="year"></span> Fabian Kossmann
-                {% endif %}
-            </div>
-            <div>
-                {% if footer.links %}
-                    {% for link in footer.links %}
-                        <a href="{{ link.href }}">{{ link.label }}</a>
-                    {% endfor %}
-                {% else %}
-                    <a href="mailto:hi@fabian-kossmann.de">Kontakt</a>
-                    <a href="{{ "/impressum.html" | relative_url }}">Impressum</a>
-                {% endif %}
-            </div>
-        </footer>
-    </div>
-
-</body>
-</html>
+</main>

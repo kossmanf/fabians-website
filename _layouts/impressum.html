@@ -1,70 +1,59 @@
 ---
+layout: base
 ---
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if page.title %}
-            {{ page.title }} · {{ site.title }}
-        {% else %}
-            {{ site.title }}
-        {% endif %}
-    </title>
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
-</head>
-<body>
-    <div class="page">
-
-        {%- assign header = site.data.header -%}
-        {%- assign footer = site.data.footer -%}
-
-        <!-- HEADER -->
-        <header>
-            <div class="logo">
-                {{ header.logo | default: "FABIAN\u00A0KOSSMANN" }}
-            </div>
-
-            {% if header.nav %}
-                <nav>
-                    {% for item in header.nav %}
-                        <a href="{{ item.href }}">{{ item.label }}</a>
-                    {% endfor %}
-                </nav>
-            {% endif %}
-        </header>
-
-        <!-- CONTENT -->
-        <main class="section" style="max-width: 700px; margin: 40px auto;">
-            <h1>{{ page.title | default: "Impressum" }}</h1>
+{% assign impressum = site.data.impressum %}
+<main class="section impressum">
+            <div class="hero-eyebrow">Rechtliches</div>
+            <h1>{{ impressum.title | default: page.title | default: "Impressum" }}</h1>
 
             <div class="impressum-content">
+                {% if impressum.legal_reference %}
+                    <p class="impressum-reference">{{ impressum.legal_reference }}</p>
+                {% endif %}
+
+                {% if impressum.provider %}
+                    <section class="impressum-block">
+                        <h2>Anbieter</h2>
+                        {% if impressum.provider.name %}
+                            <strong>{{ impressum.provider.name }}</strong>
+                        {% endif %}
+                        {% if impressum.provider.address %}
+                            <address>
+                                {% for line in impressum.provider.address %}
+                                    {{ line }}{% unless forloop.last %}<br>{% endunless %}
+                                {% endfor %}
+                            </address>
+                        {% endif %}
+                        {% if impressum.provider.email %}
+                            <p>
+                                <span>E-Mail</span>
+                                <a href="mailto:{{ impressum.provider.email }}">{{ impressum.provider.email }}</a>
+                            </p>
+                        {% endif %}
+                    </section>
+                {% endif %}
+
+                {% if impressum.responsible %}
+                    <section class="impressum-block">
+                        {% if impressum.responsible.title %}
+                            <h2>{{ impressum.responsible.title }}</h2>
+                        {% endif %}
+                        <p>
+                            {{ impressum.responsible.name }}{% if impressum.responsible.address %},
+                            {{ impressum.responsible.address }}{% endif %}
+                        </p>
+                    </section>
+                {% endif %}
+
+                {% if impressum.disclaimer %}
+                    <section class="impressum-block">
+                        <h2>{{ impressum.disclaimer.title | default: "Haftungsausschluss" }}</h2>
+                        {% for paragraph in impressum.disclaimer.paragraphs %}
+                            <p>{{ paragraph }}</p>
+                        {% endfor %}
+                    </section>
+                {% endif %}
+
                 {{ content }}
             </div>
-        </main>
-
-        <!-- FOOTER -->
-        <footer>
-            <div>
-                {% if footer.left_html %}
-                    {{ footer.left_html }}
-                {% else %}
-                    © <span id="year"></span> Fabian Kossmann
-                {% endif %}
-            </div>
-            <div>
-                {% if footer.links %}
-                    {% for link in footer.links %}
-                        <a href="{{ link.href }}">{{ link.label }}</a>
-                    {% endfor %}
-                {% else %}
-                    <a href="mailto:hi@fabian-kossmann.de">Kontakt</a>
-                {% endif %}
-            </div>
-        </footer>
-    </div>
-
-</body>
-</html>
+</main>

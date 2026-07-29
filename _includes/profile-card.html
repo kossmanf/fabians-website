@@ -1,0 +1,33 @@
+{%- assign profile = site.data.profile -%}
+<div class="card">
+    <div class="avatar-wrapper">
+        <div class="avatar">
+            <div class="avatar-inner">
+                {{ profile.initials | default: "FK" }}
+            </div>
+        </div>
+        <div>
+            <div class="avatar-text-title">
+                {{ profile.name | default: "Fabian Kossmann" }}
+            </div>
+            <div class="avatar-text-sub">
+                {{ profile.subtitle | default: "KI & Data Science · Trier, DE" }}
+            </div>
+        </div>
+    </div>
+
+    {% if profile.meta %}
+        <ul class="meta-list">
+            {% for item in profile.meta %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if profile.status %}
+        <div class="pill">
+            <span class="pill-dot"></span>
+            {{ profile.status }}
+        </div>
+    {% endif %}
+</div>

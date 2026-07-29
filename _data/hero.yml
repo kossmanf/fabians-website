@@ -3,14 +3,3 @@ title_prefix: "Hi, ich bin"
 name: "Fabian"
 sub: >
   Ich studiere Künstliche Intelligenz & Data Science …
-
-avatar_initials: "FK"
-avatar_name: "Fabian Koßmann"
-avatar_subtitle: "KI & Data Science · Trier, DE"
-
-meta:
-  - "🎓 Masterstudent mit Schwerpunkt KI, Data Science & Statistik"
-  - "🧠 Interesse an Bayes-Entscheidungstheorie & erklärbarer KI"
-  - "💻 Praxisprojekte mit Python, ML & Simulation"
-
-pill_text: "Offen für spannende Projekte & Werkstudentenstellen"
