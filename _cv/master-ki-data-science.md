@@ -4,7 +4,7 @@ order: 1
 
 period: "seit 2024"
 title: "Master KI & Data Science"
-description: "Schwerpunkte meines Studiums sind Machine Learning, Statistik und datengetriebene Anwendungen."
+description: "Seit 2024 studiere ich KI & Data Science an der Hochschule Trier. Durch meine Bachelorarbeit kam ich intensiver mit dem Themengebiet in Berührung und entschied mich, meine Kenntnisse insbesondere in Machine Learning, Statistik und datengetriebenen Anwendungen weiter zu vertiefen."
 institution: "Hochschule Trier"
 location: "Trier, DE"
 
