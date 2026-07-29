@@ -1,0 +1,14 @@
+initials: "FK"
+name: "Fabian Kossmann"
+subtitle: "AI & Data Science · Trier, Germany"
+
+meta:
+  - icon: "🎓"
+    text: "Master's student focusing on AI, data science and statistics"
+  - icon: "🧠"
+    text: "Interested in Bayesian decision theory and explainable AI"
+  - icon: "💻"
+    text: "Practical projects with Python, machine learning and simulation"
+
+status_tone: "busy"
+status: "Currently fully occupied with project work and my master's thesis, but always open to future projects."

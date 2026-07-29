@@ -3,6 +3,7 @@ layout: base
 ---
 {% assign hero = page.project_hero_section %}
 {% assign media = page.media_section %}
+{% assign page_lang = page.lang | default: "de" %}
 <main>
         <!-- HERO -->
         <section class="hero hero-project">
@@ -28,7 +29,11 @@ layout: base
                     <p class="hero-sub">{{ page.subtitle }}</p>
                 {% else %}
                     <p class="hero-sub">
-                        Ein technisches Projekt aus KI, Data Science oder Software.
+                        {% if page_lang == "en" %}
+                            A technical project in AI, data science or software.
+                        {% else %}
+                            Ein technisches Projekt aus KI, Data Science oder Software.
+                        {% endif %}
                     </p>
                 {% endif %}
 
@@ -37,7 +42,15 @@ layout: base
                        href="{{ hero.github_url | default: page.project_url | default: page.github }}"
                        target="_blank"
                        rel="noopener noreferrer">
-                        {{ hero.github_label | default: page.project_label | default: "Projekt ansehen ↗" }}
+                        {% if hero.github_label %}
+                            {{ hero.github_label }}
+                        {% elsif page.project_label %}
+                            {{ page.project_label }}
+                        {% elsif page_lang == "en" %}
+                            View project ↗
+                        {% else %}
+                            Projekt ansehen ↗
+                        {% endif %}
                     </a>
                 {% endif %}
 

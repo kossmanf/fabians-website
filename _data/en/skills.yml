@@ -1,0 +1,11 @@
+- order: 1
+  title: "AI & Data Science"
+  description: "The focus of my master's degree and my current projects."
+
+- order: 2
+  title: "Machine Learning · Statistics · Bayes"
+  description: "Interested in probabilistic models and decision-making under uncertainty."
+
+- order: 3
+  title: "Python · PyTorch · TensorFlow"
+  description: "Tools for modelling, experimentation and data-driven applications."

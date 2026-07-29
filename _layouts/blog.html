@@ -3,6 +3,7 @@ layout: base
 ---
 {% assign hero = page.blog_hero_section %}
 {% assign media = page.media_section %}
+{% assign page_lang = page.lang | default: "de" %}
 <main>
             <!-- Blog-Hero -->
             <section class="hero hero-blog">
@@ -31,7 +32,11 @@ layout: base
                         </p>
                     {% else %}
                         <p class="hero-sub">
-                            Gedanken zu KI, Data Science, Statistik und Projekten.
+                            {% if page_lang == "en" %}
+                                Thoughts on AI, data science, statistics and projects.
+                            {% else %}
+                                Gedanken zu KI, Data Science, Statistik und Projekten.
+                            {% endif %}
                         </p>
                     {% endif %}
                 </div>

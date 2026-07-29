@@ -1,14 +1,29 @@
-{%- assign header = site.data.header -%}
+{%- assign page_lang = page.lang | default: "de" -%}
+{%- if page_lang == "en" -%}
+    {%- assign header = site.data.en.header -%}
+    {%- assign language_label = "DE" -%}
+    {%- assign language_target = page.translation_url | default: "/" -%}
+{%- else -%}
+    {%- assign header = site.data.header -%}
+    {%- assign language_label = "EN" -%}
+    {%- assign language_target = page.translation_url | default: "/en/" -%}
+{%- endif -%}
 <header>
     <div class="logo">
         {{ header.logo | default: "FABIAN KOßMANN" }}
     </div>
 
     {% if header.nav %}
-        <nav aria-label="Hauptnavigation">
+        <nav aria-label="{% if page_lang == 'en' %}Main navigation{% else %}Hauptnavigation{% endif %}">
             {% for item in header.nav %}
                 <a href="{{ item.href | relative_url }}">{{ item.label }}</a>
             {% endfor %}
+            <a class="language-switch"
+               href="{{ language_target | relative_url }}"
+               hreflang="{{ language_label | downcase }}"
+               lang="{{ language_label | downcase }}">
+                {{ language_label }}
+            </a>
         </nav>
     {% endif %}
 </header>

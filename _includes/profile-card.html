@@ -1,4 +1,9 @@
-{%- assign profile = site.data.profile -%}
+{%- assign page_lang = page.lang | default: "de" -%}
+{%- if page_lang == "en" -%}
+    {%- assign profile = site.data.en.profile -%}
+{%- else -%}
+    {%- assign profile = site.data.profile -%}
+{%- endif -%}
 <div class="card">
     <div class="avatar-wrapper">
         <div class="avatar">

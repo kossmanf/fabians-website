@@ -1,0 +1,19 @@
+- order: 1
+  label: "View projects"
+  href: "/en/#projects"
+  style: "primary"
+
+- order: 2
+  label: "Read blog posts"
+  href: "/en/#blog"
+  style: "ghost"
+
+- order: 3
+  label: "More about me"
+  href: "/en/#about"
+  style: "ghost"
+
+- order: 4
+  label: "Profiles & Platforms"
+  href: "/en/#platforms"
+  style: "ghost"

@@ -7,13 +7,16 @@ function setupTagSearch(section) {
     var clearButton = input.parentElement.querySelector('.search-clear');
     var resultMeta = section.querySelector('.search-meta');
     var emptyState = section.querySelector('.search-empty');
+    var countSingular = section.dataset.countSingular || 'Eintrag';
+    var countPlural = section.dataset.countPlural || 'Einträge';
+    var locale = document.documentElement.lang || 'de';
 
     function updateResults() {
-        var query = input.value.toLocaleLowerCase('de').trim();
+        var query = input.value.toLocaleLowerCase(locale).trim();
         var visibleCount = 0;
 
         items.forEach(function (item) {
-            var text = (item.dataset.search || item.textContent).toLocaleLowerCase('de');
+            var text = (item.dataset.search || item.textContent).toLocaleLowerCase(locale);
             var isVisible = text.includes(query);
             item.hidden = !isVisible;
             if (isVisible) visibleCount += 1;
@@ -22,8 +25,8 @@ function setupTagSearch(section) {
         clearButton.hidden = query.length === 0;
         emptyState.hidden = visibleCount !== 0;
         resultMeta.textContent = query
-            ? visibleCount + ' Treffer'
-            : items.length + (items.length === 1 ? ' Eintrag' : ' Einträge');
+            ? visibleCount + ' ' + (visibleCount === 1 ? countSingular : countPlural)
+            : items.length + ' ' + (items.length === 1 ? countSingular : countPlural);
     }
 
     input.addEventListener('input', updateResults);

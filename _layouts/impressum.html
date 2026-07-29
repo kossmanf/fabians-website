@@ -1,9 +1,14 @@
 ---
 layout: base
 ---
-{% assign impressum = site.data.impressum %}
+{% assign page_lang = page.lang | default: "de" %}
+{% if page_lang == "en" %}
+    {% assign impressum = site.data.en.impressum %}
+{% else %}
+    {% assign impressum = site.data.impressum %}
+{% endif %}
 <main class="section impressum">
-            <div class="hero-eyebrow">Rechtliches</div>
+            <div class="hero-eyebrow">{% if page_lang == "en" %}Legal{% else %}Rechtliches{% endif %}</div>
             <h1>{{ impressum.title | default: page.title | default: "Impressum" }}</h1>
 
             <div class="impressum-content">
@@ -13,7 +18,7 @@ layout: base
 
                 {% if impressum.provider %}
                     <section class="impressum-block">
-                        <h2>Anbieter</h2>
+                        <h2>{{ impressum.provider.heading | default: "Anbieter" }}</h2>
                         {% if impressum.provider.name %}
                             <strong>{{ impressum.provider.name }}</strong>
                         {% endif %}
@@ -26,7 +31,7 @@ layout: base
                         {% endif %}
                         {% if impressum.provider.email %}
                             <p>
-                                <span>E-Mail</span>
+                                <span>{{ impressum.provider.email_label | default: "E-Mail" }}</span>
                                 <a href="mailto:{{ impressum.provider.email }}">{{ impressum.provider.email }}</a>
                             </p>
                         {% endif %}

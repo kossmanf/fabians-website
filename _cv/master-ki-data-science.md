@@ -5,4 +5,8 @@ period: "seit 2024"
 title: "Master KI & Data Science"
 institution: "Universität Trier"
 location: "Trier, DE"
+period_en: "since 2024"
+title_en: "M.Sc. Artificial Intelligence & Data Science"
+institution_en: "Trier University"
+location_en: "Trier, Germany"
 ---

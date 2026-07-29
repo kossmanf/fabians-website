@@ -3,6 +3,8 @@ layout: blog
 title: "Was bedeutet eigentlich erklärbare KI?"
 subtitle: "Warum gute Vorhersagen allein nicht immer ausreichen."
 category: "KI & Erklärbarkeit"
+lang: "de"
+translation_url: "/en/posts/what-does-explainable-ai-mean.html"
 ---
 
 Künstliche Intelligenz kann heute erstaunlich gute Vorhersagen treffen. Doch gerade bei wichtigen Entscheidungen reicht es nicht, nur das Ergebnis eines Modells zu kennen. Wir möchten auch verstehen, **wie** dieses Ergebnis entstanden ist.

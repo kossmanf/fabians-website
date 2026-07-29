@@ -1,0 +1,11 @@
+logo: "FABIAN KOSSMANN"
+
+nav:
+  - label: "About"
+    href: "/en/#about"
+  - label: "Projects"
+    href: "/en/#projects"
+  - label: "Blog"
+    href: "/en/#blog"
+  - label: "Profiles & Platforms"
+    href: "/en/#platforms"

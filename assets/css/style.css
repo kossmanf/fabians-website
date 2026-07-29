@@ -67,6 +67,19 @@ nav a:hover {
   color: var(--text);
 }
 
+.language-switch {
+  margin-left: 10px;
+  border-color: var(--border);
+  color: #c7d2fe;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.language-switch:hover {
+  border-color: #6366f1;
+  background: rgba(99,102,241,0.1);
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);

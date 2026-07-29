@@ -1,6 +1,8 @@
 ---
 layout: blog
 title: "Warum KI-Systeme nicht allein entscheiden sollten"
+lang: "de"
+translation_url: "/en/posts/why-ai-systems-should-not-decide-alone.html"
 ---
 
 Hier kommt dein Blogtext hin.

@@ -1,7 +1,18 @@
 ---
 layout: base
 ---
-{% assign hero = site.data.hero %}
+{% assign page_lang = page.lang | default: "de" %}
+{% if page_lang == "en" %}
+    {% assign hero = site.data.en.hero %}
+    {% assign skills = site.data.en.skills | sort: "order" %}
+    {% assign hero_actions = site.data.en.actions | sort: "order" %}
+    {% assign sections = site.data.en.sections | sort: "order" %}
+{% else %}
+    {% assign hero = site.data.hero %}
+    {% assign skills = site.data.skills | sort: "order" %}
+    {% assign hero_actions = site.data.actions | sort: "order" %}
+    {% assign sections = site.data.sections | sort: "order" %}
+{% endif %}
 <main>
             <!-- HERO -->
             <section class="hero">
@@ -31,7 +42,6 @@ layout: base
                         </p>
                     {% endif %}
 
-                    {% assign skills = site.data.skills | sort: "order" %}
                     {% if skills.size > 0 %}
                         <div class="badges">
                             {% assign described_skills = skills | where_exp: "skill", "skill.description" %}
@@ -60,7 +70,6 @@ layout: base
                         {% endif %}
                     {% endif %}
 
-                    {% assign hero_actions = site.data.actions | sort: "order" %}
                     {% if hero_actions.size > 0 %}
                         <div class="hero-actions">
                             {% for action in hero_actions %}
@@ -77,10 +86,11 @@ layout: base
                 </div>
             </section>
 
-            {% assign sections = site.data.sections | sort: "order" %}
             {% for section in sections %}
                 <section id="{{ section.section_id }}"
                          class="section"
+                         data-count-singular="{{ section.count_singular | default: 'Eintrag' }}"
+                         data-count-plural="{{ section.count_plural | default: 'Einträge' }}"
                          {% if section.search %}data-search-section{% endif %}>
                     {% if section.title %}
                         <h2>{{ section.title }}</h2>
@@ -120,10 +130,17 @@ layout: base
                                         <div class="cv-item">
                                             <div class="cv-bubble"></div>
                                             <div class="cv-content">
-                                                {% if item.period %}<div class="cv-year">{{ item.period }}</div>{% endif %}
-                                                {% if item.title %}<div class="cv-title">{{ item.title }}</div>{% endif %}
-                                                {% if item.institution %}<div class="cv-subtitle">{{ item.institution }}</div>{% endif %}
-                                                {% if item.location %}<div class="cv-location">{{ item.location }}</div>{% endif %}
+                                                {% if page_lang == "en" %}
+                                                    {% if item.period_en %}<div class="cv-year">{{ item.period_en }}</div>{% endif %}
+                                                    {% if item.title_en %}<div class="cv-title">{{ item.title_en }}</div>{% endif %}
+                                                    {% if item.institution_en %}<div class="cv-subtitle">{{ item.institution_en }}</div>{% endif %}
+                                                    {% if item.location_en %}<div class="cv-location">{{ item.location_en }}</div>{% endif %}
+                                                {% else %}
+                                                    {% if item.period %}<div class="cv-year">{{ item.period }}</div>{% endif %}
+                                                    {% if item.title %}<div class="cv-title">{{ item.title }}</div>{% endif %}
+                                                    {% if item.institution %}<div class="cv-subtitle">{{ item.institution }}</div>{% endif %}
+                                                    {% if item.location %}<div class="cv-location">{{ item.location }}</div>{% endif %}
+                                                {% endif %}
                                             </div>
                                         </div>
                                     {% endfor %}
@@ -134,11 +151,14 @@ layout: base
                             <div class="tags result-list">
                                 {% assign project_pages = site.pages | where: "layout", "project" %}
                                 {% for project in project_pages %}
-                                    <a class="tag tag-project" href="{{ project.url | relative_url }}">
-                                        <span class="result-type">Projekt</span>
-                                        <span class="result-title">{{ project.title }}</span>
-                                        <span class="result-arrow" aria-hidden="true">→</span>
-                                    </a>
+                                    {% assign project_lang = project.lang | default: "de" %}
+                                    {% if project_lang == page_lang %}
+                                        <a class="tag tag-project" href="{{ project.url | relative_url }}">
+                                            <span class="result-type">{{ section.item_label | default: "Projekt" }}</span>
+                                            <span class="result-title">{{ project.title }}</span>
+                                            <span class="result-arrow" aria-hidden="true">→</span>
+                                        </a>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
 
@@ -146,16 +166,23 @@ layout: base
                             <div class="tags result-list">
                                 {% assign blog_posts = site.pages | where: "layout", "blog" %}
                                 {% for post in blog_posts %}
-                                    <a class="tag tag-blog" href="{{ post.url | relative_url }}">
-                                        <span class="result-type">Artikel</span>
-                                        <span class="result-title">{{ post.title }}</span>
-                                        <span class="result-arrow" aria-hidden="true">→</span>
-                                    </a>
+                                    {% assign post_lang = post.lang | default: "de" %}
+                                    {% if post_lang == page_lang %}
+                                        <a class="tag tag-blog" href="{{ post.url | relative_url }}">
+                                            <span class="result-type">{{ section.item_label | default: "Artikel" }}</span>
+                                            <span class="result-title">{{ post.title }}</span>
+                                            <span class="result-arrow" aria-hidden="true">→</span>
+                                        </a>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
 
                         {% when "platforms" %}
-                            {% assign platform_items = site.data.platforms | sort: "order" %}
+                            {% if page_lang == "en" %}
+                                {% assign platform_items = site.data.en.platforms | sort: "order" %}
+                            {% else %}
+                                {% assign platform_items = site.data.platforms | sort: "order" %}
+                            {% endif %}
                             {% if platform_items.size > 0 %}
                                 <div class="tags">
                                     {% for platform in platform_items %}

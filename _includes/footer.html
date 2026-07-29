@@ -1,4 +1,9 @@
-{%- assign footer = site.data.footer -%}
+{%- assign page_lang = page.lang | default: "de" -%}
+{%- if page_lang == "en" -%}
+    {%- assign footer = site.data.en.footer -%}
+{%- else -%}
+    {%- assign footer = site.data.footer -%}
+{%- endif -%}
 <footer>
     <div>
         {{ footer.left_html | default: "© <span id='year'></span> Fabian Kossmann" }}

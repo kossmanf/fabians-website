@@ -1,0 +1,23 @@
+title: "Legal notice"
+legal_reference: "Information pursuant to § 5 TMG and § 18(2) MStV"
+
+provider:
+  heading: "Provider"
+  name: "Fabian Kossmann"
+  address:
+    - "Lambertistraße 1"
+    - "54294 Trier"
+    - "Germany"
+  email_label: "Email"
+  email: "fabiankossmann98@gmail.com"
+
+responsible:
+  title: "Responsible for the content pursuant to § 18(2) MStV"
+  name: "Fabian Kossmann"
+  address: "Lambertistraße 1, 54294 Trier, Germany"
+
+disclaimer:
+  title: "Disclaimer"
+  paragraphs:
+    - "The contents of this website have been prepared with the greatest possible care. Nevertheless, I cannot guarantee their accuracy, completeness or timeliness."
+    - "The operators of linked external websites are solely responsible for their content."

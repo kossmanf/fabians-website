@@ -1,0 +1,42 @@
+- order: 1
+  section_id: "about"
+  kind: "cv"
+  title: "About me"
+  text: |
+    I enjoy combining mathematical thinking with practical implementation. I am particularly interested in problems where uncertainty, decisions and real-world data meet—for example recommender systems, simulations of complex systems, or health and routing optimisation.
+
+    When I am not coding, I enjoy working out and running, and I think about fair, data-driven systems for society and technology.
+  search: false
+
+- order: 2
+  section_id: "projects"
+  kind: "projects"
+  title: "Selected topics & projects"
+  intro: "A growing collection of my AI, statistics and web projects."
+  search: true
+  search_placeholder: "Search projects …"
+  search_label: "Search projects"
+  empty_text: "No matching project found."
+  count_singular: "result"
+  count_plural: "results"
+  item_label: "Project"
+
+- order: 3
+  section_id: "blog"
+  kind: "blog"
+  title: "Blog"
+  intro: "Short thoughts, experiments and projects around AI, statistics and data science."
+  search: true
+  search_placeholder: "Search blog posts …"
+  search_label: "Search blog posts"
+  empty_text: "No matching blog post found."
+  count_singular: "entry"
+  count_plural: "entries"
+  item_label: "Article"
+
+- order: 4
+  section_id: "platforms"
+  kind: "platforms"
+  title: "Profiles & Platforms"
+  text: "Here you can find my most important accounts and online profiles."
+  search: false

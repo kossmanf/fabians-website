@@ -17,6 +17,9 @@
   search_placeholder: "Projekte durchsuchen …"
   search_label: "Projekte durchsuchen"
   empty_text: "Kein passendes Projekt gefunden."
+  count_singular: "Eintrag"
+  count_plural: "Einträge"
+  item_label: "Projekt"
 
 - order: 3
   section_id: "blog"
@@ -27,6 +30,9 @@
   search_placeholder: "Blogposts durchsuchen …"
   search_label: "Blogposts durchsuchen"
   empty_text: "Kein passender Blogbeitrag gefunden."
+  count_singular: "Eintrag"
+  count_plural: "Einträge"
+  item_label: "Artikel"
 
 - order: 4
   section_id: "platforms"
