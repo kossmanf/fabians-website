@@ -1,2 +1,6 @@
 title: "Fabian Kossmann – KI und Data Science"
 email: fabian@example.com
+
+collections:
+  cv:
+    output: false

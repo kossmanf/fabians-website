@@ -1,0 +1,8 @@
+- order: 1
+  title: "KI & Data Science"
+
+- order: 2
+  title: "Machine Learning · Statistik · Bayes"
+
+- order: 3
+  title: "Python · PyTorch · TensorFlow"

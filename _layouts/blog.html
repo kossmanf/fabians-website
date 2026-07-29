@@ -17,10 +17,10 @@
 </head>
 <body>
     <div class="page">
-        {%- assign header = page.header_section | default: site.header_section -%}
+        {%- assign header = site.data.header -%}
         {%- assign hero = page.blog_hero_section -%}
         {%- assign media = page.media_section -%}
-        {%- assign footer = page.footer_section | default: site.footer_section -%}
+        {%- assign footer = site.data.footer -%}
 
         <!-- HEADER -->
         <header>

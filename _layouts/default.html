@@ -18,13 +18,9 @@
 <body>
     <div class="page">
 
-        {%- assign header = page.header_section -%}
-        {%- assign hero = page.hero_section -%}
-        {%- assign about = page.about_section -%}
-        {%- assign projects = page.projects_section -%}
-        {%- assign blog = page.blog_section -%}
-        {%- assign platforms = page.platforms_section -%}
-        {%- assign footer = page.footer_section -%}
+        {%- assign header = site.data.header -%}
+        {%- assign hero = site.data.hero -%}
+        {%- assign footer = site.data.footer -%}
 
         <!-- HEADER -->
         <header>
@@ -70,23 +66,21 @@
                         </p>
                     {% endif %}
 
-                    {% if hero.badges %}
+                    {% assign skills = site.data.skills | sort: "order" %}
+                    {% if skills.size > 0 %}
                         <div class="badges">
-                            {% for badge in hero.badges %}
+                            {% for skill in skills %}
                                 <div class="badge">
-                                    {% if badge.strong %}
-                                        <strong>{{ badge.strong }}</strong>{% if badge.text %} {{ badge.text }}{% endif %}
-                                    {% else %}
-                                        {{ badge.text }}
-                                    {% endif %}
+                                    {{ skill.title }}
                                 </div>
                             {% endfor %}
                         </div>
                     {% endif %}
 
-                    {% if hero.actions %}
+                    {% assign hero_actions = site.data.actions | sort: "order" %}
+                    {% if hero_actions.size > 0 %}
                         <div class="hero-actions">
-                            {% for action in hero.actions %}
+                            {% for action in hero_actions %}
                                 <a href="{{ action.href }}" class="btn btn-{{ action.style | default: 'ghost' }}">
                                     {{ action.label }}
                                 </a>
@@ -136,127 +130,103 @@
                 </div>
             </section>
 
-            <!-- ABOUT -->
-            <section id="about" class="section" style="margin-bottom: 16px;">
-                <h2>{{ about.title | default: "Über mich" }}</h2>
+            {% assign sections = site.data.sections | sort: "order" %}
+            {% for section in sections %}
+                <section id="{{ section.section_id }}"
+                         class="section"
+                         {% if section.search %}data-search-section{% endif %}>
+                    {% if section.title %}
+                        <h2>{{ section.title }}</h2>
+                    {% endif %}
 
-                {% if about.paragraphs %}
-                    {% for paragraph in about.paragraphs %}
-                        <p>{{ paragraph }}</p>
-                    {% endfor %}
-                {% endif %}
+                    {% if section.intro %}
+                        <p class="section-intro">{{ section.intro }}</p>
+                    {% endif %}
 
-                {% if about.cv_entries %}
-                    <div class="cv-timeline">
-                        {% for item in about.cv_entries %}
-                            <div class="cv-item">
-                                <div class="cv-bubble"></div>
-                                <div class="cv-content">
-                                    {% if item.year %}
-                                        <div class="cv-year">{{ item.year }}</div>
-                                    {% endif %}
-                                    {% if item.title %}
-                                        <div class="cv-title">{{ item.title }}</div>
-                                    {% endif %}
-                                    {% if item.subtitle %}
-                                        <div class="cv-subtitle">{{ item.subtitle }}</div>
-                                    {% endif %}
-                                    {% if item.location %}
-                                        <div class="cv-location">{{ item.location }}</div>
-                                    {% endif %}
+                    {% if section.text %}
+                        <div class="section-text">{{ section.text | markdownify }}</div>
+                    {% endif %}
+
+                    {% if section.search %}
+                        <div class="search-wrapper" role="search">
+                            <span class="search-icon" aria-hidden="true"></span>
+                            <input
+                                type="search"
+                                id="{{ section.section_id }}-search"
+                                class="search-input"
+                                placeholder="{{ section.search_placeholder | default: 'Durchsuchen …' }}"
+                                aria-label="{{ section.search_label | default: 'Bereich durchsuchen' }}">
+                            <button class="search-clear"
+                                    type="button"
+                                    aria-label="{{ section.search_label | default: 'Suche' }} leeren"
+                                    hidden>×</button>
+                        </div>
+                        <div class="search-meta" aria-live="polite"></div>
+                    {% endif %}
+
+                    {% case section.kind %}
+                        {% when "cv" %}
+                            {% assign cv_entries = site.cv | where: "layout", "cv-entry" | sort: "order" %}
+                            {% if cv_entries.size > 0 %}
+                                <div class="cv-timeline">
+                                    {% for item in cv_entries %}
+                                        <div class="cv-item">
+                                            <div class="cv-bubble"></div>
+                                            <div class="cv-content">
+                                                {% if item.period %}<div class="cv-year">{{ item.period }}</div>{% endif %}
+                                                {% if item.title %}<div class="cv-title">{{ item.title }}</div>{% endif %}
+                                                {% if item.institution %}<div class="cv-subtitle">{{ item.institution }}</div>{% endif %}
+                                                {% if item.location %}<div class="cv-location">{{ item.location }}</div>{% endif %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 </div>
+                            {% endif %}
+
+                        {% when "projects" %}
+                            <div class="tags result-list">
+                                {% assign project_pages = site.pages | where: "layout", "project" %}
+                                {% for project in project_pages %}
+                                    <a class="tag tag-project" href="{{ project.url | relative_url }}">
+                                        <span class="result-type">Projekt</span>
+                                        <span class="result-title">{{ project.title }}</span>
+                                        <span class="result-arrow" aria-hidden="true">→</span>
+                                    </a>
+                                {% endfor %}
                             </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </section>
 
-            <!-- PROJECTS -->
-            <section id="projects" class="section" style="margin-bottom: 16px;">
-                <h2>{{ projects.title | default: "Ausgewählte Themen & Projekte" }}</h2>
+                        {% when "blog" %}
+                            <div class="tags result-list">
+                                {% assign blog_posts = site.pages | where: "layout", "blog" %}
+                                {% for post in blog_posts %}
+                                    <a class="tag tag-blog" href="{{ post.url | relative_url }}">
+                                        <span class="result-type">Artikel</span>
+                                        <span class="result-title">{{ post.title }}</span>
+                                        <span class="result-arrow" aria-hidden="true">→</span>
+                                    </a>
+                                {% endfor %}
+                            </div>
 
-                {% if projects.intro %}
-                    <p>{{ projects.intro }}</p>
-                {% endif %}
-                
-                <div class="search-wrapper" role="search">
-                    <span class="search-icon" aria-hidden="true"></span>
-                    <input
-                        type="search"
-                        id="project-search"
-                        class="search-input"
-                        placeholder="Projekte durchsuchen …"
-                        aria-label="Projekte durchsuchen">
-                    <button class="search-clear" type="button" aria-label="Projektsuche leeren" hidden>×</button>
-                </div>
-                <div class="search-meta" aria-live="polite"></div>
+                        {% when "platforms" %}
+                            {% assign platform_items = site.data.platforms | sort: "order" %}
+                            {% if platform_items.size > 0 %}
+                                <div class="tags">
+                                    {% for platform in platform_items %}
+                                        <a class="tag tag-platform"
+                                           href="{{ platform.url }}"
+                                           {% unless platform.url contains "mailto:" %}target="_blank" rel="noopener noreferrer"{% endunless %}>
+                                            {{ platform.icon }} {{ platform.title }}
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                    {% endcase %}
 
-                <div class="tags result-list">
-                    {% assign project_pages = site.pages | where: "layout", "project" %}
-                    {% for project in project_pages %}
-                        <a class="tag tag-project" href="{{ project.url | relative_url }}">
-                            <span class="result-type">Projekt</span>
-                            <span class="result-title">{{ project.title }}</span>
-                            <span class="result-arrow" aria-hidden="true">→</span>
-                        </a>
-                    {% endfor %}
-                </div>
-                <p class="search-empty" hidden>Kein passendes Projekt gefunden.</p>
-            </section>
-
-            <!-- BLOG -->
-            <section id="blog" class="section" style="margin-bottom: 16px;">
-                <h2>{{ blog.title | default: "Blog" }}</h2>
-
-                {% if blog.intro %}
-                    <p>{{ blog.intro }}</p>
-                {% endif %}
-                 
-                <div class="search-wrapper" role="search">
-                    <span class="search-icon" aria-hidden="true"></span>
-                    <input
-                        type="search"
-                        id="blog-search"
-                        class="search-input"
-                        placeholder="Blogs durchsuchen …"
-                        aria-label="Blogs durchsuchen">
-                    <button class="search-clear" type="button" aria-label="Blogsuche leeren" hidden>×</button>
-                </div>
-                <div class="search-meta" aria-live="polite"></div>
-
-                <div class="tags result-list">
-                    {% assign blog_posts = site.pages | where: "layout", "blog" %}
-                    {% for post in blog_posts %}
-                        <a class="tag tag-blog" href="{{ post.url | relative_url }}">
-                            <span class="result-type">Artikel</span>
-                            <span class="result-title">{{ post.title }}</span>
-                            <span class="result-arrow" aria-hidden="true">→</span>
-                        </a>
-                    {% endfor %}
-                </div>
-                <p class="search-empty" hidden>Kein passender Blogbeitrag gefunden.</p>
-            </section>
-
-            <!-- PLATFORMS -->
-            <section id="platforms" class="section" style="margin-bottom: 16px;">
-                {% if platforms.title %}
-                    <h2>{{ platforms.title }}</h2>
-                {% endif %}
-
-                {% if platforms.text %}
-                    <p>{{ platforms.text }}</p>
-                {% endif %}
-
-                {% if platforms.platforms %}
-                    <div class="tags">
-                        {% for platform in platforms.platforms %}
-                            <a class="tag tag-platform" href="{{ platform.url }}" target="_blank">
-                                {{ platform.icon }} {{ platform.name }}
-                            </a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </section>
+                    {% if section.search %}
+                        <p class="search-empty" hidden>{{ section.empty_text | default: "Keine passenden Einträge gefunden." }}</p>
+                    {% endif %}
+                </section>
+            {% endfor %}
         </main>
 
         <!-- FOOTER -->
@@ -274,7 +244,7 @@
                         <a href="{{ link.href }}">{{ link.label }}</a>
                     {% endfor %}
                 {% else %}
-                    <a href="mailto:fabiankossmann98@gmail.com">Kontakt</a>
+                    <a href="mailto:hi@fabian-kossmann.de">Kontakt</a>
                 {% endif %}
             </div>
         </footer>

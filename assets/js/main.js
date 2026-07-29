@@ -1,10 +1,9 @@
-function setupTagSearch(inputId, containerSelector) {
-    var input = document.getElementById(inputId);
-    var container = document.querySelector(containerSelector);
+function setupTagSearch(section) {
+    var input = section.querySelector('.search-input');
+    var container = section.querySelector('.result-list');
     if (!input || !container) return;
 
     var items = container.querySelectorAll('a.tag');
-    var section = input.closest('.section');
     var clearButton = input.parentElement.querySelector('.search-clear');
     var resultMeta = section.querySelector('.search-meta');
     var emptyState = section.querySelector('.search-empty');
@@ -38,8 +37,9 @@ function setupTagSearch(inputId, containerSelector) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    setupTagSearch("project-search", "#projects .tags");
-    setupTagSearch('blog-search', '#blog .tags');
+    document.querySelectorAll('[data-search-section]').forEach(function (section) {
+        setupTagSearch(section);
+    });
 
     var yearEl = document.getElementById('year');
     if (yearEl) {

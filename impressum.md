@@ -2,23 +2,6 @@
 layout: impressum
 title: "Impressum"
 
-header_section:
-  logo: "FABIAN&nbsp;KOSSMANN"
-  nav:
-    - label: "Startseite"
-      href: "/"
-    - label: "Über mich"
-      href: "/#about"
-    - label: "Projekte"
-      href: "/#projects"
-    - label: "Blog"
-      href: "/#blog"
-
-footer_section:
-  left_html: "© <span id='year'></span> Fabian Kossmann"
-  links:
-    - label: "Kontakt"
-      href: "mailto:fabiankossmann98@gmail.com"
 ---
 
 **Impressum**  

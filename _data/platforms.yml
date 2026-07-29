@@ -1,0 +1,29 @@
+- order: 1
+  title: "E-Mail"
+  icon: "📧"
+  url: "mailto:hi@fabian-kossmann.de"
+
+- order: 2
+  title: "GitHub"
+  icon: "💻"
+  url: "https://github.com/fabikoss"
+
+- order: 3
+  title: "LinkedIn"
+  icon: "🔗"
+  url: "https://www.linkedin.com/in/fabian-kossmann"
+
+- order: 4
+  title: "X / Twitter"
+  icon: "🐦"
+  url: "https://twitter.com/dein_username"
+
+- order: 5
+  title: "Kaggle"
+  icon: "📊"
+  url: "https://kaggle.com/dein_username"
+
+- order: 6
+  title: "Hugging Face"
+  icon: "🤗"
+  url: "https://huggingface.co/dein_username"

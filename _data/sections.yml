@@ -1,0 +1,36 @@
+- order: 1
+  section_id: "about"
+  kind: "cv"
+  title: "Über mich"
+  text: |
+    Ich kombiniere gerne mathematisches Denken mit praktischer Umsetzung. Besonders spannend finde ich Probleme, bei denen Unsicherheit, Entscheidungen und reale Daten zusammentreffen – z. B. Empfehlungssysteme, Simulation von komplexen Systemen oder Gesundheits-/Routing-Optimierung.
+
+    Wenn ich nicht gerade code, mache ich Sport (Gym, Laufen) und denke über faire, datengetriebene Systeme für Gesellschaft und Technik nach.
+  search: false
+
+- order: 2
+  section_id: "projects"
+  kind: "projects"
+  title: "Ausgewählte Themen & Projekte"
+  intro: "Eine wachsende Sammlung meiner KI-, Statistik- und Web-Projekte."
+  search: true
+  search_placeholder: "Projekte durchsuchen …"
+  search_label: "Projekte durchsuchen"
+  empty_text: "Kein passendes Projekt gefunden."
+
+- order: 3
+  section_id: "blog"
+  kind: "blog"
+  title: "Blog"
+  intro: "Kurze Gedanken, Experimente und Projekte rund um KI, Statistik und Data Science."
+  search: true
+  search_placeholder: "Blogposts durchsuchen …"
+  search_label: "Blogposts durchsuchen"
+  empty_text: "Kein passender Blogbeitrag gefunden."
+
+- order: 4
+  section_id: "platforms"
+  kind: "platforms"
+  title: "Profile & Plattformen"
+  text: "Hier findest du meine wichtigsten Accounts und Online-Profile."
+  search: false

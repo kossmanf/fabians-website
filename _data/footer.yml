@@ -1,0 +1,7 @@
+left_html: "© <span id='year'></span> Fabian Kossmann"
+
+links:
+  - label: "Kontakt"
+    href: "mailto:hi@fabian-kossmann.de"
+  - label: "Impressum"
+    href: "/impressum.html"

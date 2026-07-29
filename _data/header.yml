@@ -1,0 +1,11 @@
+logo: "FABIAN KOßMANN"
+
+nav:
+  - label: "Über mich"
+    href: "/#about"
+  - label: "Projekte"
+    href: "/#projects"
+  - label: "Blog"
+    href: "/#blog"
+  - label: "Profile & Plattformen"
+    href: "/#platforms"
