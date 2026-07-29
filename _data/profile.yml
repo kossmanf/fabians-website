@@ -11,5 +11,5 @@ meta:
     text: "Praxisprojekte mit Python im Bereich ML & Simulation"
 
 # Mögliche Werte: "green", "yellow" oder "red"
-status_tone: "red"
+status_tone: "yellow"
 status: "Leider gerade voll ausgelastet mit Projektarbeit und Masterarbeit, aber prinzipiell immer offen für neue Projekte und Ideen."

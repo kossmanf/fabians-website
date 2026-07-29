@@ -127,19 +127,55 @@ layout: base
                             {% if cv_entries.size > 0 %}
                                 <div class="cv-timeline">
                                     {% for item in cv_entries %}
+                                        {% if page_lang == "en" %}
+                                            {% assign cv_description = item.description_en %}
+                                        {% else %}
+                                            {% assign cv_description = item.description %}
+                                        {% endif %}
                                         <div class="cv-item">
                                             <div class="cv-bubble"></div>
                                             <div class="cv-content">
                                                 {% if page_lang == "en" %}
                                                     {% if item.period_en %}<div class="cv-year">{{ item.period_en }}</div>{% endif %}
-                                                    {% if item.title_en %}<div class="cv-title">{{ item.title_en }}</div>{% endif %}
+                                                    {% if item.title_en %}
+                                                        {% if cv_description %}
+                                                            <button class="cv-title cv-title-toggle"
+                                                                    type="button"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="cv-detail-{{ item.order }}">
+                                                                {{ item.title_en }}
+                                                                <span class="cv-title-icon" aria-hidden="true"></span>
+                                                            </button>
+                                                        {% else %}
+                                                            <div class="cv-title">{{ item.title_en }}</div>
+                                                        {% endif %}
+                                                    {% endif %}
                                                     {% if item.institution_en %}<div class="cv-subtitle">{{ item.institution_en }}</div>{% endif %}
                                                     {% if item.location_en %}<div class="cv-location">{{ item.location_en }}</div>{% endif %}
                                                 {% else %}
                                                     {% if item.period %}<div class="cv-year">{{ item.period }}</div>{% endif %}
-                                                    {% if item.title %}<div class="cv-title">{{ item.title }}</div>{% endif %}
+                                                    {% if item.title %}
+                                                        {% if cv_description %}
+                                                            <button class="cv-title cv-title-toggle"
+                                                                    type="button"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="cv-detail-{{ item.order }}">
+                                                                {{ item.title }}
+                                                                <span class="cv-title-icon" aria-hidden="true"></span>
+                                                            </button>
+                                                        {% else %}
+                                                            <div class="cv-title">{{ item.title }}</div>
+                                                        {% endif %}
+                                                    {% endif %}
                                                     {% if item.institution %}<div class="cv-subtitle">{{ item.institution }}</div>{% endif %}
                                                     {% if item.location %}<div class="cv-location">{{ item.location }}</div>{% endif %}
+                                                {% endif %}
+                                                {% if cv_description %}
+                                                    <div class="cv-detail"
+                                                         id="cv-detail-{{ item.order }}"
+                                                         hidden>
+                                                        {{ cv_description | markdownify }}
+                                                    </div>
                                                 {% endif %}
                                             </div>
                                         </div>

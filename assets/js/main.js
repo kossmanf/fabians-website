@@ -71,12 +71,27 @@ function setupSkillDetails() {
     });
 }
 
+function setupCvDetails() {
+    document.querySelectorAll('.cv-title-toggle').forEach(function (toggle) {
+        var detailId = toggle.getAttribute('aria-controls');
+        var detail = document.getElementById(detailId);
+        if (!detail) return;
+
+        toggle.addEventListener('click', function () {
+            var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            detail.hidden = isOpen;
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('[data-search-section]').forEach(function (section) {
         setupTagSearch(section);
     });
 
     setupSkillDetails();
+    setupCvDetails();
 
     var yearEl = document.getElementById('year');
     if (yearEl) {

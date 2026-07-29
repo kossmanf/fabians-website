@@ -867,6 +867,42 @@ footer a:hover {
     font-size: 1rem;
 }
 
+.cv-title-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cv-title-toggle:hover {
+    color: #c7d2fe;
+}
+
+.cv-title-toggle:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid #818cf8;
+    outline-offset: 3px;
+}
+
+.cv-title-icon {
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 150ms ease;
+}
+
+.cv-title-toggle[aria-expanded="true"] .cv-title-icon {
+    transform: translateY(2px) rotate(225deg);
+}
+
 .cv-subtitle {
     font-size: 0.9rem;
     opacity: 0.9;
@@ -875,6 +911,26 @@ footer a:hover {
 .cv-location {
     font-size: 0.85rem;
     opacity: 0.75;
+}
+
+.cv-detail {
+    max-width: 560px;
+    margin-top: 10px;
+    padding: 11px 13px;
+    border-left: 2px solid #6366f1;
+    border-radius: 0 8px 8px 0;
+    background: rgba(99,102,241,0.07);
+    color: #8f9bb0;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.cv-detail[hidden] {
+    display: none;
+}
+
+.cv-detail p {
+    margin: 0;
 }
 
 
