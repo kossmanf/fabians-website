@@ -35,8 +35,19 @@ layout: base
                     {% if skills.size > 0 %}
                         <div class="badges">
                             {% for skill in skills %}
-                                <div class="badge">
+                                <div class="badge{% if skill.description %} skill-badge{% endif %}"
+                                     {% if skill.description %}
+                                         tabindex="0"
+                                         aria-describedby="skill-tooltip-{{ forloop.index }}"
+                                     {% endif %}>
                                     {{ skill.title }}
+                                    {% if skill.description %}
+                                        <span class="skill-tooltip"
+                                              id="skill-tooltip-{{ forloop.index }}"
+                                              role="tooltip">
+                                            {{ skill.description }}
+                                        </span>
+                                    {% endif %}
                                 </div>
                             {% endfor %}
                         </div>

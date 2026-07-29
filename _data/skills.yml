@@ -1,8 +1,11 @@
 - order: 1
   title: "KI & Data Science"
+  description: "Schwerpunkt meines Masterstudiums und meiner aktuellen Projekte."
 
 - order: 2
   title: "Machine Learning · Statistik · Bayes"
+  description: "Interesse an probabilistischen Modellen und Entscheidungen unter Unsicherheit."
 
 - order: 3
   title: "Python · PyTorch · TensorFlow"
+  description: "Werkzeuge für Modellierung, Experimente und datengetriebene Anwendungen."
