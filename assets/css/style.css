@@ -35,20 +35,30 @@ header {
 }
 
 header nav {
+  display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
   font-weight: 700;
   letter-spacing: 0.08em;
   font-size: 0.9rem;
+  line-height: 20px;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
   margin-left: 16px;
   font-size: 0.9rem;
+  line-height: 20px;
   text-decoration: none;
   color: var(--muted);
   padding: 6px 10px;
@@ -80,7 +90,7 @@ nav a:hover {
   border: 1px solid var(--border);
   border-radius: 999px;
   font-size: 0.9rem;
-  line-height: normal;
+  line-height: 20px;
   text-decoration: none;
   color: #c7d2fe;
   font-weight: 700;
