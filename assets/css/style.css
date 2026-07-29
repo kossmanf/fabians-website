@@ -34,6 +34,10 @@ header {
   margin-bottom: 32px;
 }
 
+header nav {
+  margin-left: auto;
+}
+
 .logo {
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -68,8 +72,16 @@ nav a:hover {
 }
 
 .language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 10px;
-  border-color: var(--border);
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  line-height: normal;
+  text-decoration: none;
   color: #c7d2fe;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -93,9 +105,20 @@ nav a:hover {
       grid-template-columns: minmax(0, 1fr);
   }
   header {
-      flex-direction: column;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
       gap: 12px;
+  }
+  header nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      margin-left: 0;
+  }
+  header .language-switch {
+      grid-column: 2;
+      grid-row: 1;
+      margin-left: 0;
   }
 }
 
@@ -846,18 +869,17 @@ footer a:hover {
 
 @media (max-width: 620px) {
   header {
-    position: relative;
     width: 100%;
   }
 
   .logo {
-    padding-right: 64px;
+    padding-right: 12px;
   }
 
   nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     width: 100%;
     margin-left: 0;
     overflow: visible;
@@ -866,13 +888,12 @@ footer a:hover {
   nav a {
     flex: 0 0 auto;
     margin-left: 0;
+    padding: 6px 5px;
+    font-size: 0.85rem;
   }
 
-  nav .language-switch {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
+  header .language-switch {
+    align-self: center;
   }
 
   .hero-actions .btn {

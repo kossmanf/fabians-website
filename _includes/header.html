@@ -18,12 +18,12 @@
             {% for item in header.nav %}
                 <a href="{{ item.href | relative_url }}">{{ item.label }}</a>
             {% endfor %}
-            <a class="language-switch"
-               href="{{ language_target | relative_url }}"
-               hreflang="{{ language_label | downcase }}"
-               lang="{{ language_label | downcase }}">
-                {{ language_label }}
-            </a>
         </nav>
     {% endif %}
+    <a class="language-switch"
+       href="{{ language_target | relative_url }}"
+       hreflang="{{ language_label | downcase }}"
+       lang="{{ language_label | downcase }}">
+        {{ language_label }}
+    </a>
 </header>
