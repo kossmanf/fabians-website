@@ -1,17 +1,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-    {% if page.title %}
-        {{ page.title }} · {{ site.title }}
-    {% else %}
-        {{ site.title }}
-    {% endif %}
-</title>
+{% capture document_title %}{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+{% assign social_image = page.social_image | default: '/assets/img/social-preview.jpg' %}
+<title>{{ document_title | strip }}</title>
+{% if page.description %}
+    <meta name="description" content="{{ page.description | strip_html | normalize_whitespace | escape }}">
+{% endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% assign page_language = page.lang | default: 'de' %}
+{% if page_language == 'en' %}
+    {% assign german_url = page.translation_url %}
+    {% assign english_url = page.url %}
+{% else %}
+    {% assign german_url = page.url %}
+    {% assign english_url = page.translation_url %}
+{% endif %}
+<link rel="alternate"
+      hreflang="{{ page_language }}"
+      href="{{ page.url | absolute_url }}">
 {% if page.translation_url %}
     <link rel="alternate"
           hreflang="{% if page.lang == 'en' %}de{% else %}en{% endif %}"
-          href="{{ page.translation_url | relative_url }}">
+          href="{{ page.translation_url | absolute_url }}">
+    <link rel="alternate"
+          hreflang="x-default"
+          href="{{ german_url | absolute_url }}">
 {% endif %}
+<meta property="og:title" content="{{ document_title | strip | escape }}">
+{% if page.description %}
+    <meta property="og:description" content="{{ page.description | strip_html | normalize_whitespace | escape }}">
+{% endif %}
+<meta property="og:type" content="{% if page.layout == 'blog' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ social_image | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fabian Koßmann – KI & Data Science Portfolio">
+<meta property="og:site_name" content="Fabian Koßmann">
+<meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% else %}de_DE{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ document_title | strip | escape }}">
+{% if page.description %}
+    <meta name="twitter:description" content="{{ page.description | strip_html | normalize_whitespace | escape }}">
+{% endif %}
+<meta name="twitter:image" content="{{ social_image | absolute_url }}">
+<meta name="twitter:image:alt" content="Fabian Koßmann – KI & Data Science Portfolio">
+{% include structured-data.html %}
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
 {% assign asset_version = site.time | date: '%s' %}
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ asset_version }}">
 <script src="{{ '/assets/js/main.js' | relative_url }}?v={{ asset_version }}" defer></script>

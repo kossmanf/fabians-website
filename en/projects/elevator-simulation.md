@@ -2,6 +2,7 @@
 layout: project
 title: "Elevator Simulation with Reinforcement Learning"
 subtitle: "Multiple elevators learn to transport passengers efficiently using a SimPy-based simulation."
+description: "A reinforcement learning project for efficiently controlling multiple elevators in a SimPy-based simulation."
 category: "Simulation & Reinforcement Learning"
 project_url: "https://github.com/dein_repo/fahrstuhl-rl"
 lang: "en"

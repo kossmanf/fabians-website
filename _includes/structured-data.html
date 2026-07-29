@@ -1,0 +1,58 @@
+{% assign page_lang = page.lang | default: "de" %}
+{% if page.url == "/" or page.url == "/en/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ '/' | absolute_url }}#website",
+      "url": "{{ '/' | absolute_url }}",
+      "name": "Fabian Koßmann",
+      "alternateName": "Fabian Koßmann KI & Data Science",
+      "inLanguage": ["de", "en"]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ page.url | absolute_url }}#profilepage",
+      "url": "{{ page.url | absolute_url }}",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | strip_html | normalize_whitespace | escape }}",
+      "inLanguage": "{{ page_lang }}",
+      "isPartOf": {
+        "@id": "{{ '/' | absolute_url }}#website"
+      },
+      "mainEntity": {
+        "@id": "{{ '/' | absolute_url }}#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ '/' | absolute_url }}#person",
+      "name": "Fabian Koßmann",
+      "url": "{{ '/' | absolute_url }}",
+      "jobTitle": "{% if page_lang == 'en' %}Master's student in Artificial Intelligence & Data Science{% else %}Masterstudent für KI & Data Science{% endif %}",
+      "sameAs": [
+        "https://github.com/kossmanf",
+        "https://www.linkedin.com/in/fabian-kossmann"
+      ],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "{% if page_lang == 'en' %}Trier University of Applied Sciences{% else %}Hochschule Trier{% endif %}",
+        "url": "https://www.hochschule-trier.de/"
+      },
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Data Science",
+        "Machine Learning",
+        "Statistics",
+        "Bayesian Decision Theory",
+        "Explainable AI",
+        "Reinforcement Learning",
+        "Simulation"
+      ]
+    }
+  ]
+}
+</script>
+{% endif %}

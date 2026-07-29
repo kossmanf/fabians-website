@@ -2,6 +2,7 @@
 layout: project
 title: "Fahrstuhl-Simulation mit Reinforcement Learning"
 subtitle: "Mehrere Aufzüge lernen, Personen effizient zu transportieren – basierend auf einer SimPy-Simulation."
+description: "Reinforcement-Learning-Projekt zur effizienten Steuerung mehrerer Aufzüge in einer SimPy-basierten Simulation."
 category: "Simulation & Reinforcement Learning"
 project_url: "https://github.com/dein_repo/fahrstuhl-rl"
 lang: "de"

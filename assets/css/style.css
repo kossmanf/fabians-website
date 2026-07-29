@@ -845,16 +845,34 @@ footer a:hover {
 }
 
 @media (max-width: 620px) {
+  header {
+    position: relative;
+    width: 100%;
+  }
+
+  .logo {
+    padding-right: 64px;
+  }
+
   nav {
     display: flex;
-    margin-left: -10px;
-    overflow-x: auto;
-    width: calc(100% + 20px);
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    margin-left: 0;
+    overflow: visible;
   }
 
   nav a {
     flex: 0 0 auto;
     margin-left: 0;
+  }
+
+  nav .language-switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
   }
 
   .hero-actions .btn {
