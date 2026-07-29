@@ -3,6 +3,8 @@
   kind: "cv"
   title: "Über mich"
   text: "Hier werden wichtige Erlebnisse und Stationen meines Lebens beschrieben, die mich geprägt und zu dem Menschen gemacht haben, der ich heute bin. Mein Weg verlief dabei nicht immer geradlinig."
+
+- order: 2
   section_id: "projects"
   kind: "projects"
   title: "Projekte"
