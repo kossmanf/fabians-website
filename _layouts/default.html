@@ -34,23 +34,30 @@ layout: base
                     {% assign skills = site.data.skills | sort: "order" %}
                     {% if skills.size > 0 %}
                         <div class="badges">
+                            {% assign described_skills = skills | where_exp: "skill", "skill.description" %}
                             {% for skill in skills %}
-                                <div class="badge{% if skill.description %} skill-badge{% endif %}"
-                                     {% if skill.description %}
-                                         tabindex="0"
-                                         aria-describedby="skill-tooltip-{{ forloop.index }}"
-                                     {% endif %}>
-                                    {{ skill.title }}
-                                    {% if skill.description %}
-                                        <span class="skill-tooltip"
-                                              id="skill-tooltip-{{ forloop.index }}"
-                                              role="tooltip">
-                                            {{ skill.description }}
-                                        </span>
-                                    {% endif %}
-                                </div>
+                                {% if skill.description %}
+                                    <button type="button"
+                                            class="badge skill-badge{% if skill == described_skills.first %} is-active{% endif %}"
+                                            data-skill-title="{{ skill.title | escape }}"
+                                            data-skill-description="{{ skill.description | escape }}"
+                                            aria-controls="skill-detail"
+                                            aria-expanded="{% if skill == described_skills.first %}true{% else %}false{% endif %}">
+                                        {{ skill.title }}
+                                    </button>
+                                {% else %}
+                                    <div class="badge">{{ skill.title }}</div>
+                                {% endif %}
                             {% endfor %}
                         </div>
+
+                        {% assign first_skill = described_skills | first %}
+                        {% if first_skill.description %}
+                            <div class="skill-detail" id="skill-detail" aria-live="polite">
+                                <strong class="skill-detail-title">{{ first_skill.title }}</strong>
+                                <p class="skill-detail-text">{{ first_skill.description }}</p>
+                            </div>
+                        {% endif %}
                     {% endif %}
 
                     {% assign hero_actions = site.data.actions | sort: "order" %}

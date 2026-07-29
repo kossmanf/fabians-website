@@ -36,10 +36,44 @@ function setupTagSearch(section) {
     updateResults();
 }
 
+function setupSkillDetails() {
+    var detail = document.getElementById('skill-detail');
+    if (!detail) return;
+
+    var title = detail.querySelector('.skill-detail-title');
+    var text = detail.querySelector('.skill-detail-text');
+    var skills = document.querySelectorAll('.skill-badge[data-skill-description]');
+
+    function selectSkill(skill) {
+        skills.forEach(function (item) {
+            var isSelected = item === skill;
+            item.classList.toggle('is-active', isSelected);
+            item.setAttribute('aria-expanded', isSelected ? 'true' : 'false');
+        });
+
+        title.textContent = skill.dataset.skillTitle;
+        text.textContent = skill.dataset.skillDescription;
+    }
+
+    skills.forEach(function (skill) {
+        skill.addEventListener('mouseenter', function () {
+            selectSkill(skill);
+        });
+        skill.addEventListener('focus', function () {
+            selectSkill(skill);
+        });
+        skill.addEventListener('click', function () {
+            selectSkill(skill);
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('[data-search-section]').forEach(function (section) {
         setupTagSearch(section);
     });
+
+    setupSkillDetails();
 
     var yearEl = document.getElementById('year');
     if (yearEl) {

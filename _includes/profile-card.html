@@ -30,9 +30,14 @@
     {% endif %}
 
     {% if profile.status %}
-        <div class="pill">
+        <div class="availability">
             <span class="pill-dot"></span>
-            {{ profile.status }}
+            <span>
+                {% if profile.status_label %}
+                    <strong>{{ profile.status_label }}</strong>
+                {% endif %}
+                {{ profile.status }}
+            </span>
         </div>
     {% endif %}
 </div>

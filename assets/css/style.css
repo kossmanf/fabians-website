@@ -117,7 +117,7 @@ h1 span {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .badge {
@@ -147,58 +147,45 @@ h1 span {
 }
 
 .skill-badge {
-  cursor: help;
+  appearance: none;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
   outline: none;
+  transition: color 150ms ease, background 150ms ease, box-shadow 150ms ease;
 }
 
 .skill-badge:focus-visible {
   box-shadow: 0 0 0 3px rgba(99,102,241,0.24);
 }
 
-.skill-tooltip {
-  position: absolute;
-  z-index: 20;
-  left: 50%;
-  bottom: calc(100% + 10px);
-  width: max-content;
-  max-width: 230px;
-  padding: 9px 11px;
-  border: 1px solid #334155;
-  border-radius: 9px;
-  background: #111827;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
-  color: #dbe4f0;
+.skill-badge:hover,
+.skill-badge.is-active {
+  background: rgba(99,102,241,0.2);
+  color: #eef2ff;
+}
+
+.skill-detail {
+  max-width: 560px;
+  margin-bottom: 20px;
+  padding: 11px 13px;
+  border-left: 2px solid #6366f1;
+  border-radius: 0 8px 8px 0;
+  background: rgba(99,102,241,0.07);
+}
+
+.skill-detail-title {
+  display: block;
+  margin-bottom: 3px;
+  color: #e0e7ff;
   font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.4;
-  text-align: left;
-  text-transform: none;
-  letter-spacing: normal;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-50%, 5px);
-  visibility: hidden;
-  transition: opacity 140ms ease, transform 140ms ease, visibility 140ms ease;
 }
 
-.skill-tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-right: 1px solid #334155;
-  border-bottom: 1px solid #334155;
-  background: #111827;
-  transform: translate(-50%, -4px) rotate(45deg);
-}
-
-.skill-badge:hover .skill-tooltip,
-.skill-badge:focus .skill-tooltip {
-  opacity: 1;
-  transform: translate(-50%, 0);
-  visibility: visible;
+.skill-detail-text {
+  margin: 0;
+  color: #8f9bb0;
+  font-size: 0.75rem;
+  line-height: 1.45;
 }
 
 .hero-actions {
@@ -331,15 +318,28 @@ h1 span {
   line-height: 1.35;
 }
 
-.pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  background: rgba(15,23,42,0.85);
-  border: 1px solid rgba(148,163,184,0.4);
-  color: #e5e7eb;
+.availability {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 10px;
+  background: rgba(34,197,94,0.055);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.availability strong {
+  display: block;
+  margin-bottom: 1px;
+  color: #86efac;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .pill-dot {
@@ -347,7 +347,8 @@ h1 span {
   height: 6px;
   border-radius: 999px;
   background: #22c55e;
-  margin-right: 6px;
+  margin-top: 4px;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.12);
 }
 
 .section {
