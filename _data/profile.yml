@@ -10,4 +10,5 @@ meta:
   - icon: "💻"
     text: "Praxisprojekte mit Python, ML & Simulation"
 
-status: "Offen für spannende Projekte und Werkstudentenstellen"
+status_tone: "busy"
+status: "Leider gerade voll ausgelastet mit Projektarbeit und Masterarbeit, aber prinzipiell immer offen für neue Projekte."
