@@ -1,3 +1,4 @@
+---
 layout: blog 
 title: "Gedanken übers Laufen" 
 subtitle: "Warum mir Joggen dabei hilft, den Kopf freizubekommen." 
@@ -6,9 +7,9 @@ date: 2026-07-30
 category: "Gedanken & Alltag" 
 lang: "de" 
 translation_url: "/en/posts/thoughts-on-running.html"
+---
 
 Laufen hilft mir extrem. Sobald ich unterwegs bin, fühle ich mich frei und muss für eine Weile über nichts nachdenken.
-
 # Laufen an der Mosel
 Meistens jogge ich an der Mosel entlang, die nur etwa eine Minute von meinem Zuhause entfernt ist. Abends begegnet man dort teilweise immer wieder denselben Menschen.
 Man kennt sich zwar nicht wirklich, aber irgendwann lächelt man sich beim Vorbeilaufen an. Irgendwie hat das etwas Vertrautes.
