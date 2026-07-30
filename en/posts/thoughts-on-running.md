@@ -1,5 +1,6 @@
 ---
-layout: blog title: "Thoughts on Running" 
+layout: blog 
+title: "Thoughts on Running" 
 subtitle: "Why running helps me clear my head." 
 description: "A personal reflection on running along the Moselle, familiar encounters, and why running somehow feels more difficult without music." 
 date: 2026-07-30 
