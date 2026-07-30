@@ -12,20 +12,39 @@ function setupTagSearch(section) {
     var countSingular = section.dataset.countSingular || (isEnglish ? 'result' : 'Eintrag');
     var countPlural = section.dataset.countPlural || (isEnglish ? 'results' : 'Einträge');
 
+    function normalizeSearchText(value) {
+        var normalized = String(value || '').toLocaleLowerCase(locale);
+
+        if (typeof normalized.normalize === 'function') {
+            normalized = normalized.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        return normalized.replace(/ß/g, 'ss').replace(/\s+/g, ' ').trim();
+    }
+
     function updateResults() {
-        var query = input.value.toLocaleLowerCase(locale).trim();
+        var queryTerms = normalizeSearchText(input.value).split(' ').filter(Boolean);
         var visibleCount = 0;
 
         items.forEach(function (item) {
-            var text = (item.dataset.search || item.textContent).toLocaleLowerCase(locale);
-            var isVisible = text.includes(query);
+            var text = normalizeSearchText(item.dataset.search || item.textContent);
+            var isVisible = queryTerms.every(function (term) {
+                return text.includes(term);
+            });
             item.hidden = !isVisible;
+            item.classList.toggle('is-filtered-out', !isVisible);
+            item.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+            if (isVisible) {
+                item.style.removeProperty('display');
+            } else {
+                item.style.setProperty('display', 'none', 'important');
+            }
             if (isVisible) visibleCount += 1;
         });
 
-        clearButton.hidden = query.length === 0;
+        clearButton.hidden = queryTerms.length === 0;
         emptyState.hidden = visibleCount !== 0;
-        resultMeta.textContent = query
+        resultMeta.textContent = queryTerms.length > 0
             ? visibleCount + ' ' + (visibleCount === 1 ? countSingular : countPlural)
             : items.length + ' ' + (items.length === 1 ? countSingular : countPlural);
     }
