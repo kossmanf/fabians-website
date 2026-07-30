@@ -307,7 +307,7 @@ h1 span {
   width: 68px;
   height: 68px;
   border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.32);
   background: #020617;
 }
 
