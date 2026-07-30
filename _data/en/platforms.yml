@@ -1,16 +1,16 @@
 - order: 1
   title: "Email"
-  icon: "📧"
+  icon: "email"
   url: "mailto:fabiankossmann98@gmail.com"
 
 - order: 2
   title: "GitHub"
-  icon: "💻"
+  icon: "github"
   url: "https://github.com/kossmanf"
 
 - order: 3
   title: "LinkedIn"
-  icon: "🔗"
+  icon: "linkedin"
   url: "https://www.linkedin.com/in/fabian-kossmann"
 
 #- order: 4

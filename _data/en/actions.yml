@@ -1,7 +1,7 @@
 - order: 1
   label: "View projects"
   href: "/en/#projects"
-  style: "primary"
+  style: "ghost"
 
 - order: 2
   label: "Read blog posts"

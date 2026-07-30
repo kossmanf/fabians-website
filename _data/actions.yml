@@ -1,7 +1,7 @@
 - order: 1
   label: "Projekte ansehen"
   href: "#projects"
-  style: "primary"
+  style: "ghost"
 
 - order: 2
   label: "Blogposts ansehen"
