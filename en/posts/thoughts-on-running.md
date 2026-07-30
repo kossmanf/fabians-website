@@ -1,9 +1,11 @@
+---
 layout: blog title: "Thoughts on Running" 
 subtitle: "Why running helps me clear my head." 
 description: "A personal reflection on running along the Moselle, familiar encounters, and why running somehow feels more difficult without music." 
 date: 2026-07-30 category: "Thoughts & Everyday Life" 
 lang: "en" 
 translation_url: "/de/posts/gedanken-uebers-laufen.html"
+---
 
 Running helps me a lot. As soon as I am out running, I feel free and do not have to think about anything for a while.
 
