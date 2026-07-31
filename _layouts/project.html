@@ -18,9 +18,12 @@ layout: base
         <section class="hero hero-project">
             <div class="hero-left">
 
-                <div class="hero-eyebrow">
-                    {{ hero.eyebrow | default: page.category | default: project_label_fallback }}
-                </div>
+                {% assign eyebrow = hero.eyebrow | default: page.category %}
+                {% if eyebrow != blank %}
+                    <div class="hero-eyebrow">
+                        {{ eyebrow }}
+                    </div>
+                {% endif %}
 
                 <h1>
                     {% if hero.title %}
@@ -32,12 +35,9 @@ layout: base
                     {% endif %}
                 </h1>
 
-                {% if hero.subtitle %}
-                    <p class="hero-sub">{{ hero.subtitle }}</p>
-                {% elsif page.subtitle %}
-                    <p class="hero-sub">{{ page.subtitle }}</p>
-                {% else %}
-                    <p class="hero-sub">{{ project_subtitle_fallback }}</p>
+                {% assign subtitle = hero.subtitle | default: page.subtitle %}
+                {% if subtitle != blank %}
+                    <p class="hero-sub">{{ subtitle }}</p>
                 {% endif %}
 
                 {% if hero.github_url or page.project_url or page.github %}

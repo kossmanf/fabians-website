@@ -229,12 +229,13 @@ layout: base
                                            data-search="{{ post.title | append: ' ' | append: post.description | strip_html | normalize_whitespace | escape }}">
                                             <span class="result-meta">
                                                 <span class="result-type">{{ section.item_label | default: blog_item_label_fallback }}</span>
-                                                {% if post.date %}
-                                                    <time class="result-date" datetime="{{ post.date | date_to_xmlschema }}">
+                                                {% assign post_date = post.date | default: post.created | default: post.modified | default: site.time %}
+                                                {% if post_date %}
+                                                    <time class="result-date" datetime="{{ post_date | date_to_xmlschema }}">
                                                         {% if page_lang == "en" %}
-                                                            {{ post.date | date: "%-d %B %Y" }}
+                                                            {{ post_date | date: "%-d %B %Y" }}
                                                         {% else %}
-                                                            {{ post.date | date: "%d.%m.%Y" }}
+                                                            {{ post_date | date: "%d.%m.%Y" }}
                                                         {% endif %}
                                                     </time>
                                                 {% endif %}

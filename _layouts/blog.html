@@ -13,16 +13,20 @@ layout: base
             <!-- Blog-Hero -->
             <section class="hero hero-blog">
                 <div class="hero-left">
-                    <div class="hero-eyebrow">
-                        {{ hero.eyebrow | default: page.category | default: "Blog" }}
-                    </div>
+                    {% assign eyebrow = hero.eyebrow | default: page.category %}
+                    {% if eyebrow != blank %}
+                        <div class="hero-eyebrow">
+                            {{ eyebrow }}
+                        </div>
+                    {% endif %}
 
-                    {% if page.date %}
-                        <time class="blog-date" datetime="{{ page.date | date_to_xmlschema }}">
+                    {% assign post_date = page.date | default: page.created | default: page.modified | default: site.time %}
+                    {% if post_date %}
+                        <time class="blog-date" datetime="{{ post_date | date_to_xmlschema }}">
                             {% if page_lang == "en" %}
-                                {{ page.date | date: "%-d %B %Y" }}
+                                {{ post_date | date: "%-d %B %Y" }}
                             {% else %}
-                                {{ page.date | date: "%d.%m.%Y" }}
+                                {{ post_date | date: "%d.%m.%Y" }}
                             {% endif %}
                         </time>
                     {% endif %}
@@ -37,16 +41,11 @@ layout: base
                         {% endif %}
                     </h1>
 
-                    {% if hero.subtitle %}
+                    {% assign subtitle = hero.subtitle | default: page.subtitle %}
+                    {% if subtitle != blank %}
                         <p class="hero-sub">
-                            {{ hero.subtitle }}
+                            {{ subtitle }}
                         </p>
-                    {% elsif page.subtitle %}
-                        <p class="hero-sub">
-                            {{ page.subtitle }}
-                        </p>
-                    {% else %}
-                        <p class="hero-sub">{{ blog_subtitle_fallback }}</p>
                     {% endif %}
                 </div>
 
