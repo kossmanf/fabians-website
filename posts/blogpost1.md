@@ -1,10 +1,10 @@
 ---
 layout: blog
-title: "Warum KI-Systeme nicht allein entscheiden sollten"
-description: "Warum KI-Systeme wichtige Entscheidungen nicht allein treffen sollten und menschliche Verantwortung weiterhin notwendig bleibt."
+title: Warum KI-Systeme nicht allein entscheiden sollten
+description: Warum KI-Systeme wichtige Entscheidungen nicht allein treffen sollten und menschliche Verantwortung weiterhin notwendig bleibt.
 date: 2026-07-29
-lang: "de"
-translation_url: "/en/posts/why-ai-systems-should-not-decide-alone.html"
+lang: de
+translation_url: /en/posts/why-ai-systems-should-not-decide-alone.html
 ---
 
 Hier kommt dein Blogtext hin.
@@ -19,7 +19,7 @@ Warum fühlen sich Fehler von KI-Systemen oft „komischer“ an als menschliche
 - Menschen akzeptieren Fehler eher, wenn sie sie sich erklären können.
 - Deswegen ist es wichtig, dass KI **nicht autonom alles entscheidet**, sondern als Werkzeug in einem System mit Menschen eingesetzt wird.
 
-![Symbolbild zu KI-Risiken](/assets/img/blog/b1.jpg)
+![Symbolbild zu KI-Risiken](/assets/img/blog/de/b1.jpg)
 
 ## Mensch + KI statt Mensch vs. KI
 
