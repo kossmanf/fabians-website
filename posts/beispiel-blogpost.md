@@ -1,12 +1,12 @@
 ---
 layout: blog
-title: "Was bedeutet eigentlich erklärbare KI?"
-subtitle: "Warum gute Vorhersagen allein nicht immer ausreichen."
-description: "Eine verständliche Einführung in erklärbare KI, globale und lokale Erklärungen sowie die Grenzen von Explainable AI."
+title: Was bedeutet eigentlich erklärbare KI?
+subtitle: Warum gute Vorhersagen allein nicht immer ausreichen.
+description: Eine verständliche Einführung in erklärbare KI, globale und lokale Erklärungen sowie die Grenzen von Explainable AI.
 date: 2026-07-29
-category: "KI & Erklärbarkeit"
-lang: "de"
-translation_url: "/en/posts/what-does-explainable-ai-mean.html"
+category: KI & Erklärbarkeit
+lang: de
+translation_url: /en/posts/what-does-explainable-ai-mean.html
 ---
 
 Künstliche Intelligenz kann heute erstaunlich gute Vorhersagen treffen. Doch gerade bei wichtigen Entscheidungen reicht es nicht, nur das Ergebnis eines Modells zu kennen. Wir möchten auch verstehen, **wie** dieses Ergebnis entstanden ist.
@@ -39,7 +39,7 @@ Beide Perspektiven sind nützlich:
 
 Auch eine verständlich wirkende Erklärung muss kritisch betrachtet werden. Manche Verfahren liefern lediglich eine Annäherung an das Verhalten eines komplexen Modells. Eine plausible Darstellung ist daher nicht automatisch eine vollständige oder kausale Erklärung.
 
-![Visualisierung zu Entscheidungen und Unsicherheit](/assets/img/blog/b2.jpg)
+![Visualisierung zu Entscheidungen und Unsicherheit](/assets/img/blog/de/b2.jpg)
 
 ## Fazit
 
