@@ -7,6 +7,7 @@ date: 2026-07-29
 category: KI & Erklärbarkeit
 lang: de
 translation_url: /en/posts/what-does-explainable-ai-mean.html
+type: Journal
 ---
 
 Künstliche Intelligenz kann heute erstaunlich gute Vorhersagen treffen. Doch gerade bei wichtigen Entscheidungen reicht es nicht, nur das Ergebnis eines Modells zu kennen. Wir möchten auch verstehen, **wie** dieses Ergebnis entstanden ist.
