@@ -13,11 +13,14 @@ layout: base
             <!-- Blog-Hero -->
             <section class="hero hero-blog">
                 <div class="hero-left">
-                    {% assign eyebrow = hero.eyebrow | default: page.category %}
-                    {% if eyebrow != blank %}
-                        <div class="hero-eyebrow">
-                            {{ eyebrow }}
-                        </div>
+                    {% assign tag_list = page.tags | default: hero.eyebrow %}
+                    {% if tag_list != blank %}
+                        {% assign tags_display = tag_list | join: " • " | default: tag_list %}
+                        {% if tags_display != blank %}
+                            <div class="hero-eyebrow">
+                                {{ tags_display }}
+                            </div>
+                        {% endif %}
                     {% endif %}
 
                     {% assign post_date = page.date | default: page.created | default: page.modified | default: site.time %}

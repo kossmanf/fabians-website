@@ -209,7 +209,7 @@ layout: base
                                     {% if project_lang == page_lang %}
                                         <a class="tag tag-project"
                                            href="{{ project.url | relative_url }}"
-                                           data-search="{{ project.title | append: ' ' | append: project.subtitle | append: ' ' | append: project.description | append: ' ' | append: project.category | strip_html | normalize_whitespace | escape }}">
+                                           data-search="{{ project.title | append: ' ' | append: project.subtitle | append: ' ' | append: project.description | append: ' ' | append: project.tags | join: ' ' | strip_html | normalize_whitespace | escape }}">
                                             <span class="result-type">{{ section.item_label | default: project_item_label_fallback }}</span>
                                             <span class="result-title">{{ project.title }}</span>
                                             <span class="result-arrow" aria-hidden="true">→</span>
@@ -226,7 +226,7 @@ layout: base
                                     {% if post_lang == page_lang %}
                                         <a class="tag tag-blog"
                                            href="{{ post.url | relative_url }}"
-                                           data-search="{{ post.title | append: ' ' | append: post.description | strip_html | normalize_whitespace | escape }}">
+                                           data-search="{{ post.title | append: ' ' | append: post.description | append: ' ' | append: post.tags | join: ' ' | strip_html | normalize_whitespace | escape }}">
                                             <span class="result-meta">
                                                 <span class="result-type">{{ section.item_label | default: blog_item_label_fallback }}</span>
                                                 {% assign post_date = post.date | default: post.created | default: post.modified | default: site.time %}
