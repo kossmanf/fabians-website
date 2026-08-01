@@ -203,7 +203,7 @@ layout: base
 
                         {% when "projects" %}
                             <div class="tags result-list">
-                                {% assign project_pages = site.pages | where: "layout", "project" %}
+                                {% assign project_pages = site.pages | where:"layout","project" | sort:"date" | reverse %}
                                 {% for project in project_pages %}
                                     {% assign project_lang = project.lang | default: "de" %}
                                     {% if project_lang == page_lang %}
