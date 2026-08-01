@@ -22,12 +22,12 @@ Why do mistakes made by AI systems often feel stranger than human mistakes?
 - People are more likely to accept mistakes when they can understand them.
 - AI should therefore **not make every decision autonomously**, but should be used as a tool within a system that includes human judgement.
 
-![Illustration of AI-related risks](/assets/img/blog/b1.jpg)
+![Illustration of AI-related risks](/assets/assets/img/blog/en/blog/b1.jpg)
 
 ## People and AI instead of people versus AI
 
 You can continue the post here and place additional images exactly where they are needed:
 
-![Another illustration of AI-related risks](/assets/img/blog/b2.jpg)
+![Another illustration of AI-related risks](/assets/assets/img/blog/en/blog/b2.jpg)
 
 ... and so on.

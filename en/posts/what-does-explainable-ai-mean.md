@@ -22,7 +22,7 @@ Imagine a model classifies a loan application as risky. The prediction alone doe
 
 Explainable AI—often shortened to *XAI*—is concerned with methods designed to answer questions like these.
 
-![Abstract representation of an AI system](/assets/img/blog/b1.jpg)
+![Abstract representation of an AI system](/assets/assets/img/blog/en/blog/b1.jpg)
 
 ## Global and local explanations
 
@@ -40,7 +40,7 @@ Both perspectives are useful:
 
 Even an explanation that appears intuitive must be examined critically. Some methods provide only an approximation of a complex model's behaviour. A plausible presentation is therefore not necessarily a complete or causal explanation.
 
-![Visualisation of decisions and uncertainty](/assets/img/blog/b2.jpg)
+![Visualisation of decisions and uncertainty](/assets/assets/img/blog/en/blog/b2.jpg)
 
 ## Conclusion
 
