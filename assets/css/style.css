@@ -254,6 +254,21 @@ h1 span {
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
+/* Remove persistent focus outline on buttons for mobile */
+.btn:focus,
+.btn-primary:focus,
+.btn-ghost:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove mobile tap highlight color */
+.btn,
+.btn-primary,
+.btn-ghost {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, #6366f1, #4f46e5);
   color: white;
