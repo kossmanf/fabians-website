@@ -263,6 +263,8 @@ h1 span {
 .btn-ghost:active {
   outline: none;
   box-shadow: none;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
