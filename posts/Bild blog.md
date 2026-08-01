@@ -3,7 +3,6 @@ layout: blog
 category: Allgemein
 lang: de
 tags: [Test]
-type: Journal
 subtitle: null
 description: null
 translation_url: null
