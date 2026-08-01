@@ -19,12 +19,12 @@ Warum fühlen sich Fehler von KI-Systemen oft „komischer“ an als menschliche
 - Menschen akzeptieren Fehler eher, wenn sie sie sich erklären können.
 - Deswegen ist es wichtig, dass KI **nicht autonom alles entscheidet**, sondern als Werkzeug in einem System mit Menschen eingesetzt wird.
 
-![Symbolbild zu KI-Risiken](/assets/img/blog/de/b1.jpg)
+![Symbolbild zu KI-Risiken](/assets/assets/img/blog/de/blog/de/b1.jpg)
 
 ## Mensch + KI statt Mensch vs. KI
 
 Hier kannst du deinen Text fortsetzen und weitere Bilder genau dort einfügen, wo du sie brauchst:
 
-![Weiteres Symbolbild zu KI-Risiken](/assets/img/blog/b2.jpg)
+![Weiteres Symbolbild zu KI-Risiken](/assets/assets/img/blog/de/blog/b2.jpg)
 
 ... usw.

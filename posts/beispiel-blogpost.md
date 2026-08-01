@@ -21,7 +21,7 @@ Stell dir vor, ein Modell bewertet einen Kreditantrag als riskant. Die Vorhersag
 
 Erklärbare KI – häufig auch *Explainable AI* oder kurz *XAI* genannt – beschäftigt sich mit Methoden, die solche Fragen beantworten sollen.
 
-![Abstrakte Darstellung eines KI-Systems](/assets/img/blog/b1.jpg)
+![Abstrakte Darstellung eines KI-Systems](/assets/assets/img/blog/de/blog/b1.jpg)
 
 ## Globale und lokale Erklärungen
 
@@ -39,7 +39,7 @@ Beide Perspektiven sind nützlich:
 
 Auch eine verständlich wirkende Erklärung muss kritisch betrachtet werden. Manche Verfahren liefern lediglich eine Annäherung an das Verhalten eines komplexen Modells. Eine plausible Darstellung ist daher nicht automatisch eine vollständige oder kausale Erklärung.
 
-![Visualisierung zu Entscheidungen und Unsicherheit](/assets/img/blog/de/b2.jpg)
+![Visualisierung zu Entscheidungen und Unsicherheit](/assets/assets/img/blog/de/blog/de/b2.jpg)
 
 ## Fazit
 

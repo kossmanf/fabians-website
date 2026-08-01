@@ -11,4 +11,4 @@ translation_url: null
 
 # Bild blog
 
-Das hier ist ein Blog mit Bild ![Image](../img/e5a06c3f6b93607edcd222d6127e5675.jpg)
+Das hier ist ein Blog mit Bild ![Image](../assets/img/blog/de/e5a06c3f6b93607edcd222d6127e5675.jpg)
