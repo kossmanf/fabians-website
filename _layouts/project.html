@@ -43,6 +43,17 @@ layout: base
                     <p class="hero-sub">{{ subtitle }}</p>
                 {% endif %}
 
+                {% assign post_date = page.date | default: page.created | default: page.modified | default: site.time %}
+                {% if post_date %}
+                    <time class="blog-date" datetime="{{ post_date | date_to_xmlschema }}">
+                        {% if page_lang == "en" %}
+                            {{ post_date | date: "%-d %B %Y %H:%M" }}
+                        {% else %}
+                            {{ post_date | date: "%d.%m.%Y %H:%M" }}
+                        {% endif %}
+                    </time>
+                {% endif %}
+
                 {% if hero.github_url or page.project_url or page.github %}
                     <a class="btn btn-primary"
                        href="{{ hero.github_url | default: page.project_url | default: page.github }}"
