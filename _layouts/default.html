@@ -220,7 +220,7 @@ layout: base
 
                         {% when "blog" %}
                             <div class="tags result-list">
-                                {% assign blog_posts = site.pages | where: "layout", "blog" %}
+                                {% assign blog_posts = site.pages | where:"layout","blog" | sort:"date" | reverse %}
                                 {% for post in blog_posts %}
                                     {% assign post_lang = post.lang | default: "de" %}
                                     {% if post_lang == page_lang %}
