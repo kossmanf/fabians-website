@@ -1,11 +1,12 @@
 ---
 layout: blog
-subtitle: 
-description: 
 category: Allgemein
 lang: de
-translation_url: 
 tags: [Test]
+type: Journal
+subtitle: null
+description: null
+translation_url: null
 ---
 
 # Bild blog
