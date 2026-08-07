@@ -38,8 +38,10 @@ header {
   max-width: 920px;
   margin: 0 auto;
   padding: 14px 0;
-  background: rgba(5, 8, 22, 0.86);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  background: rgba(5, 8, 22, 0.97);
   backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 header nav {
@@ -580,6 +582,7 @@ a.btn-ghost:active {
 }
 
 .section {
+  scroll-margin-top: 80px;
   border-radius: 16px;
   padding: 18px 18px 16px;
   border: 1px solid var(--border);
