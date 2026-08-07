@@ -35,13 +35,24 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 920px;
+  max-width: none;
   margin: 0 auto;
   padding: 14px 0;
   border-bottom: 1px solid rgba(148, 163, 184, 0.1);
   background: rgba(5, 8, 22, 0.97);
   backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+@media (min-width: 1600px) {
+  header {
+    top: 12px;
+    max-width: 920px;
+    margin-top: 12px;
+    padding: 14px 18px;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 14px;
+  }
 }
 
 header nav {
