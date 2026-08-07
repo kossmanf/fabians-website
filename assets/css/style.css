@@ -376,12 +376,20 @@ a.btn-ghost:active {
 }
 
 .home-hero .avatar-wrapper {
-  margin-bottom: 0;
+  margin-bottom: 14px;
 }
 
 .home-hero .avatar {
   width: 58px;
   height: 58px;
+}
+
+.home-hero .badges {
+  margin-bottom: 10px;
+}
+
+.home-hero .skill-detail {
+  margin-bottom: 24px;
 }
 
 .card {

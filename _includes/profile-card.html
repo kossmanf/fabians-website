@@ -31,4 +31,10 @@
         </div>
     </div>
 
+    {% if profile.status %}
+        <div class="availability{% if profile.status_tone %} availability--{{ profile.status_tone }}{% endif %}">
+            <span class="pill-dot"></span>
+            <span class="availability-text">{{ profile.status }}</span>
+        </div>
+    {% endif %}
 </div>

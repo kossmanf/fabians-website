@@ -64,9 +64,24 @@ layout: base
                         <div class="badges">
                             {% assign featured_skills = skills | where: "featured", true %}
                             {% for skill in featured_skills %}
-                                <div class="badge">{{ skill.title }}</div>
+                                <button type="button"
+                                        class="badge skill-badge{% if skill == featured_skills.first %} is-active{% endif %}"
+                                        data-skill-title="{{ skill.title | escape }}"
+                                        data-skill-description="{{ skill.description | escape }}"
+                                        aria-controls="skill-detail"
+                                        aria-expanded="{% if skill == featured_skills.first %}true{% else %}false{% endif %}">
+                                    {{ skill.title }}
+                                </button>
                             {% endfor %}
                         </div>
+
+                        {% assign first_skill = featured_skills | first %}
+                        {% if first_skill.description %}
+                            <div class="skill-detail" id="skill-detail" aria-live="polite">
+                                <strong class="skill-detail-title">{{ first_skill.title }}</strong>
+                                <p class="skill-detail-text">{{ first_skill.description }}</p>
+                            </div>
+                        {% endif %}
                     {% endif %}
 
                     {% if hero_actions.size > 0 %}
