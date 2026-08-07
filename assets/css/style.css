@@ -109,6 +109,17 @@ nav a:hover {
   margin-bottom: 32px;
 }
 
+.home-hero {
+  max-width: 920px;
+  margin: 44px auto 64px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 56px;
+}
+
+.home-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
 .hero-blog,
 .hero-project {
   display: block;
@@ -126,6 +137,15 @@ nav a:hover {
 @media (max-width: 720px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero {
+    gap: 28px;
+    margin: 28px auto 48px;
+  }
+
+  .home-hero .hero-right {
+    justify-self: start;
   }
 
   header {
@@ -178,7 +198,7 @@ h1 span {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 6px;
+  margin-bottom: 24px;
 }
 
 .badge {
@@ -341,6 +361,29 @@ a.btn-ghost:active {
   width: min(100%, 320px);
 }
 
+.home-hero .hero-right {
+  width: auto;
+}
+
+.home-hero .card {
+  min-width: 0;
+  width: auto;
+  max-width: 240px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.home-hero .avatar-wrapper {
+  margin-bottom: 0;
+}
+
+.home-hero .avatar {
+  width: 58px;
+  height: 58px;
+}
+
 .card {
   background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.22), transparent 55%),
     radial-gradient(circle at bottom, rgba(37, 99, 235, 0.28), transparent 60%),
@@ -493,6 +536,36 @@ a.btn-ghost:active {
   border: 1px solid var(--border);
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(10px);
+}
+
+.section-home {
+  max-width: 860px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 44px 0;
+  border: 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.section.section-home + .section.section-home {
+  margin-top: 0;
+}
+
+.section.section-home h2 {
+  margin-bottom: 14px;
+  font-size: 1.45rem;
+}
+
+.section-home .section-intro,
+.section-home .section-text {
+  max-width: 680px;
+}
+
+.section-home .cv-timeline {
+  max-width: 680px;
 }
 
 .section+.section {

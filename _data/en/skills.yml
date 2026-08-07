@@ -1,8 +1,10 @@
 - order: 1
+  featured: true
   title: "AI & Data Science"
   description: "The focus of my master's degree and current projects, spanning everything from data preparation to the development and evaluation of data-driven models."
 
 - order: 2
+  featured: true
   title: "Machine Learning & Statistics"
   description: "An interest in probabilistic models, prediction and well-founded decision-making under uncertainty."
 
@@ -15,6 +17,7 @@
   description: "Modelling and solving complex decision problems using mathematical optimisation methods."
 
 - order: 5
+  featured: true
   title: "Python"
   description: "My preferred tool for data analysis, modelling, machine learning, simulation and rapid prototyping."
 
@@ -23,6 +26,7 @@
   description: "Preparing, exploring and visualising real-world data to identify patterns and derive actionable insights."
 
 - order: 7
+  featured: true
   title: "Software Development"
   description: "Developing structured, maintainable applications, from smaller tools and prototypes to larger projects."
 

@@ -1,9 +1,11 @@
 - order: 1
   title: "KI & Data Science"
+  featured: true
   description: "Schwerpunkt meines Masterstudiums und meiner aktuellen Projekte von der Datenaufbereitung bis zur Entwicklung und Bewertung datengetriebener Modelle."
 
 - order: 2
   title: "Machine Learning & Statistik"
+  featured: true
   description: "Interesse an probabilistischen Modellen, Vorhersagen und fundierten Entscheidungen unter Unsicherheit."
 
 - order: 3
@@ -16,6 +18,7 @@
 
 - order: 5
   title: "Python"
+  featured: true
   description: "Mein bevorzugtes Werkzeug für Datenanalyse, Modellierung, Machine Learning, Simulationen und schnelle Prototypen."
 
 - order: 6
@@ -24,6 +27,7 @@
 
 - order: 7
   title: "Softwareentwicklung"
+  featured: true
   description: "Entwicklung strukturierter und wartbarer Anwendungen von kleineren Tools und Prototypen bis zu umfangreicheren Projekten."
 
 - order: 8

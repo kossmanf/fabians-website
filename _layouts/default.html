@@ -33,7 +33,7 @@ layout: base
 {% endif %}
 <main>
             <!-- HERO -->
-            <section class="hero">
+            <section class="hero home-hero">
                 <div class="hero-left">
                     {% if hero.eyebrow %}
                         <div class="hero-eyebrow">{{ hero.eyebrow }}</div>
@@ -62,35 +62,16 @@ layout: base
 
                     {% if skills.size > 0 %}
                         <div class="badges">
-                            {% assign described_skills = skills | where_exp: "skill", "skill.description" %}
-                            {% for skill in skills %}
-                                {% if skill.description %}
-                                    <button type="button"
-                                            class="badge skill-badge{% if skill == described_skills.first %} is-active{% endif %}"
-                                            data-skill-title="{{ skill.title | escape }}"
-                                            data-skill-description="{{ skill.description | escape }}"
-                                            aria-controls="skill-detail"
-                                            aria-expanded="{% if skill == described_skills.first %}true{% else %}false{% endif %}">
-                                        {{ skill.title }}
-                                    </button>
-                                {% else %}
-                                    <div class="badge">{{ skill.title }}</div>
-                                {% endif %}
+                            {% assign featured_skills = skills | where: "featured", true %}
+                            {% for skill in featured_skills %}
+                                <div class="badge">{{ skill.title }}</div>
                             {% endfor %}
                         </div>
-
-                        {% assign first_skill = described_skills | first %}
-                        {% if first_skill.description %}
-                            <div class="skill-detail" id="skill-detail" aria-live="polite">
-                                <strong class="skill-detail-title">{{ first_skill.title }}</strong>
-                                <p class="skill-detail-text">{{ first_skill.description }}</p>
-                            </div>
-                        {% endif %}
                     {% endif %}
 
                     {% if hero_actions.size > 0 %}
                         <div class="hero-actions">
-                            {% for action in hero_actions %}
+                            {% for action in hero_actions limit: 2 %}
                                 <a href="{{ action.href }}" class="btn btn-{{ action.style | default: 'ghost' }}">
                                     {{ action.label }}
                                 </a>
@@ -106,7 +87,7 @@ layout: base
 
             {% for section in sections %}
                 <section id="{{ section.section_id }}"
-                         class="section"
+                         class="section section-home"
                          data-count-singular="{{ section.count_singular | default: count_singular_fallback }}"
                          data-count-plural="{{ section.count_plural | default: count_plural_fallback }}"
                          {% if section.search %}data-search-section{% endif %}>

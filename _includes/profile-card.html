@@ -31,23 +31,4 @@
         </div>
     </div>
 
-    {% if profile.meta %}
-        <ul class="meta-list">
-            {% for item in profile.meta %}
-                <li>
-                    {% if item.icon %}
-                        <span class="meta-icon" aria-hidden="true">{{ item.icon }}</span>
-                    {% endif %}
-                    <span>{{ item.text | default: item }}</span>
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    {% if profile.status %}
-        <div class="availability{% if profile.status_tone %} availability--{{ profile.status_tone }}{% endif %}">
-            <span class="pill-dot"></span>
-            <span class="availability-text">{{ profile.status }}</span>
-        </div>
-    {% endif %}
 </div>
