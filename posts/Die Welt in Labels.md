@@ -18,7 +18,7 @@ Das ist sinnvoll. Ohne Klassifikation wären viele wissenschaftliche Erkenntniss
 
 Doch Menschen sind keine Datensätze.
 
-Im gesellschaftlichen Alltag stellt sich eine andere Frage: Welche Features sind überhaupt die richtigen, um einen Menschen zu beurteilen?
+Im gesellschaftlichen Alltag stellt sich eine andere Frage: Welche Features sind überhaupt die richtigen, um einen Menschen zu beurteilen und zu beschreiben?
 
 Ist das Geschlecht relevant? Die Körpergröße? Das Gewicht? Das Alter? Die Herkunft? Oder sind Eigenschaften wie Ehrlichkeit, Verantwortungsbewusstsein oder Zuverlässigkeit viel wichtiger obwohl sie deutlich schwerer zu erkennen sind?
 
