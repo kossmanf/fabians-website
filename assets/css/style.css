@@ -839,10 +839,13 @@ footer a:hover {
 }
 
 .blog-content {
-  max-width: 860px;
+  max-width: 760px;
   margin: 0 auto;
-  border-color: rgba(148, 163, 184, 0.14);
-  background: rgba(15, 23, 42, 0.5);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .prose {
