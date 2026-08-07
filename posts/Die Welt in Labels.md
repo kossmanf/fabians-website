@@ -25,6 +25,7 @@ Ist das Geschlecht relevant? Die Körpergröße? Das Gewicht? Das Alter? Die Her
 Problematisch wird es, wenn wir Menschen aufgrund weniger Merkmale beurteilen oder behandeln. Ein Label beschreibt lediglich eine Kategorie, und ein Feature beschreibt lediglich eine Eigenschaft. Beides beschreibt niemals den ganzen Menschen.
 
 Vor Kurzem musste ich eine Wohnung suchen. Mir wurde gesagt, dass bevorzugt eine Frau gesucht werde. In diesem Moment spielte nicht meine Persönlichkeit, meine Zuverlässigkeit oder mein Verhalten eine Rolle, sondern zunächst das Feature „Geschlecht“ beziehungsweise das Label „männlich“.
+Das hat mich nachdenklich gemacht.
 
 Ist das fair? Wollen wir als Gesellschaft Menschen anhand einzelner Merkmale unterschiedlich behandeln? Oder sollten wir versuchen, den Menschen hinter den Merkmalen zu sehen?
 
