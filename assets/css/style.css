@@ -28,15 +28,24 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 14px 0;
+  background: rgba(5, 8, 22, 0.86);
+  backdrop-filter: blur(14px);
 }
 
 header nav {
   display: flex;
   align-items: center;
+  gap: 26px;
   margin-left: auto;
 }
 
@@ -45,25 +54,38 @@ header nav {
   align-items: center;
   min-height: 34px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  font-size: 0.9rem;
+  letter-spacing: 0.07em;
+  font-size: 0.84rem;
   line-height: 20px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.78);
 }
 
 nav a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 34px;
-  margin-left: 16px;
+  margin-left: 0;
   font-size: 0.9rem;
   line-height: 20px;
   text-decoration: none;
   color: var(--muted);
-  padding: 6px 10px;
+  padding: 6px 0;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
   border-radius: 999px;
-  border: 1px solid transparent;
+  background: #6366f1;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 160ms ease;
 }
 
 .nav {
@@ -77,8 +99,12 @@ nav a {
 
 
 nav a:hover {
-  border-color: var(--border);
   color: var(--text);
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .language-switch {
@@ -87,9 +113,9 @@ nav a:hover {
   justify-content: center;
   margin-left: 10px;
   padding: 6px 10px;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.82rem;
   line-height: 20px;
   text-decoration: none;
   color: var(--muted);
@@ -98,7 +124,9 @@ nav a:hover {
 }
 
 .language-switch:hover {
+  border-color: #6366f1;
   color: var(--text);
+  background: var(--accent-soft);
 }
 
 .hero {
@@ -111,7 +139,7 @@ nav a:hover {
 
 .home-hero {
   max-width: 920px;
-  margin: 44px auto 16px;
+  margin: 24px auto 16px;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 56px;
   align-items: start;
