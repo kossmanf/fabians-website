@@ -14,4 +14,5 @@ meta:
 
 # Mögliche Werte: "green", "yellow" oder "red"
 status_tone: "red"
+status_short: "Aktuell ausgelastet"
 status: "Leider gerade voll ausgelastet mit Projektarbeit und Masterarbeit, aber prinzipiell immer offen für neue Projekte und Ideen."

@@ -114,6 +114,7 @@ nav a:hover {
   margin: 44px auto 64px;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 56px;
+  align-items: start;
 }
 
 .home-hero h1 {
@@ -146,6 +147,7 @@ nav a:hover {
 
   .home-hero .hero-right {
     justify-self: start;
+    margin-top: 0;
   }
 
   header {
@@ -363,16 +365,17 @@ a.btn-ghost:active {
 
 .home-hero .hero-right {
   width: auto;
+  margin-top: 48px;
 }
 
 .home-hero .card {
   min-width: 0;
-  width: auto;
-  max-width: 240px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  width: 280px;
+  max-width: 100%;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.5);
 }
 
 .home-hero .avatar-wrapper {
@@ -380,8 +383,8 @@ a.btn-ghost:active {
 }
 
 .home-hero .avatar {
-  width: 58px;
-  height: 58px;
+  width: 70px;
+  height: 70px;
 }
 
 .home-hero .badges {
@@ -390,6 +393,16 @@ a.btn-ghost:active {
 
 .home-hero .skill-detail {
   margin-bottom: 24px;
+}
+
+.home-hero .availability--compact {
+  display: inline-flex;
+  width: auto;
+  padding: 7px 10px;
+  gap: 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  white-space: nowrap;
 }
 
 .card {
