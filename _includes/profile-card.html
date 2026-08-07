@@ -31,12 +31,23 @@
         </div>
     </div>
 
-    {% if profile.status %}
-        <div class="availability availability--compact{% if profile.status_tone %} availability--{{ profile.status_tone }}{% endif %}"
-             title="{{ profile.status | escape }}"
-             aria-label="{{ profile.status | escape }}">
+    {% if profile.status_tone %}
+        {% if page_lang == "en" %}
+            {% case profile.status_tone %}
+                {% when "green" %}{% assign status_label = "Available" %}
+                {% when "yellow" %}{% assign status_label = "Limited availability" %}
+                {% when "red" %}{% assign status_label = "Currently at capacity" %}
+            {% endcase %}
+        {% else %}
+            {% case profile.status_tone %}
+                {% when "green" %}{% assign status_label = "Verfügbar" %}
+                {% when "yellow" %}{% assign status_label = "Eingeschränkt verfügbar" %}
+                {% when "red" %}{% assign status_label = "Aktuell ausgelastet" %}
+            {% endcase %}
+        {% endif %}
+        <div class="availability availability--compact availability--{{ profile.status_tone }}">
             <span class="pill-dot"></span>
-            <span class="availability-text">{{ profile.status_short | default: profile.status }}</span>
+            <span class="availability-text">{{ status_label }}</span>
         </div>
     {% endif %}
 </div>

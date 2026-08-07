@@ -14,5 +14,4 @@ meta:
 
 # Available values: "green", "yellow" or "red"
 status_tone: "red"
-status_short: "Currently at capacity"
 status: "I'm currently at full capacity with project work and my master's thesis, but I'm always open to new projects and ideas."
