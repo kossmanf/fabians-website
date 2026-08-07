@@ -617,6 +617,7 @@ a.btn-ghost:active {
 
 .section-home .cv-timeline {
   max-width: 680px;
+  margin-left: 11px;
 }
 
 .section+.section {
