@@ -111,7 +111,7 @@ nav a:hover {
 
 .home-hero {
   max-width: 920px;
-  margin: 44px auto 64px;
+  margin: 44px auto 16px;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 56px;
   align-items: start;
@@ -142,7 +142,7 @@ nav a:hover {
 
   .home-hero {
     gap: 28px;
-    margin: 28px auto 48px;
+    margin: 28px auto 16px;
   }
 
   .home-hero .hero-right {
@@ -560,19 +560,18 @@ a.btn-ghost:active {
 }
 
 .section-home {
-  max-width: 860px;
+  max-width: 760px;
   margin-right: auto;
   margin-left: auto;
-  padding: 44px 0;
+  padding: 30px 0;
   border: 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.16);
   border-radius: 0;
   background: transparent;
   backdrop-filter: none;
 }
 
 .section.section-home + .section.section-home {
-  margin-top: 0;
+  margin-top: 12px;
 }
 
 .section.section-home h2 {
