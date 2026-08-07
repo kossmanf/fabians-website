@@ -109,6 +109,10 @@ nav a:hover {
   margin-bottom: 32px;
 }
 
+.hero-blog {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 @media (max-width: 720px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
