@@ -1221,7 +1221,10 @@ footer a:hover {
 
 @media (max-width: 620px) {
   header {
-    width: 100%;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .logo {
