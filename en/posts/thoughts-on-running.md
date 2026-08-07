@@ -3,7 +3,7 @@ layout: blog
 title: "Thoughts on Running" 
 subtitle: "Why running helps me clear my head." 
 description: "A personal reflection on running along the Moselle, familiar encounters, and why running somehow feels more difficult without music." 
-date: 2026-07-30 
+date: "2026-07-31 14:56:06 +0200"
 category: "Thoughts & Everyday Life" 
 lang: "en" 
 translation_url: "/de/posts/gedanken-uebers-laufen.html"
