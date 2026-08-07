@@ -1,6 +1,5 @@
 ---
 layout: blog 
-| **date**             | 2026-07-31 |
 title: "Gedanken übers Laufen" 
 subtitle: "Warum mir Joggen dabei hilft, den Kopf freizubekommen." 
 description: "Ein persönlicher Gedanke über das Laufen an der Mosel, vertraute Begegnungen und die Frage, warum es ohne Musik irgendwie schwerer geht." 

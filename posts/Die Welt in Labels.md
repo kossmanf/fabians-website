@@ -1,6 +1,6 @@
 ---
 layout: blog
-| **date**             | 2026-08-06 |
+date: 2026-08-06
 category: Allgemein
 lang: de
 subtitle: null
