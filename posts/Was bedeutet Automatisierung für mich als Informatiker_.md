@@ -109,11 +109,11 @@ Als Informatiker möchte ich Technologien entwickeln, die Probleme lösen und Me
 
 Aber ich glaube, unsere Verantwortung endet nicht bei der Frage:
 
-«„Funktioniert meine technische Lösung?“»
+„Funktioniert meine technische Lösung?“
 
 Wir sollten uns genauso fragen:
 
-«„Was passiert, wenn meine technische Lösung funktioniert?“»
+„Was passiert, wenn meine technische Lösung funktioniert?"
 
 Automatisierung kann uns produktiver machen, gefährliche Arbeit reduzieren und einen enormen gesellschaftlichen Wohlstand erzeugen.
 
