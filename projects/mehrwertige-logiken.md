@@ -55,7 +55,8 @@ Mehrwertige Logiken zeigen damit, dass die klassische Unterscheidung zwischen *w
 
 Wer sich genauer für die Definition mehrwertiger Logiken, die dreiwertige Łukasiewicz-Logik und das Anwendungsbeispiel mit VDM-SL interessiert, findet hier die vollständige Seminararbeit sowie die dazugehörige Präsentation:
 
-**[Seminararbeit als PDF herunterladen](/assets/documents/de/Seminararbeit_mehrwertige_logiken_presentation%20%282%29.pdf)**  
+**[Seminararbeit als PDF herunterladen](/assets/documents/de/Seminararbeit_mehrwertige_logiken.pdf)**
+
 **[Präsentation als PDF ansehen](/assets/documents/de/Seminararbeit_mehrwertige_logiken_presentation%20%281%29.pdf)**
 
 *„Mehrwertige Logiken“*  
