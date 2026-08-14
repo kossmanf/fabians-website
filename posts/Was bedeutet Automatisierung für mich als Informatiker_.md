@@ -1,5 +1,4 @@
 ---
-
 layout: blog
 title: Was bedeutet Automatisierung für mich als Informatiker?
 subtitle: Über technischen Fortschritt, Arbeit und die Verantwortung hinter der Automatisierung.
@@ -7,7 +6,8 @@ description: Gedanken darüber, was Automatisierung für unsere Arbeitswelt bede
 date: "2026-08-14 21:48:29 +0200"
 category: KI & Gesellschaft
 lang: de
-translation_url:
+translation_url: null
+---
 
 Was bedeutet Automatisierung für mich als Informatiker?
 
@@ -63,7 +63,7 @@ Arbeit bedeutet schließlich mehr als Einkommen.
 
 Für viele Menschen bedeutet sie Struktur, soziale Kontakte, Anerkennung und das Gefühl, etwas zu erschaffen oder einen Beitrag zur Gesellschaft zu leisten. Deshalb halte ich die Vorstellung, dass Menschen einfach nicht mehr arbeiten müssen und damit automatisch glücklich sind, für zu einfach.
 
-Wer profitiert von Automatisierung?
+## Wer profitiert von Automatisierung?
 
 Hinzu kommt für mich eine entscheidende Verteilungsfrage.
 
@@ -79,7 +79,7 @@ Technischer Fortschritt könnte damit paradoxerweise gleichzeitig den gesellscha
 
 Das wäre für mich kein besonders erfolgreicher Fortschritt.
 
-Wir brauchen neue Ideen
+## Wir brauchen neue Ideen
 
 Ich glaube deshalb, dass wir uns bereits heute intensiver mit diesen Fragen beschäftigen sollten.
 
@@ -103,7 +103,7 @@ Vielleicht gibt es wesentlich bessere Modelle.
 
 Genau deshalb halte ich die Diskussion darüber für wichtig.
 
-Verantwortung bedeutet für mich auch, Fragen zu stellen
+## Verantwortung bedeutet für mich auch, Fragen zu stellen
 
 Als Informatiker möchte ich Technologien entwickeln, die Probleme lösen und Menschen unterstützen.
 
@@ -121,7 +121,7 @@ Die entscheidende Frage ist für mich deshalb nicht, ob wir automatisieren sollt
 
 Die entscheidende Frage ist:
 
-Wie gestalten wir eine Gesellschaft, in der der durch Automatisierung entstehende Wohlstand möglichst vielen Menschen zugutekommt – und in der Menschen weiterhin das Gefühl haben, gebraucht zu werden und etwas Sinnvolles beitragen zu können?
+Wie gestalten wir eine Gesellschaft, in der der durch Automatisierung entstehende Wohlstand möglichst vielen Menschen zugutekommt und in der Menschen weiterhin das Gefühl haben, gebraucht zu werden und etwas Sinnvolles beitragen zu können?
 
 Darüber sollten nicht erst zukünftige Generationen nachdenken.
 
