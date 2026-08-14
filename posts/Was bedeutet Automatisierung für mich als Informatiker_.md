@@ -1,18 +1,19 @@
 ---
-layout: blog
-date: "2026-08-14 21:48:29 +0200"
-subtitle: 
-description: 
-category: Allgemein
-lang: de
-translation_url: 
----
 
-# Was bedeutet Automatisierung für mich als Informatiker?
+layout: blog
+title: Was bedeutet Automatisierung für mich als Informatiker?
+subtitle: Über technischen Fortschritt, Arbeit und die Verantwortung hinter der Automatisierung.
+description: Gedanken darüber, was Automatisierung für unsere Arbeitswelt bedeutet, wer von steigender Produktivität profitiert und welche Verantwortung wir als Informatiker dabei tragen.
+date: "2026-08-14 21:48:29 +0200"
+category: KI & Gesellschaft
+lang: de
+translation_url:
+
+Was bedeutet Automatisierung für mich als Informatiker?
 
 Als Informatiker, der sich viel mit Künstlicher Intelligenz und Automatisierung beschäftigt, sehe ich darin enorme Möglichkeiten. Gleichzeitig denke ich, dass wir gerade deshalb eine besondere Verantwortung haben, uns ehrlich mit den gesellschaftlichen Folgen unserer Arbeit auseinanderzusetzen.
 
-Automatisierung bedeutet Effizienz – aber nicht nur
+## Automatisierung bedeutet Effizienz aber nicht nur
 
 Eine typische Herangehensweise an Automatisierung sieht vereinfacht ungefähr so aus:
 
@@ -24,7 +25,7 @@ Aus technischer und wirtschaftlicher Sicht ist das zunächst ein Erfolg.
 
 Aber was bedeutet dieser Erfolg für den Menschen, dessen Aufgabe wir gerade automatisiert haben?
 
-Wenn die einfachen Aufgaben verschwinden
+## Wenn die einfachen Aufgaben verschwinden
 
 Besonders nachdenklich macht mich, dass häufig gerade die einfacheren und repetitiven Tätigkeiten zuerst automatisiert werden.
 
@@ -34,7 +35,7 @@ Niemand beginnt seine Karriere mit den schwierigsten Aufgaben.
 
 Wir lernen durch einfache Aufgaben, sammeln Erfahrungen, machen Fehler und übernehmen anschließend schrittweise komplexere Tätigkeiten. Wenn wir immer mehr dieser Einstiegsaufgaben automatisieren, stellt sich deshalb die Frage:
 
-Wie sollen Menschen die Erfahrung sammeln, die sie für die komplexeren Aufgaben benötigen?
+## Wie sollen Menschen die Erfahrung sammeln, die sie für die komplexeren Aufgaben benötigen?
 
 Das betrifft nicht nur klassische Industriearbeitsplätze.
 
@@ -44,7 +45,7 @@ Wir werden dadurch produktiver.
 
 Gleichzeitig sollten wir uns aber eingestehen, dass dieselben Mechanismen, mit denen wir andere Tätigkeiten automatisieren, langfristig auch unsere eigenen Berufe verändern können.
 
-Was passiert, wenn wir immer weniger Menschen brauchen?
+## Was passiert, wenn wir immer weniger Menschen brauchen?
 
 Technischer Fortschritt hat schon immer Berufe verändert und neue geschaffen. Trotzdem halte ich es für gefährlich, daraus automatisch abzuleiten, dass dies auch bei jeder zukünftigen Form der Automatisierung genauso sein muss.
 
