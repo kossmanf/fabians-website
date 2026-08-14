@@ -1,6 +1,5 @@
 ---
 layout: blog
-title: "Welche Features machen einen Menschen aus?"
 date: "2026-08-06 19:17:55 +0200"
 category: Allgemein
 lang: de
@@ -8,6 +7,8 @@ subtitle: null
 description: null
 translation_url: null
 ---
+
+# Welche Features machen einen Menschen aus?
 
 Warum geben wir Menschen immer mehr Labels und ordnen ihnen bestimmte Eigenschaften zu? Und warum wundern wir uns anschließend darüber, dass Vorurteile entstehen und Menschen andere nur noch in Schubladen sehen?
 
