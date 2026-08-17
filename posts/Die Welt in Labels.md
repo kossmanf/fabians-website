@@ -3,6 +3,7 @@ layout: blog
 date: "2026-08-06 19:17:55 +0200"
 category: Allgemein
 lang: de
+type: Journal
 subtitle: null
 description: null
 translation_url: null
