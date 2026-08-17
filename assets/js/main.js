@@ -105,6 +105,15 @@ function setupCvDetails() {
     });
 }
 
+function setupResumePrint() {
+    var printButton = document.querySelector('[data-resume-print]');
+    if (!printButton) return;
+
+    printButton.addEventListener('click', function () {
+        window.print();
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('[data-search-section]').forEach(function (section) {
         setupTagSearch(section);
@@ -112,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setupSkillDetails();
     setupCvDetails();
+    setupResumePrint();
 
     var yearEl = document.getElementById('year');
     if (yearEl) {

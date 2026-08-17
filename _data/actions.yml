@@ -1,19 +1,24 @@
 - order: 1
+  label: "Lebenslauf erstellen"
+  href: "/lebenslauf/"
+  style: "primary"
+
+- order: 2
   label: "Projekte ansehen"
   href: "#projects"
   style: "ghost"
 
-- order: 2
+- order: 3
   label: "Blogposts ansehen"
   href: "#blog"
   style: "ghost"
 
-- order: 3
+- order: 4
   label: "Mehr über mich"
   href: "#about"
   style: "ghost"
 
-- order: 4
+- order: 5
   label: "Profile & Plattformen"
   href: "#platforms"
   style: "ghost"

@@ -1,0 +1,27 @@
+---
+layout: base
+---
+{% assign page_lang = page.lang | default: "de" %}
+{% if page_lang == "en" %}
+    {% assign resume = site.data.en.resume %}
+    {% assign portfolio_url = "/en/" %}
+{% else %}
+    {% assign resume = site.data.resume %}
+    {% assign portfolio_url = "/" %}
+{% endif %}
+<main class="resume-page">
+    <div class="resume-toolbar" role="toolbar" aria-label="{{ resume.document_title }}">
+        <a class="resume-back" href="{{ portfolio_url | relative_url }}">
+            <span aria-hidden="true">←</span>
+            <span>{{ resume.back_label }}</span>
+        </a>
+        <button class="btn btn-primary resume-print"
+                type="button"
+                data-resume-print
+                aria-label="{{ resume.print_aria_label }}">
+            {{ resume.print_label }}
+        </button>
+    </div>
+
+    {% include resume-document.html %}
+</main>

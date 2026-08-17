@@ -1,0 +1,112 @@
+{%- assign page_lang = page.lang | default: "de" -%}
+{%- if page_lang == "en" -%}
+    {%- assign resume = site.data.en.resume -%}
+    {%- assign profile = site.data.en.profile -%}
+    {%- assign skills = site.data.en.skills | sort: "order" -%}
+    {%- assign platforms = site.data.en.platforms | sort: "order" -%}
+{%- else -%}
+    {%- assign resume = site.data.resume -%}
+    {%- assign profile = site.data.profile -%}
+    {%- assign skills = site.data.skills | sort: "order" -%}
+    {%- assign platforms = site.data.platforms | sort: "order" -%}
+{%- endif -%}
+{%- assign resume_entries = site.cv | where: "layout", "cv-entry" | sort: "order" -%}
+
+<article class="resume-sheet" aria-labelledby="resume-name">
+    <div class="resume-document-header">
+        <div class="resume-photo">
+            {% if profile.image %}
+                <img src="{{ profile.image | relative_url }}"
+                     alt="{{ profile.image_alt | default: profile.name | escape }}">
+            {% else %}
+                <span>{{ profile.initials | default: "FK" }}</span>
+            {% endif %}
+        </div>
+
+        <div class="resume-identity">
+            <p class="resume-kicker">{{ resume.document_title }}</p>
+            <h1 id="resume-name">{{ profile.name }}</h1>
+            <p class="resume-role">{{ resume.role }}</p>
+        </div>
+
+        <div class="resume-header-contact">
+            <span>{{ resume.location }}</span>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+    </div>
+
+    <div class="resume-columns">
+        <aside class="resume-sidebar">
+            <section class="resume-document-section">
+                <h2>{{ resume.summary_title }}</h2>
+                <p class="resume-summary">{{ resume.summary }}</p>
+            </section>
+
+            {% if skills.size > 0 %}
+                <section class="resume-document-section">
+                    <h2>{{ resume.skills_title }}</h2>
+                    <ul class="resume-skills">
+                        {% for skill in skills %}
+                            <li class="resume-skill{% if skill.featured %} resume-skill--featured{% endif %}">
+                                <span class="resume-skill-title">{{ skill.title }}</span>
+                                {% if skill.featured and skill.description %}
+                                    <span class="resume-skill-description">{{ skill.description }}</span>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endif %}
+
+            {% if platforms.size > 0 %}
+                <section class="resume-document-section resume-contact-section">
+                    <h2>{{ resume.contact_title }}</h2>
+                    <ul class="resume-contact-list">
+                        {% for platform in platforms %}
+                            <li>
+                                <span>{{ platform.title }}</span>
+                                <a href="{{ platform.url }}"
+                                   {% unless platform.url contains "mailto:" %}target="_blank" rel="noopener noreferrer"{% endunless %}>
+                                    {% if platform.url contains "mailto:" %}
+                                        {{ site.email }}
+                                    {% else %}
+                                        {{ platform.url | remove: "https://" | remove: "www." }}
+                                    {% endif %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endif %}
+        </aside>
+
+        <section class="resume-document-section resume-career">
+            <h2>{{ resume.career_title }}</h2>
+            <ol class="resume-timeline">
+                {% for item in resume_entries %}
+                    {% if page_lang == "en" %}
+                        {% assign entry_period = item.period_en %}
+                        {% assign entry_title = item.title_en %}
+                        {% assign entry_institution = item.institution_en %}
+                        {% assign entry_location = item.location_en %}
+                        {% assign entry_summary = item.resume_description_en %}
+                    {% else %}
+                        {% assign entry_period = item.period %}
+                        {% assign entry_title = item.title %}
+                        {% assign entry_institution = item.institution %}
+                        {% assign entry_location = item.location %}
+                        {% assign entry_summary = item.resume_description %}
+                    {% endif %}
+                    <li class="resume-entry">
+                        <span class="resume-entry-dot" aria-hidden="true"></span>
+                        {% if entry_period %}<p class="resume-entry-period">{{ entry_period }}</p>{% endif %}
+                        {% if entry_title %}<h3>{{ entry_title }}</h3>{% endif %}
+                        {% if entry_institution %}<p class="resume-entry-institution">{{ entry_institution }}</p>{% endif %}
+                        {% if entry_location %}<p class="resume-entry-location">{{ entry_location }}</p>{% endif %}
+                        {% if entry_summary %}<p class="resume-entry-summary">{{ entry_summary }}</p>{% endif %}
+                    </li>
+                {% endfor %}
+            </ol>
+        </section>
+    </div>
+</article>

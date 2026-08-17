@@ -85,7 +85,7 @@ layout: base
 
                     {% if hero_actions.size > 0 %}
                         <div class="hero-actions">
-                            {% for action in hero_actions limit: 2 %}
+                            {% for action in hero_actions limit: 3 %}
                                 <a href="{{ action.href }}" class="btn btn-{{ action.style | default: 'ghost' }}">
                                     {{ action.label }}
                                 </a>

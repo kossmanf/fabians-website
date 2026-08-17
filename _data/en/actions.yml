@@ -1,19 +1,24 @@
 - order: 1
+  label: "Create CV"
+  href: "/en/cv/"
+  style: "primary"
+
+- order: 2
   label: "View projects"
   href: "/en/#projects"
   style: "ghost"
 
-- order: 2
+- order: 3
   label: "Read blog posts"
   href: "/en/#blog"
   style: "ghost"
 
-- order: 3
+- order: 4
   label: "More about me"
   href: "/en/#about"
   style: "ghost"
 
-- order: 4
+- order: 5
   label: "Profiles & Platforms"
   href: "/en/#platforms"
   style: "ghost"
