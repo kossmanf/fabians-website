@@ -8,8 +8,6 @@ description: null
 translation_url: null
 ---
 
-# Welche Features machen einen Menschen aus?
-
 Warum geben wir Menschen immer mehr Labels und ordnen ihnen bestimmte Eigenschaften zu? Und warum wundern wir uns anschließend darüber, dass Vorurteile entstehen und Menschen andere nur noch in Schubladen sehen?
 
 In der Informatik insbesondere in der Künstlichen Intelligenz und in Data Science beschäftigen wir uns ständig mit Labels, Features und Klassifikationen. Wir überlegen, welche Merkmale relevant sind, um ein Problem zu lösen oder ein Modell zu trainieren. Labels und Features helfen dabei, Ordnung zu schaffen und komplexe Sachverhalte zu vereinfachen.
