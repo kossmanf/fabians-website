@@ -1,7 +1,7 @@
 - order: 1
-  label: "Create CV"
+  label: "View CV"
   href: "/en/cv/"
-  style: "primary"
+  style: "ghost"
 
 - order: 2
   label: "View projects"
