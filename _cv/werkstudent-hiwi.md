@@ -1,6 +1,7 @@
 ---
 layout: cv-entry
 order: 3
+featured: true
 
 period: "seit 2023"
 title: "Werkstudent / HiWi"

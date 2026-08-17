@@ -1,6 +1,7 @@
 ---
 layout: cv-entry
 order: 6
+featured: true
 
 period: "2014 – 2015"
 title: "AFS-Auslandsjahr in China"

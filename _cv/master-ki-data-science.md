@@ -1,6 +1,7 @@
 ---
 layout: cv-entry
 order: 1
+featured: true
 
 period: "seit 2024"
 title: "Master KI & Data Science"

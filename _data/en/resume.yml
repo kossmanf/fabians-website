@@ -10,6 +10,7 @@ summary: >-
 skills_title: "Skills"
 career_title: "Experience & education"
 contact_title: "Contact & profiles"
+website_label: "Website"
 back_label: "Back to portfolio"
 print_label: "Save as PDF"
 print_aria_label: "Print CV or save it as a PDF"

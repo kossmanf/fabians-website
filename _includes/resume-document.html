@@ -62,6 +62,10 @@
                 <section class="resume-document-section resume-contact-section">
                     <h2>{{ resume.contact_title }}</h2>
                     <ul class="resume-contact-list">
+                        <li>
+                            <span>{{ resume.website_label }}</span>
+                            <a href="{{ site.url }}">{{ site.url | remove: "https://" | remove: "http://" }}</a>
+                        </li>
                         {% for platform in platforms %}
                             <li>
                                 <span>{{ platform.title }}</span>
@@ -97,13 +101,13 @@
                         {% assign entry_location = item.location %}
                         {% assign entry_summary = item.resume_description %}
                     {% endif %}
-                    <li class="resume-entry">
+                    <li class="resume-entry{% if item.featured %} resume-entry--featured{% endif %}">
                         <span class="resume-entry-dot" aria-hidden="true"></span>
                         {% if entry_period %}<p class="resume-entry-period">{{ entry_period }}</p>{% endif %}
                         {% if entry_title %}<h3>{{ entry_title }}</h3>{% endif %}
                         {% if entry_institution %}<p class="resume-entry-institution">{{ entry_institution }}</p>{% endif %}
                         {% if entry_location %}<p class="resume-entry-location">{{ entry_location }}</p>{% endif %}
-                        {% if entry_summary %}<p class="resume-entry-summary">{{ entry_summary }}</p>{% endif %}
+                        {% if item.featured and entry_summary %}<p class="resume-entry-summary">{{ entry_summary }}</p>{% endif %}
                     </li>
                 {% endfor %}
             </ol>

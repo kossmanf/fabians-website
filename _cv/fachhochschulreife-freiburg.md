@@ -1,6 +1,7 @@
 ---
 layout: cv-entry
 order: 5
+featured: true
 
 period: "2018"
 title: "Fachhochschulreife"

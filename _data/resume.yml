@@ -10,6 +10,7 @@ summary: >-
 skills_title: "Kompetenzen"
 career_title: "Werdegang"
 contact_title: "Kontakt & Profile"
+website_label: "Webseite"
 back_label: "Zurück zum Portfolio"
 print_label: "Als PDF speichern"
 print_aria_label: "Lebenslauf drucken oder als PDF speichern"

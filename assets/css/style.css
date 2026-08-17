@@ -44,12 +44,19 @@ header {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
+@media (min-width: 721px) {
+  header {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
 @media (min-width: 1600px) {
   header {
     top: 12px;
     max-width: 920px;
     margin-top: 12px;
-    padding: 14px 18px;
+    padding: 14px 22px;
     border: 1px solid rgba(148, 163, 184, 0.12);
     border-radius: 14px;
   }
@@ -1546,17 +1553,26 @@ footer a {
   height: 9px;
   border: 2px solid #ffffff;
   border-radius: 50%;
+  background: #a8b0c0;
+  box-shadow: 0 0 0 1px #a8b0c0;
+}
+
+.resume-entry--featured .resume-entry-dot {
   background: var(--resume-accent);
   box-shadow: 0 0 0 1px var(--resume-accent);
 }
 
 .resume-entry-period {
   margin: 0 0 4px;
-  color: var(--resume-accent);
+  color: #737c8d;
   font-size: 0.62rem;
   font-weight: 800;
   line-height: 1.3;
   text-transform: uppercase;
+}
+
+.resume-entry--featured .resume-entry-period {
+  color: var(--resume-accent);
 }
 
 .resume-entry h3 {

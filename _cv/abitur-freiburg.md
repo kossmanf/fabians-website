@@ -1,6 +1,7 @@
 ---
 layout: cv-entry
 order: 4
+featured: true
 
 period: "2019"
 title: "Abitur"
